@@ -1,0 +1,129 @@
+{
+  "sites": [
+    {
+      "label": "Online Hulp Enschede",
+      "hosts": [
+        "onlinehulpenschede.nl",
+        "www.onlinehulpenschede.nl"
+      ],
+      "type": "informatie",
+      "start_urls": [
+        "https://www.onlinehulpenschede.nl/themas/",
+        "https://www.onlinehulpenschede.nl/veelgestelde-vragen/"
+      ],
+      "max_pages": 45,
+      "max_depth": 3
+    },
+    {
+      "label": "Wijkwijzer Enschede",
+      "hosts": [
+        "wijkwijzerenschede.nl",
+        "www.wijkwijzerenschede.nl"
+      ],
+      "type": "voorziening",
+      "start_urls": [
+        "https://wijkwijzerenschede.nl/"
+      ],
+      "max_pages": 30,
+      "max_depth": 3
+    },
+    {
+      "label": "Gemeente Enschede",
+      "hosts": [
+        "enschede.nl",
+        "www.enschede.nl"
+      ],
+      "type": "informatie",
+      "start_urls": [
+        "https://www.enschede.nl/werk-laag-inkomen-en-uitkering",
+        "https://www.enschede.nl/nieuws",
+        "https://www.enschede.nl/wijkwijzer-enschede"
+      ],
+      "max_pages": 35,
+      "max_depth": 2
+    },
+    {
+      "label": "Alifa",
+      "hosts": [
+        "alifa.nl",
+        "www.alifa.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://www.alifa.nl/activiteiten"
+      ],
+      "max_pages": 25,
+      "max_depth": 2
+    },
+    {
+      "label": "Incluzio Enschede",
+      "hosts": [
+        "incluzioenschede.nl",
+        "www.incluzioenschede.nl"
+      ],
+      "type": "organisatie",
+      "start_urls": [
+        "https://www.incluzioenschede.nl/"
+      ],
+      "max_pages": 25,
+      "max_depth": 2
+    },
+    {
+      "label": "M-Pact",
+      "hosts": [
+        "m-pact.nl",
+        "www.m-pact.nl"
+      ],
+      "type": "organisatie",
+      "start_urls": [
+        "https://www.m-pact.nl/maatjes",
+        "https://www.m-pact.nl/vrijwilligerswerk/activiteiten"
+      ],
+      "max_pages": 25,
+      "max_depth": 2
+    },
+    {
+      "label": "Sportaal",
+      "hosts": [
+        "sportaal.nl",
+        "www.sportaal.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://www.sportaal.nl/"
+      ],
+      "max_pages": 20,
+      "max_depth": 2
+    },
+    {
+      "label": "Uit in Enschede",
+      "hosts": [
+        "uitinenschede.nl",
+        "www.uitinenschede.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://www.uitinenschede.nl/agenda"
+      ],
+      "max_pages": 20,
+      "max_depth": 2
+    },
+    {
+      "label": "M-Pact Kenniscentrum",
+      "hosts": [
+        "kenniscentrum.m-pact.nl",
+        "www.kenniscentrum.m-pact.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://www.kenniscentrum.m-pact.nl/vrijwilligerswerk/all/activiteiten"
+      ],
+      "max_pages": 15,
+      "max_depth": 2
+    }
+  ],
+  "feeds": {
+    "sociale_kaart": "https://raw.githubusercontent.com/mlemson/sociale-kaart-twente/main/data/catalog.json",
+    "jeugdhulptwente": "https://raw.githubusercontent.com/mlemson/jeugdhulptwente/main/wachtlijsten_data.json"
+  }
+}

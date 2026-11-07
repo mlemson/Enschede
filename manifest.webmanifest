@@ -1,0 +1,19 @@
+{
+  "name": "Enschede dichtbij",
+  "short_name": "Dichtbij",
+  "description": "Hulp, buurtinformatie en activiteiten in Enschede",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffdf9",
+  "theme_color": "#fffdf9",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

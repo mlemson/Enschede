@@ -1,0 +1,583 @@
+{
+  "checked": "2026-11-07",
+  "note": "Redactionele startindex met controleerbare links en korte, originele samenvattingen. Wordt uitgebreid via optionele GitHub-indexbouwer.",
+  "items": [
+    {
+      "id": "onlinehulp-psychisch",
+      "title": "Psychische gezondheid: waaronder autisme",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/welzijn-en-gezondheid/psychische-gezondheid/",
+      "summary": "Uitleg over psychische klachten, waaronder autisme en angst. Je kunt de huisarts of het wijkteam benaderen; voor volwassenen kan de huisarts verwijzen naar specialistische zorg.",
+      "segments": [
+        "Autisme, angst en andere psychische problemen kunnen van invloed zijn op het dagelijks leven. Bespreek moeilijkheden met iemand die je vertrouwt.",
+        "Een wijkteammedewerker denkt mee over klachten, ondersteuning en mogelijkheden. Bij complexere vragen is soms specialistische hulp nodig.",
+        "Ook ervaringsdeskundige ondersteuning van Ixta Noa wordt genoemd."
+      ],
+      "terms": "autisme ass autismespectrumstoornis psychische gezondheid depressie angst angststoornis persoonlijkheidsstoornis ggz ixta noa huisarts wijkteam ondersteuning"
+    },
+    {
+      "id": "onlinehulp-jeugd-info",
+      "title": "Ondersteuning en trainingen voor kinderen en ouders",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/opvoeden-en-opgroeien/meer-informatie/",
+      "summary": "Bij opvoed- en gezinsvragen kun je terecht bij het wijkteam. De site noemt onder meer trainingen rond autisme, sociale vaardigheden en scheiding.",
+      "segments": [
+        "Onder meer een groep over autisme vanaf 8 jaar wordt genoemd bij trainingen vanuit Wijkteams Enschede. Vraag na of deze momenteel plaatsvindt.",
+        "Ook worden KIES-trainingen en een brussencursus voor broers en zussen van kinderen met een beperking genoemd.",
+        "Het wijkteam kan meedenken als je zelf of met andere organisaties geen passend antwoord vindt."
+      ],
+      "terms": "autisme ass autismespectrum ouders kinderen jeugd opvoeden sociale vaardigheden groep cursus training brussencursus KIES scheiding wijkteams"
+    },
+    {
+      "id": "wijkwijzer-onderwijs",
+      "title": "Onderwijs en kinderopvang, ook bij autisme",
+      "source": "Wijkwijzer Enschede",
+      "type": "voorziening",
+      "url": "https://wijkwijzerenschede.nl/onderwijs-en-kinderopvang",
+      "summary": "Informatie over basisonderwijs, voortgezet onderwijs en scholen voor kinderen die extra ondersteuning nodig hebben. De Wijkwijzer noemt het Panta Rhei College voor leerlingen met autisme.",
+      "segments": [
+        "Het Panta Rhei College van Attendiz wordt als voortgezet speciaal onderwijs voor leerlingen met autisme genoemd.",
+        "Via de Wijkwijzer vind je informatie over vormen van onderwijs en kinderopvang."
+      ],
+      "terms": "autisme ass autismespectrum school panta rhei attendiz onderwijs middelbare school kinderen leerling kinderopvang passend onderwijs"
+    },
+    {
+      "id": "wijkwijzer-alle-vragen",
+      "title": "Met je vraag naar de Wijkwijzer",
+      "source": "Wijkwijzer Enschede",
+      "type": "voorziening",
+      "url": "https://wijkwijzerenschede.nl/voor-alle-vragen-die-je-in-je-leven-tegen-kunt-komen",
+      "summary": "Bij de Wijkwijzer kun je terecht voor vragen over wonen, zorg, geld, studie of dagelijks leven. Ook vragen rond autisme en studieproblemen komen aan bod.",
+      "segments": [
+        "Bij de Wijkwijzer denken vrijwilligers en professionals met je mee, bijvoorbeeld bij moeilijkheden met studeren of contact met anderen.",
+        "Als er meer ondersteuning nodig is, kan een wijkteammedewerker betrokken worden."
+      ],
+      "terms": "wijkwijzer studeren studie autisme ass wijkcoach wijkteam begeleiding ondersteuning voorzieningen"
+    },
+    {
+      "id": "onlinehulp-contact",
+      "title": "Contact met anderen en eenzaamheid",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/welzijn-en-gezondheid/sociale-contacten/",
+      "summary": "Tips om contacten op te bouwen, bijvoorbeeld via sport, hobby's, vrijwilligerswerk of een activiteit in de buurt.",
+      "segments": [
+        "Een buurtcentrum, maatjesproject of vrijwilligerswerk kan een manier zijn om anderen te ontmoeten.",
+        "Op school kun je bij pesten of sociale problemen ook met een schoolwijkcoach spreken."
+      ],
+      "terms": "eenzaamheid eenzaam maatjes contacten vrienden sport verenigingen buurthuis pesten vrijwilligerswerk ontmoeten"
+    },
+    {
+      "id": "onlinehulp-werk",
+      "title": "Werk, vrijwilligerswerk en daginvulling",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/geld-en-werk/werk-en-dagbesteding/",
+      "summary": "Tips over werk zoeken, solliciteren, een zinvolle daginvulling en vrijwilligerswerk. M-Pact kan helpen met vrijwilligerswerk.",
+      "segments": [
+        "Vrijwilligerswerk kan helpen om ervaring op te doen, nieuwe mensen te ontmoeten of iets voor een ander te betekenen.",
+        "Een wijkteammedewerker kan meedenken bij problemen die werken moeilijk maken."
+      ],
+      "terms": "sollicitatie cv baan werk vacatures werkloos dagbesteding daginvulling vrijwilligerswerk maatschappelijk werker bedrijfsarts m pact"
+    },
+    {
+      "id": "onlinehulp-geld",
+      "title": "Geld en werk",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/geld-en-werk/",
+      "summary": "Informatie bij vragen over inkomen, administratie, schulden en werk. Ook kun je met een wijkteammedewerker overleggen.",
+      "segments": [
+        "Kun je moeilijk rondkomen of heb je problemen met geld of werk? Bekijk de mogelijkheden voor hulp en ondersteuning in Enschede."
+      ],
+      "terms": "geld werk administratie schulden rondkomen inkomen budget uitkering loon aanvragen financien"
+    },
+    {
+      "id": "wijkwijzer-geld",
+      "title": "Hulp met geld en administratie",
+      "source": "Wijkwijzer Enschede",
+      "type": "voorziening",
+      "url": "https://wijkwijzerenschede.nl/geld-en-administratie",
+      "summary": "De Wijkwijzer helpt bij vragen over inkomsten, regelingen, schulden en formulieren.",
+      "segments": [
+        "Bij de Wijkwijzer kun je vragen stellen over geld, brieven, formulieren en hulp bij het overzicht houden."
+      ],
+      "terms": "geld administratie schuld budget rondkomen brieven formulieren toeslagen regelingen"
+    },
+    {
+      "id": "alifa-budget",
+      "title": "Budgetadvies, thuisadministratie en bespaarcoaches",
+      "source": "Alifa",
+      "type": "voorziening",
+      "url": "https://www.alifa.nl/dienst/47/wijkwijzers",
+      "summary": "Alifa noemt budgethulp, begeleiding bij administratie en bespaarcoaches die meedenken over energiegebruik.",
+      "segments": [
+        "Met hulp bij thuisadministratie kun je meer overzicht krijgen in post, rekeningen en formulieren.",
+        "Bespaarcoaches kunnen helpen om te kijken naar energie besparen."
+      ],
+      "terms": "budgetadvies thuisadministratie besparen energie bespaarcoach rekeningen papierwerk geld formulieren alifa"
+    },
+    {
+      "id": "alifa-activiteiten",
+      "title": "Activiteiten in Enschede",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteiten",
+      "summary": "Inloopmomenten, jongerengroepen, taalactiviteiten en ontmoetingen verspreid over de stad; filter op stadsdeel.",
+      "segments": [
+        "Alifa organiseert onder andere jongereninloop, sportinloop en taalactiviteiten. Controleer op de agenda welke bijeenkomsten nu doorgaan.",
+        "Op de activiteitenpagina kun je per stadsdeel zoeken."
+      ],
+      "terms": "activiteiten taal sport ouderen senioren inloop jongeren jongerengroep buurthuis sportinloop lezen schrijven huiskamer wandelgroep koffie"
+    },
+    {
+      "id": "m-pact-maatjes",
+      "title": "Maatjes en vrijwilligerswerk",
+      "source": "M-Pact",
+      "type": "organisatie",
+      "url": "https://www.m-pact.nl/maatjes",
+      "summary": "M-Pact brengt inwoners met een vraag naar een maatje in contact met organisaties die maatjes inzetten. Je kunt ook zelf maatje worden.",
+      "segments": [
+        "Wie gezelschap zoekt of vrijwilliger wil worden, kan via M-Pact verkennen welke maatjesorganisaties passend zijn."
+      ],
+      "terms": "maatje maatjes vrijwilligerswerk bezoekvriend gezelschap ontmoeten vrijwilligers isolement eenzaamheid m pact"
+    },
+    {
+      "id": "m-pact-vrijwilligers",
+      "title": "Vrijwilligersvacatures in Enschede",
+      "source": "M-Pact",
+      "type": "activiteit",
+      "url": "https://www.m-pact.nl/vrijwilligerswerk/activiteiten",
+      "summary": "Zoek vrijwilligersactiviteiten en vacatures bij lokale organisaties. Aanbod kan veranderen.",
+      "segments": [
+        "Je kunt vrijwilligerswerk zoeken op onderwerp, organisatie en beschikbare tijd."
+      ],
+      "terms": "vacature vrijwilliger vrijwilligerswerk bijbaan maatje bezoeken begeleiding beperking zorg enschede"
+    },
+    {
+      "id": "alifa-senioren",
+      "title": "Seniorenwijzer 2026",
+      "source": "Alifa",
+      "type": "informatie",
+      "url": "https://www.alifa.nl/dienst/21/seniorenwijzer-2025",
+      "summary": "Gids met voorzieningen, zorg, welzijn, wonen en activiteiten voor oudere inwoners van Enschede.",
+      "segments": [
+        "De Seniorenwijzer beschrijft veel laagdrempelige activiteiten, ontmoetingsplekken en vormen van ondersteuning voor ouderen."
+      ],
+      "terms": "senioren ouderen 65 plus activiteiten ontmoeten wonen zorg thuisadministratie vervoer automaatje"
+    },
+    {
+      "id": "wijkwijzer-beschermd-wonen",
+      "title": "Begeleid en beschermd wonen",
+      "source": "Wijkwijzer Enschede",
+      "type": "voorziening",
+      "url": "https://wijkwijzerenschede.nl/beschermd-wonen-en-opvang",
+      "summary": "Informatie over begeleid wonen, beschermd wonen, Wlz, Wmo en tijdelijke opvang in Enschede.",
+      "segments": [
+        "Voor beschermd wonen en begeleid wonen kan de Wijkwijzer of een wijkteammedewerker helpen bepalen wat een passende vervolgstap is."
+      ],
+      "terms": "beschermd wonen begeleid wonen wlz wmo ggz dakloos opvang begeleiding psychiatrie"
+    },
+    {
+      "id": "jeugdhulp-twente",
+      "title": "Wachtlijsten zorgaanbieders Twente",
+      "source": "Jeugdhulp Twente",
+      "type": "voorziening",
+      "url": "https://jeugdhulptwente.nl/",
+      "summary": "Zelfstandig overzicht van zorgaanbieders en wachttijden in Twente, met filters op doelgroep, behandeling, expertise, zorgniveau en locatie. Controleer de actualiteit bij de aanbieder.",
+      "segments": [
+        "Je kunt zoeken op aanbieder, behandeling of expertise, zoals EMDR, trauma en autisme.",
+        "Wachttijden kunnen verschillen per hulpvraag en behandeling. De website adviseert bevestiging bij de zorgaanbieder."
+      ],
+      "terms": "jeugdhulp jeugdzorg jeugd ggz wachtlijsten wachttijden autisme ass emdr trauma expertise behandeling DOPPA Youz verwijzer begeleiding wachttijd"
+    },
+    {
+      "id": "beschikbaarheidswijzer",
+      "title": "Beschikbaarheidswijzer jeugdhulp",
+      "source": "Beschikbaarheidswijzer",
+      "type": "voorziening",
+      "url": "https://beschikbaarheidswijzer.nl/",
+      "summary": "Aanvullende bron om mogelijkheden en beschikbaarheid van jeugdhulp te verkennen.",
+      "segments": [
+        "Controleer de beschikbaarheid en actuele wachttijden altijd bij de betreffende aanbieder."
+      ],
+      "terms": "jeugdhulp jeugdzorg wachttijd wachtlijsten zorgaanbieder beschikbaarheid verwijzen kinderen jeugd"
+    },
+    {
+      "id": "waarintwente",
+      "title": "Sociale kaart: Waar in Twente",
+      "source": "Waar in Twente",
+      "type": "voorziening",
+      "url": "https://waarintwente.nl/",
+      "summary": "Zoek locaties en vrij toegankelijke voorzieningen in de Twentse gemeenten. Open de kaart voor het actuele aanbod.",
+      "segments": [
+        "Je kunt voorzieningen per plaats en thema zoeken. De actuele inhoud van de kaart is nog niet automatisch in deze zoekindex opgenomen."
+      ],
+      "terms": "sociale kaart twente enschede voorzieningen vrijwilligers zelfhulp buurt inloop ontmoetingsplek hulp"
+    },
+    {
+      "id": "onlinehulp-vragen",
+      "title": "Veelgestelde vragen over hulp in Enschede",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/veelgestelde-vragen/",
+      "summary": "Veelgestelde vragen over ondersteuning, online hulp, opvoeden, school, sociale contacten, veiligheid en het wijkteam.",
+      "segments": [
+        "Vragen over problemen op school, opvoeden en sociale contacten worden beantwoord met tips en doorverwijzingen naar lokale hulp.",
+        "Wijkteams Enschede biedt gratis advies en hulp."
+      ],
+      "terms": "online hulp ouders vragen angst kind school vrienden eenzaam pesten scheiden jongeren wijkteam digitaal opvoeden contact"
+    },
+    {
+      "id": "onlinehulp-onzekerheid",
+      "title": "Onzekerheid en zelfvertrouwen",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/welzijn-en-gezondheid/onzekerheid/",
+      "summary": "Handvatten bij onzekerheid, hoge verwachtingen of angst voor afwijzing. Een wijkteam kan helpen of een training bespreken.",
+      "segments": [
+        "Bij onzekerheid kunnen oefenen met sociale vaardigheden en praten met iemand die je vertrouwt steun geven."
+      ],
+      "terms": "onzekerheid verlegen zelfvertrouwen afwijzing angst sociale vaardigheden wijkteam training"
+    },
+    {
+      "id": "onlinehulp-oudere",
+      "title": "Ouder worden en ondersteuning",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/welzijn-en-gezondheid/ouder-worden/",
+      "summary": "Onderwerpen rond ouder worden, geheugenproblemen, wonen en eenzaamheid; met verwijzingen naar passende ondersteuning.",
+      "segments": [
+        "Bij zorgen over dementie of veranderend geheugen wordt geadviseerd dit met de huisarts te bespreken."
+      ],
+      "terms": "ouder worden dementie geheugen ouderen zelfstandig wonen somberheid mantelzorg huisarts"
+    },
+    {
+      "id": "m-pact-bezoekmaatje",
+      "title": "Bezoekvrijwilliger voor een jongere met autisme",
+      "source": "M-Pact / De Twentse Zorgcentra",
+      "type": "activiteit",
+      "url": "https://www.m-pact.nl/o/Twentse-Zorgcentra-de/activiteiten/BezoekvrijwilligerMaatje-mv-voor-2-uur-per-maand-in-het-weekend-E76/61879",
+      "summary": "Vacature voor een bezoekmaatje bij De Twentse Zorgcentra in Enschede. Het gaat om samen activiteiten ondernemen met iemand met autisme; controleer of de oproep nog openstaat.",
+      "segments": [
+        "De vacature zoekt een vrijwilliger die af en toe in het weekend iets leuks onderneemt met een bewoner met autisme."
+      ],
+      "terms": "autisme ass autistisch vrijwilliger vrijwilligerswerk maatje weekend bezoekvriend twentse zorgcentra",
+      "caution": "Vacaturestatus niet live gecontroleerd."
+    },
+    {
+      "id": "gemeente-wijkwijzer",
+      "title": "Wijkwijzer: welke vragen kun je stellen?",
+      "source": "Gemeente Enschede",
+      "type": "informatie",
+      "url": "https://www.enschede.nl/wijkwijzer-enschede",
+      "summary": "Inwoners kunnen met uiteenlopende vragen over gezondheid, zorg, jeugd, geld, onderwijs, taal en ontmoeten naar een Wijkwijzer.",
+      "segments": [
+        "De Wijkwijzer helpt onder meer bij vragen over mantelzorg, ondersteuning thuis, schulden, vervoer en opvoeden.",
+        "Ook voor vrijwilligerswerk, taal en activiteiten kun je bij een Wijkwijzer informeren."
+      ],
+      "terms": "geld advies ondersteuning wmo wonen mantelzorg jeugd taal ontmoet werk geld administratie wijkwijzer"
+    },
+    {
+      "id": "gemeente-bijstand",
+      "title": "Werk, laag inkomen en uitkeringen",
+      "source": "Gemeente Enschede",
+      "type": "informatie",
+      "url": "https://www.enschede.nl/werk-laag-inkomen-en-uitkering",
+      "summary": "Informatie over bijstand, bijzondere bijstand, individuele inkomensondersteuning, het Kindpakket en hulp voor werkzoekenden.",
+      "segments": [
+        "Bij inkomensverlies kun je onderzoeken of er recht is op een uitkering.",
+        "Bij lage inkomens noemt de gemeente verschillende vormen van aanvullende ondersteuning en hulp bij geldzorgen."
+      ],
+      "terms": "bijstand inkomen werk geld armoede bijzondere bijstand laag inkomen kindpakket uitkering werkzoekend"
+    },
+    {
+      "id": "wijkwijzer-budget",
+      "title": "Administratie en budgetadvies",
+      "source": "Wijkwijzer Enschede",
+      "type": "informatie",
+      "url": "https://wijkwijzerenschede.nl/administratie-en-budgetadvies",
+      "summary": "Hulp als de administratie of het geldbeheer onoverzichtelijk wordt, bijvoorbeeld na baanverlies of veranderingen thuis.",
+      "segments": [
+        "Humanitas Thuisadministratie helpt met het ordenen van post en financiële administratie.",
+        "De Wijkwijzer verwijst ook naar hulpmiddelen van het Nibud."
+      ],
+      "terms": "administratie post formulieren rekeningen humanitas budget ordenen financieel brieven"
+    },
+    {
+      "id": "wijkwijzer-ontmoeten",
+      "title": "Meedoen en ontmoeten",
+      "source": "Wijkwijzer Enschede",
+      "type": "informatie",
+      "url": "https://wijkwijzerenschede.nl/meedoen-en-ontmoeten",
+      "summary": "Wegwijzer naar activiteiten, vrijwilligerswerk, sociale contacten en het zelf organiseren van een activiteit.",
+      "segments": [
+        "Ontmoeten kan via buurtactiviteiten, een groep of een inloop.",
+        "Een Wijkwijzer kan helpen een activiteit te vinden die past bij de buurt."
+      ],
+      "terms": "ontmoeten eenzaam vrijwilligerswerk buurt activiteiten maatjes leren taal buurtcentrum"
+    },
+    {
+      "id": "gemeente-digitaal",
+      "title": "Hulp bij online aanvragen en digitale overheid",
+      "source": "Gemeente Enschede",
+      "type": "informatie",
+      "url": "https://www.enschede.nl/hulp-bij-online-zaken-regelen",
+      "summary": "Als een online aanvraag of contact met de overheid niet lukt, kun je uitleg of begeleiding krijgen.",
+      "segments": [
+        "Voor verschillende gemeentelijke aanvragen kan de gemeente telefonisch helpen.",
+        "Ook via Wijkwijzers kun je hulp vragen bij formulieren of digitale zaken."
+      ],
+      "terms": "digid formulier formulieren digitaal overheid hulp aanvragen IDO bibliotheek brief"
+    },
+    {
+      "id": "gemeente-wijkwijzer-centrum",
+      "title": "Wijkwijzer Centrum, opening en aanbod",
+      "source": "Gemeente Enschede",
+      "type": "voorziening",
+      "url": "https://www.enschede.nl/wijkwijzer-centrum-een-plek-voor-vragen-advies-en-ondersteuning",
+      "summary": "Dinsdag en donderdag van 09.00 tot 12.00 uur vrije inloop in de Performance Factory, Hoge Bothofstraat 49.",
+      "segments": [
+        "Op dinsdag sluiten onder meer Werk en Inkomen, Budget Advies Team en Alifa Opvoeden & Opgroeien aan.",
+        "Op donderdag zijn onder andere Werk en Inkomen en op bepaalde momenten Buurtbemiddeling aanwezig."
+      ],
+      "terms": "wijkwijzer hoge bothofstraat Centrum geld advies budget alifa inloop opvoeden"
+    },
+    {
+      "id": "onlinehulp-opvoeden",
+      "title": "Opvoeden en opgroeien",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/opvoeden-en-opgroeien/",
+      "summary": "Vragen over ruzie thuis, scheiding, school, gamen en sociale media, met uitleg wanneer school of het wijkteam kan meedenken.",
+      "segments": [
+        "Op alle scholen zijn schoolwijkcoaches betrokken bij vragen over opgroeien en school.",
+        "Voor zorgen over de ontwikkeling van een kind kunnen JGZ of huisarts een eerste aanspreekpunt zijn."
+      ],
+      "terms": "opvoeding kind jeugd gamen scheiding school social media huiselijk ruzie wijkteam"
+    },
+    {
+      "id": "onlinehulp-school",
+      "title": "School en problemen in de klas",
+      "source": "Online Hulp Enschede",
+      "type": "informatie",
+      "url": "https://www.onlinehulpenschede.nl/themas/opvoeden-en-opgroeien/school/",
+      "summary": "Uitleg over schoolkeuze, pesten, gedragsproblemen en ondersteuning op school in Enschede.",
+      "segments": [
+        "Een gesprek met de leerkracht kan helpen om een schoolprobleem te onderzoeken.",
+        "Schoolwijkcoaches zijn aanspreekpunten voor kinderen, ouders en school."
+      ],
+      "terms": "school pesten autisme speciaal onderwijs leerprobleem gedragsprobleem passend onderwijs schoolwijkcoach"
+    },
+    {
+      "id": "sportaal-home",
+      "title": "Sportaal: sport, spelen en bewegen",
+      "source": "Sportaal",
+      "type": "organisatie",
+      "url": "https://www.sportaal.nl/",
+      "summary": "Sportaal verzorgt activiteiten en projecten voor bewegen in Enschede, waaronder ouder-peutergym.",
+      "segments": [
+        "Op 9 november staat ouder-peutergym gepland bij Het Kompas.",
+        "Sportaal biedt ook informatie voor sportverenigingen en buurtprojecten."
+      ],
+      "terms": "sport bewegen jeugd peuter gym ouderen sportvereniging ontmoeting sportaal"
+    },
+    {
+      "id": "uit-agenda",
+      "title": "Uit in Enschede: culturele agenda",
+      "source": "Uit in Enschede",
+      "type": "activiteit",
+      "url": "https://www.uitinenschede.nl/agenda",
+      "summary": "Een agenda met concerten, tentoonstellingen, markten, stadswandelingen en culturele evenementen.",
+      "segments": [
+        "De agenda bevat evenementen in diverse buurten, waaronder de Museumnacht op 7 november.",
+        "Controleer per activiteit de starttijd, kosten en locatie."
+      ],
+      "terms": "uitgaan cultuur museum tentoonstellingen muziek concert stadswandeling markt theater"
+    },
+    {
+      "id": "gemeente-familiehuis",
+      "title": "Familiehuis Enschede-West: activiteiten in november",
+      "source": "Gemeente Enschede",
+      "type": "activiteit",
+      "url": "https://www.enschede.nl/activiteiten-in-de-maand-november-in-het-familiehuis-enschede-west",
+      "summary": "Gratis en vrij toegankelijke bijeenkomsten voor gezinnen in wijkcentrum ’t Ni-je Terphoes.",
+      "segments": [
+        "Er is peuterdans op 11, 18 en 25 november.",
+        "Op 11 november is er een spreekuur familierecht; op 19 november een speelgoedmarkt en op 24 november ontmoeting voor ouders."
+      ],
+      "terms": "familiehuis west peuterdans Kaliber advocatenspreekuur ouders ontwikkeling speelgoedmarkt"
+    },
+    {
+      "id": "uit-sinterklaas",
+      "title": "Sinterklaasintocht op 14 november",
+      "source": "Uit in Enschede",
+      "type": "activiteit",
+      "url": "https://www.uitinenschede.nl/evenementen/sinterklaasintocht",
+      "summary": "Gratis intocht door de haven en binnenstad van Enschede op 14 november 2026.",
+      "segments": [
+        "De intocht begint met het voorprogramma om 10.30 uur bij de haven.",
+        "Daarna trekt het gezelschap naar het stadhuis."
+      ],
+      "terms": "sinterklaas sint kinderfeest evenement kinderen 14 november haven"
+    },
+    {
+      "id": "mpact-seniorenbeurs",
+      "title": "Seniorenbeurs 21 november 2026",
+      "source": "M-Pact",
+      "type": "activiteit",
+      "url": "https://www.m-pact.nl/blog/seniorenbeurs-keert-na-zeven-jaar-terug-in-enschede",
+      "summary": "Gratis Seniorenbeurs in ’t Pluspunt op 21 november van 10.00 tot 16.00 uur.",
+      "segments": [
+        "De beurs is voor senioren en ook mantelzorgers, partners en familieleden.",
+        "Thema’s zijn onder meer wonen, financiën, bewegen, cultuur en vrijwilligerswerk."
+      ],
+      "terms": "senioren beurs ouderen mantelzorg financiën wonen vrijwilligers ontmoet"
+    },
+    {
+      "id": "gemeente-mediagebruik",
+      "title": "Schermtijd en digitaal opvoeden",
+      "source": "Gemeente Enschede",
+      "type": "informatie",
+      "url": "https://www.enschede.nl/opvoeden-in-een-digitale-wereld-hoe-vind-je-de-juiste-balans",
+      "summary": "Over veilig en gezond schermgebruik bij kinderen en mogelijkheden om als ouder vragen te stellen.",
+      "segments": [
+        "De gemeente wijst onder meer op een webinar van Triple P op 9 november 2026.",
+        "Je kunt afspraken maken over schermtijd en met kinderen blijven praten over media."
+      ],
+      "terms": "media schermtijd digitaal opvoeden ouder kind gaming social media webinar"
+    },
+    {
+      "id": "gemeente-spelbel",
+      "title": "Spelbel in speeltuin Lindenhof",
+      "source": "Gemeente Enschede",
+      "type": "voorziening",
+      "url": "https://www.enschede.nl/spelbel-helpt-kinderen-om-samen-buiten-te-spelen",
+      "summary": "Een Spelbel helpt kinderen en ouders afspreken om samen buiten te spelen in de buurt.",
+      "segments": [
+        "Ouders melden zich via een QR-code aan voor berichten als er kinderen buiten spelen.",
+        "Het initiatief wordt ondersteund door onder andere Alifa en Incluzio."
+      ],
+      "terms": "spelbel speeltuin velve lindenhof kinderen wijk ontmoeten spelen"
+    },
+    {
+      "id": "gemeente-stadspeiling",
+      "title": "Stadspeiling tot 22 november",
+      "source": "Gemeente Enschede",
+      "type": "informatie",
+      "url": "https://www.enschede.nl/wat-vindt-u-van-uw-buurt-de-stad-en-de-gemeente",
+      "summary": "Inwoners kunnen tot en met 22 november 2026 meedoen aan een vragenlijst over de buurt, stad en gemeente.",
+      "segments": [
+        "De gemeente wil ervaringen gebruiken om te onderzoeken wat beter kan.",
+        "Invullen duurt volgens de gemeente ongeveer 20 minuten."
+      ],
+      "terms": "stadspeiling meedenken buurt inspraak enquête participatie gemeente"
+    },
+    {
+      "id": "incluzio-enschede",
+      "title": "Incluzio Enschede: buurtwerk en Wijkwijzers",
+      "source": "Incluzio Enschede",
+      "type": "organisatie",
+      "url": "https://www.incluzioenschede.nl/",
+      "summary": "Incluzio ondersteunt inwoners bij ontmoeten, buurtinitiatieven, activiteiten en vragen over het dagelijks leven.",
+      "segments": [
+        "Buurtwerkers helpen inwoners om ideeën voor hun buurt verder te brengen.",
+        "Ook bij Wijkwijzers is Incluzio als partner betrokken."
+      ],
+      "terms": "incluzio buurthuis buurtwerken wijkwelzijn hulp activiteit vrijwilligerswerk"
+    },
+    {
+      "id": "incluzio-buurthuizen",
+      "title": "Buurtcentra en wijkactiviteiten met Incluzio",
+      "source": "Incluzio Enschede",
+      "type": "voorziening",
+      "url": "https://www.incluzioenschede.nl/ik-zoek-ondersteuning/sociaal-beheer/",
+      "summary": "Sociale beheerders zorgen samen met bewoners voor ontmoetingsplekken en activiteiten in wijkcentra.",
+      "segments": [
+        "Ze denken mee over activiteiten, voorzieningen en hoe je wijkbudget kunt aanvragen.",
+        "Bewoners kunnen op een toegankelijke plek anderen ontmoeten of iets organiseren."
+      ],
+      "terms": "sociaal beheer buurthuis wijkcentrum wijkbudget subsidie ontmoeten activiteit"
+    },
+    {
+      "id": "incluzio-buurtidee",
+      "title": "Zelf een buurtactiviteit starten",
+      "source": "Incluzio Enschede",
+      "type": "informatie",
+      "url": "https://www.incluzioenschede.nl/doe-iets-voor-je-buurt/",
+      "summary": "Inwoners met een idee voor een socialere buurt kunnen buurtwerkers vragen om ondersteuning en informatie over fondsen.",
+      "segments": [
+        "Een buurtwerker kan helpen bij het vinden van andere inwoners of organisaties.",
+        "Er zijn fondsen voor bewonersinitiatieven; de voorwaarden verschillen per fonds."
+      ],
+      "terms": "buurt activiteit buurtinitiatief buurtfonds samen organiseren subsidie vrijwilligers"
+    },
+    {
+      "id": "incluzio-wijkwijzers",
+      "title": "Wijkwijzers volgens Incluzio",
+      "source": "Incluzio Enschede",
+      "type": "informatie",
+      "url": "https://www.incluzioenschede.nl/wijkwijzers/",
+      "summary": "De Wijkwijzers zijn open inlooppunten voor geld, wonen, zorg, opvoeden, taal en vrijwilligerswerk.",
+      "segments": [
+        "Vrijwilligers, buurtwerkers en andere partners werken er samen.",
+        "De stad heeft tien Wijkwijzers; openingstijden kunnen per locatie variëren."
+      ],
+      "terms": "wijkwijzer incluzio geld huis wonen mantelzorg vrijwilligerswerk taal inloop"
+    },
+    {
+      "id": "incluzio-ondersteuning",
+      "title": "Ondersteuning bij dagelijkse en buurtvragen",
+      "source": "Incluzio Enschede",
+      "type": "informatie",
+      "url": "https://www.incluzioenschede.nl/ik-zoek-ondersteuning/",
+      "summary": "Thema’s zijn onder meer activiteiten in de wijk, geldzaken, energiebesparing, mantelzorg, gezondheid en vrijwilligerswerk.",
+      "segments": [
+        "Veel activiteiten en vragen worden via de lokale buurtwerker of Wijkwijzer opgepakt.",
+        "Inwoners kunnen ook hulp vragen als zij zelf iets voor de buurt willen organiseren."
+      ],
+      "terms": "energie buurt mantelzorg geld vrijwilligerswerk activiteit steun"
+    },
+    {
+      "id": "wijkwijzer-psychisch",
+      "title": "Psychische gezondheid, armoede en eenzaamheid",
+      "source": "Wijkwijzer Enschede",
+      "type": "informatie",
+      "url": "https://wijkwijzerenschede.nl/psychische-gezondheid-armoede-en-eenzaamheid",
+      "summary": "De Wijkwijzer verbindt vragen over psychisch welzijn aan sociale omstandigheden zoals geldproblemen of alleen zijn.",
+      "segments": [
+        "Bij eenzaamheid kunnen ontmoeting en lokale hulp een eerste stap zijn.",
+        "Bij financiële zorgen biedt de Wijkwijzer uitleg over lokale regelingen."
+      ],
+      "terms": "psychisch psychische gezondheid armoede eenzaamheid alleen autisme geld stress"
+    },
+    {
+      "id": "mpact-kennis",
+      "title": "Trainingen bij M-Pact Kenniscentrum",
+      "source": "M-Pact Kenniscentrum",
+      "type": "organisatie",
+      "url": "https://www.kenniscentrum.m-pact.nl/",
+      "summary": "Voor vrijwilligers en organisaties zijn trainingen en bijeenkomsten beschikbaar over samenwerking, communicatie en veiligheid.",
+      "segments": [
+        "M-Pact organiseert trainingen en inspiratiesessies voor vrijwilligers.",
+        "Bekijk de activiteitenkalender voor de meest recente data."
+      ],
+      "terms": "vrijwilligers training workshop communicatie sociale veiligheid maatjes"
+    },
+    {
+      "id": "mpact-kennis-agenda",
+      "title": "M-Pact: trainingen en bijeenkomsten",
+      "source": "M-Pact Kenniscentrum",
+      "type": "activiteit",
+      "url": "https://www.kenniscentrum.m-pact.nl/vrijwilligerswerk/all/activiteiten",
+      "summary": "Agenda met trainingen voor vrijwilligers, waaronder samen in gesprek en sociale veiligheid in november 2026.",
+      "segments": [
+        "Op 13 november staat Samen in gesprek voor taalvrijwilligers en deelnemers.",
+        "Op 23 november staat een bijeenkomst over sociale veiligheid."
+      ],
+      "terms": "training vrijwilligers taal vrijwilligersorganisatie sociale veiligheid november"
+    }
+  ]
+}
