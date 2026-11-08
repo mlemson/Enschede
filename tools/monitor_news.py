@@ -96,6 +96,19 @@ def fetch(session, url, robots):
     except requests.RequestException:
         return None, 'onbereikbaar'
 
+def is_sportaal_news(html):
+    """Sportaal mengt activiteiten en nieuws op één overzicht: neem alleen nieuws over."""
+    soup = BeautifulSoup(html, 'html.parser')
+    h1 = soup.find('h1')
+    if not h1:
+        return False
+    main = soup.select_one('main') or soup.body or soup
+    text = main.get_text(' ', strip=True)
+    idx = text.find(h1.get_text(' ',strip=True))
+    labels = re.findall(r'\b(nieuws|activiteit)\b',text[max(0,idx-140):idx].casefold()) if idx>=0 else []
+    return bool(labels and labels[-1] == 'nieuws')
+
+
 def candidate_links(html):
     soup = BeautifulSoup(html, 'html.parser')
     urls = []
@@ -123,7 +136,7 @@ def monitor(session, today, data):
         for url in candidate_links(html):
             page, problem = fetch(session, url, robots)
             cache[url] = (page, problem)
-            article = extract(page) if page else None
+            article = extract(page) if page and is_sportaal_news(page) else None
             if article and article['date'] and today-dt.timedelta(days=65)<=dt.date.fromisoformat(article['date'])<=today:
                 discovered.append({'id':'sportaal-'+hashlib.sha256(url.encode()).hexdigest()[:12],'url':url,
                     'source':'Sportaal','title':article['title'],'date':article['date'],

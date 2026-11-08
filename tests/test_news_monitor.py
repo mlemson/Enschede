@@ -26,3 +26,10 @@ def test_edited_news_is_loaded():
 def test_local_update_file_is_read_even_with_following_js():
     rows=m.parse_variable(ROOT/'local-updates.js')
     assert any(x.get('id')=='nieuws-pathmos' for x in rows.get('news',[]))
+
+
+def test_sportaal_news_filter():
+    news='<main>nieuws Algemeen 05 november 2026<h1>Pathmos Beweegt</h1><p>De bewoners hebben samen gesport tijdens deze fijne dag in de wijk.</p></main>'
+    activity='<main>activiteit Kinderen 09 november 2026<h1>Ouder-peutergym</h1><p>Een leuke activiteit voor kleine kinderen en hun ouders in Enschede.</p></main>'
+    assert m.is_sportaal_news(news)
+    assert not m.is_sportaal_news(activity)
