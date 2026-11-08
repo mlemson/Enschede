@@ -80,3 +80,26 @@ main.guide-active > :not(#guide-view){display:none!important}
 .search-all-link{display:inline-flex!important;color:#fff!important;background:#256359;border-radius:11px;padding:10px 13px!important;font-size:12.5px!important;font-weight:800;margin-top:11px}
 @media(max-width:690px){.source-result-grid{grid-template-columns:1fr}.source-hit{padding:16px}.guide-search-form{gap:6px}.guide-search-form .guide-button-primary{padding:11px 13px}.guide-search-hero{padding-top:13px}.guide-source-intro p{font-size:15px}}
 
+/* Compacte, toegankelijk uitklapbare vervolginfo bij antwoorden van de lokale wegwijzer. */
+.chat-turn{display:flex;flex-direction:column;align-items:flex-start;gap:9px;width:100%;flex:0 0 auto}
+.chat-turn>.chat-bubble.user{align-self:flex-end}
+.chat-reply{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:100%;min-width:0}
+.chat-reply>.chat-bubble.bot{max-width:100%;margin:0}
+.chat-primary-action{display:inline-flex;max-width:100%;align-items:center;padding:10px 13px;border-radius:10px;background:#e4f1e9;color:#225f4e;font-size:12.5px;font-weight:800;line-height:1.4;text-decoration:none}
+.chat-primary-action:hover{background:#d1e8dd}
+.chat-details{width:100%;border:1px solid #e3ebe6;border-radius:12px;background:#fff;overflow:hidden;color:#44625c}
+.chat-details summary{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;padding:10px 13px;font-size:12px;font-weight:780;list-style:none}
+.chat-details summary::-webkit-details-marker{display:none}
+.chat-details summary::after{content:'⌄';font-size:18px;line-height:1;transition:transform .15s}
+.chat-details[open] summary::after{transform:rotate(180deg)}
+.chat-details[open] summary{border-bottom:1px solid #e8ede8;background:#f8faf8}
+.chat-details summary:focus-visible{outline:2px solid #528f7d;outline-offset:-2px}
+.chat-details-content{padding:9px 12px 12px;display:flex;flex-direction:column;gap:7px}
+.chat-detail-link{display:flex;flex-direction:column;gap:3px;padding:9px 10px;border-radius:9px;background:#f7faf8;font-size:12px;font-weight:740;color:#315f59;line-height:1.4;text-decoration:none;overflow-wrap:anywhere}
+.chat-detail-link:hover,.chat-related-link:hover{background:#eaf3ed}
+.chat-source-name{font-size:10.5px;font-weight:450;color:#74867c}
+.chat-related{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:5px;border-top:1px solid #edf1ed}
+.chat-related>small{flex-basis:100%;font-size:11px;color:#72857c}
+.chat-related-link{display:inline-flex;font-size:11.5px;font-weight:680;padding:7px 9px;border:1px solid #dce8e1;border-radius:9px;text-decoration:none}
+@media(max-width:560px){.chat-reply>.chat-bubble.bot{font-size:13px}.chat-details summary{min-height:42px}}
+.chat-stream.chat-has-answers{padding-bottom:min(38vh,255px)}

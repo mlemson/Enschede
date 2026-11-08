@@ -73,7 +73,12 @@
       if(dossier.steps?.length){const h=make('h3',null,'Zo kun je beginnen');merge.append(h);const ol=make('ol');dossier.steps.forEach(s=>ol.append(make('li',null,s)));merge.append(ol);}
       main.append(merge);
       const combined=make('section','guide-copy-block hub-combined');combined.append(make('h2',null,'Wie helpt waarmee?'));
-      for(const [name,desc,url] of dossier.local){const part=make('div','hub-organisation');part.append(make('strong',null,name),make('p',null,desc),a(url,'hub-inline-source','Bekijk de bron ↗',true));combined.append(part);}
+      for(const [name,desc,url] of dossier.local){
+        const card=a(url,'hub-organisation',undefined,true);
+        card.setAttribute('aria-label',name+' — '+desc+' (opent in een nieuw tabblad)');
+        const body=make('span','hub-organisation-body');body.append(make('strong',null,name),make('span','hub-organisation-description',desc));
+        card.append(body,icon('external'));combined.append(card);
+      }
       main.append(combined);
     }
     const updates=window.ED_UPDATES;
@@ -187,43 +192,94 @@
   input.addEventListener('keydown',e=>{if(e.key==='Escape')results.hidden=true;});
   document.querySelectorAll('[data-search-example]').forEach(button=>button.addEventListener('click',()=>{input.value=button.dataset.searchExample;renderSearch(input.value);input.focus();}));
   results.addEventListener('click',e=>{if(e.target.closest('a[href^="#/"]'))results.hidden=true;});
-  // Regelgebaseerde chatbot. Geen model/API. Reageert op woorden uit dezelfde onderwerpenbibliotheek.
+  // Gesprekslaag: antwoorden uit eigen onderwerpen en bronindex. Geen AI, netwerkverzoeken of opslag.
   const chatStream=$('#chat-stream'),chatInput=$('#chat-input'),chatForm=$('#chat-form');
-  const answer=(question)=>{
-    const q=question.trim().slice(0,220);if(!q)return;
-    chatStream.append(make('div','chat-bubble user',q));const n=norm(q);
-    const severe=/(direct gevaar|levensgevaar|acuut gevaar|112|ik word nu bedreigd)/.test(n);
-    const suicidal=/(zelfmoord|zelfdoding|suicide|wil niet meer leven|mezelf iets aandoen|maak een einde aan mijn leven)/.test(n);
-    const abuse=/(huiselijk geweld|kindermishandeling|partnergeweld|mishandeld|onveilig thuis|geweld thuis|word geslagen|wordt geslagen|slaat me|slaat mij|bang voor mijn partner)/.test(n);
-    let sentence,topic=null,links=[];
-    if(severe){sentence='Is iemand direct in gevaar? Bel 112. Deze wegwijzer is geen noodhulpdienst.';links=[{text:'Bel 112',href:'tel:112'}];}
-    else if(suicidal){sentence='Heb je gedachten aan zelfdoding? Bij 113 Zelfmoordpreventie kun je dag en nacht praten. Bij direct gevaar bel je 112.';links=[{text:'Bel gratis 0800-0113',href:'tel:08000113'},{text:'113 – chat en informatie',href:'https://www.113.nl/'}];}
-    else if(abuse){sentence='Bij huiselijk geweld of zorgen om kindermishandeling kun je Veilig Thuis bellen voor advies op 0800-2000. Bij direct gevaar: 112.';links=[{text:'Bel Veilig Thuis',href:'tel:08002000'},{text:'Veilig Thuis',href:'https://veiligthuis.nl/'}];}
-    else{
-      const found=window.ED_SEARCH.search(q,{limit:7});topic=found.topics[0]||null;
-      const docs=found.sources;
-      if(topic){
-        sentence=topic.intro;
-        links=[{text:'Lees: '+topic.title,href:topicLink(topic.id)}];
-      }
-      else if(docs.length){
-        sentence=docs[0].excerpt||docs[0].summary;
-        links=[];
-      }
-      else {sentence='Ik heb hierover nog geen informatie in mijn bronindex. Je kunt de Wijkwijzer vragen om mee te denken.';links=[{text:'Wat doet de Wijkwijzer?',href:topicLink('wijkwijzer')}];}
-      if(docs.length){
-        if(topic)sentence+=' Ik vond ook passende informatie bij '+docs[0].source+': '+(docs[0].excerpt||docs[0].summary);
-        links.push(...docs.slice(0,3).map(doc=>({text:doc.title+' · '+doc.source,href:sourceRoute(doc,q)})));
-      }
-      if(topic||docs.length)links.unshift({text:'Alle resultaten bekijken',href:searchRoute(q)});
-    }
-    chatStream.append(make('div','chat-bubble bot',sentence));const container=make('div','chat-answer-links');for(const link of links){const external=link.href.startsWith('https://');const button=a(link.href,'',link.text,external);button.append(icon(external?'external':'arrow'));container.append(button);}chatStream.append(container);
-    if(!severe&&!suicidal&&!abuse&&topic&&topic.related?.length){const choices=make('div','chat-followups');choices.append(make('small',null,'Ook hierover:'));topic.related.slice(0,3).forEach(id=>{const t=byId.get(id);if(t){const b=make('button','',t.title);b.type='button';b.addEventListener('click',()=>answer(t.title));choices.append(b);}});chatStream.append(choices);}
-    chatStream.scrollTop=chatStream.scrollHeight;
+  const shortText=(value,max=300)=>{
+    const clean=String(value||'').replace(/\s+/g,' ').trim();
+    if(clean.length<=max)return clean;
+    const cut=clean.slice(0,max+1),sentences=cut.match(/^.*?[.!?](?=\s|$)/);
+    if(sentences&&sentences[0].length>Math.min(90,max*.45))return sentences[0].trim();
+    return cut.slice(0,cut.lastIndexOf(' ')>max*.6?cut.lastIndexOf(' '):max).trim().replace(/[,:; ]+$/,'')+'…';
   };
+  const chatSafety=[
+    {test:/(direct gevaar|levensgevaar|acuut gevaar|bel 112|ik word nu bedreigd|iemand ligt bewusteloos)/,text:'Is er direct gevaar of is er met spoed hulp nodig? Bel 112. Deze wegwijzer kan geen noodhulp inschakelen.',action:{text:'Bel 112',href:'tel:112'}},
+    {test:/(zelfmoord|zelfdoding|suicide|zelfmoordgedachten|wil niet meer leven|mezelf iets aandoen|maak een einde aan mijn leven)/,text:'Heb je gedachten aan zelfdoding? Je kunt dag en nacht contact opnemen met 113 Zelfmoordpreventie. Bij direct gevaar bel je 112.',action:{text:'Bel 0800-0113',href:'tel:08000113'},extra:[{text:'113 Zelfmoordpreventie',href:'https://www.113.nl/'}]},
+    {test:/(huiselijk geweld|kindermishandeling|partnergeweld|mishandeld|onveilig thuis|geweld thuis|word geslagen|wordt geslagen|slaat me|slaat mij|bang voor mijn partner)/,text:'Bij geweld thuis of zorgen om kindermishandeling kun je voor advies bellen met Veilig Thuis: 0800-2000. Bij direct gevaar bel je 112.',action:{text:'Bel Veilig Thuis',href:'tel:08002000'},extra:[{text:'Veilig Thuis',href:'https://veiligthuis.nl/'}]}
+  ];
+  function composeChatReply(question){
+    const q=question.trim(),n=norm(q);
+    const safe=chatSafety.find(item=>item.test.test(n));
+    if(safe)return {text:safe.text,primary:safe.action,extra:safe.extra||[],suggestions:[]};
+    if(/^(hoi|hallo|hey|goedemorgen|goedemiddag|goedenavond|hi)[! .]*$/.test(n))return {text:'Hoi! Waarover wil je iets weten? Je kunt bijvoorbeeld vragen naar geldzaken, activiteiten, opvoeden of hulp in jouw wijk.',extra:[],suggestions:[]};
+    const found=window.ED_SEARCH.search(q,{limit:8});
+    const ranked=rankTopics(q,3);
+    let topic=found.topics[0]||null;
+    // Herken veelgebruikte vraagvormen, maar gebruik de volledige bronindex voor vrije woorden.
+    if(/(iets doen|wat is er te doen|leuke activiteiten|activiteiten voor)/.test(n))topic=byId.get('activiteiten')||topic;
+    else if(/(ik voel me eenzaam|geen vrienden|alleen voelen|sociaal contact)/.test(n))topic=byId.get('eenzaamheid')||topic;
+    else if(/(ik heb schulden|deurwaarder|betalingsachterstand)/.test(n))topic=byId.get('schulden')||topic;
+    else if(/(autisme|autistisch|\bass\b|autismespectrum)/.test(n))topic=byId.get('autisme')||topic;
+    else if(/(wijkwijzer|waar kan ik terecht|inloopspreekuur)/.test(n))topic=byId.get('wijkwijzer')||topic;
+    else if(!topic&&ranked.length)topic=ranked[0];
+    const docs=found.sources.filter(item=>item.score>=12).slice(0,6);
+    if(topic){
+      const dossier=window.ED_DOSSIERS?.[topic.id];
+      let text=shortText(topic.intro||topic.summary,275);
+      const practical=Array.isArray(dossier?.steps)&&dossier.steps.length?dossier.steps[0]:null;
+      if(practical&&/(hoe|waar|welke|wat kan|wat moet|hulp|advies|begin|stap|regelen|terecht|zoek)/.test(n)){
+        const extra=shortText(practical,125);
+        if(text.length+extra.length<385&&!norm(text).includes(norm(extra)))text+=' '+extra;
+      }
+      const primary={text:'Lees verder: '+topic.title,href:topicLink(topic.id)};
+      const extras=docs.slice(0,3).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type}));
+      const related=(topic.related||[]).map(id=>byId.get(id)).filter(Boolean).slice(0,2);
+      const suggestions=related.map(t=>({text:t.title,href:topicLink(t.id)}));
+      return {text,primary,extra:extras,suggestions};
+    }
+    if(docs.length){
+      const best=docs[0];
+      const text=shortText(best.excerpt||best.summary,325)||'Ik heb hierover informatie uit een lokale bron gevonden.';
+      return {text,primary:{text:'Lees meer: '+best.title,href:sourceRoute(best,q)},extra:docs.slice(1,4).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type})),suggestions:[]};
+    }
+    return {text:'Daarover heb ik nog geen duidelijk antwoord gevonden. Kun je iets specifieker vertellen wat je zoekt? Bijvoorbeeld een onderwerp, organisatie of activiteit. Je kunt ook bij de Wijkwijzer terecht.',primary:{text:'Bekijk de onderwerpen',href:'#/categorie/hulp'},extra:[],suggestions:[]};
+  }
+  const chatLink=(item,css)=>{
+    const external=/^https:\/\//.test(item.href);
+    const l=a(item.href,css,item.text,external);
+    if(item.note)l.append(make('small','chat-source-name',item.note));
+    return l;
+  };
+  function answer(question){
+    const q=String(question||'').trim().slice(0,220);if(!q)return;
+    $('#chat-suggestions')?.remove();
+    const result=composeChatReply(q);
+    const turn=make('div','chat-turn');
+    turn.append(make('div','chat-bubble user',q));
+    const reply=make('div','chat-reply');
+    reply.append(make('div','chat-bubble bot',result.text));
+    if(result.primary)reply.append(chatLink(result.primary,'chat-primary-action'));
+    if(result.extra.length||result.suggestions.length){
+      const detail=make('details','chat-details');
+      detail.append(make('summary',null,'Meer informatie'+(result.extra.length?' ('+result.extra.length+')':'')));
+      const inside=make('div','chat-details-content');
+      for(const item of result.extra)inside.append(chatLink(item,'chat-detail-link'));
+      if(result.suggestions.length){
+        const related=make('div','chat-related');related.append(make('small',null,'Gerelateerde onderwerpen'));
+        for(const item of result.suggestions)related.append(chatLink(item,'chat-related-link'));
+        inside.append(related);
+      }
+      detail.append(inside);reply.append(detail);
+    }
+    turn.append(reply);chatStream.classList.add('chat-has-answers');chatStream.append(turn);
+    // Toon de bovenkant van het nieuwe antwoord, in plaats van naar de laatste bronlink te springen.
+    requestAnimationFrame(()=>{
+      const streamTop=chatStream.getBoundingClientRect().top;
+      const replyTop=reply.getBoundingClientRect().top;
+      chatStream.scrollTop+=replyTop-streamTop-10;
+    });
+  }
   chatForm.addEventListener('submit',e=>{e.preventDefault();const text=chatInput.value;chatInput.value='';answer(text);chatInput.focus();});
-  document.querySelectorAll('#chat-dialog [data-question]').forEach(button=>button.addEventListener('click',()=>{answer(button.dataset.question);$('#chat-suggestions')?.remove();}));
+  document.querySelectorAll('#chat-dialog [data-question]').forEach(button=>button.addEventListener('click',()=>answer(button.dataset.question)));
   // Behulpzame beginvragen zonder gepersonaliseerde verwerking.
   window.ED_DEBUG={rankTopics,search:(q)=>window.ED_SEARCH.search(q),topics:byId,categories:categoryById};
 })();
-

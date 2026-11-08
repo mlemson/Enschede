@@ -45,7 +45,15 @@
 .hub-other-sources{margin-top:24px}.hub-source-link{display:inline-block;border:1px solid #dfe7e2;border-radius:999px;padding:10px 14px;margin:0 7px 7px 0;color:#28564a;text-decoration:none;font-weight:650;background:#fff;font-size:.83rem}
 .hub-dossier{background:#f2f8f3;border:1px solid #dceadf;padding:23px 25px!important;border-radius:18px}
 .hub-dossier h2{margin-top:.2em!important}.hub-dossier ol{padding-left:24px;line-height:1.7;margin:10px 0 0}.hub-dossier ol li{padding-left:4px;margin:7px 0}
-.hub-combined{background:#fffdf9}.hub-organisation{margin:15px 0;padding-bottom:13px;border-bottom:1px solid #e8eae5}.hub-organisation:last-child{border-bottom:0}.hub-organisation strong{color:#235349}.hub-organisation p{margin:5px 0}.hub-inline-source{color:#216b5e;font-size:.83rem;font-weight:750;text-decoration:none}
+.hub-combined{background:#fffdf9}
+.hub-organisation{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:11px 0;padding:17px 18px;border:1px solid #e2eae7;border-radius:15px;background:#fff;color:inherit;text-decoration:none;box-shadow:0 2px 10px rgba(35,75,65,.025);transition:border-color .15s,background .15s,transform .15s}
+.hub-organisation:hover{border-color:#adcac0;background:#f7fbf9;transform:translateY(-1px)}
+.hub-organisation:focus-visible{outline:3px solid #4b8a78;outline-offset:3px}
+.hub-organisation-body{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}
+.hub-organisation strong{color:#235349;font-size:16px;line-height:1.35}
+.hub-organisation-description{color:#526772;font-size:14px;line-height:1.55}
+.hub-organisation>.icon{width:18px;height:18px;flex:0 0 18px;color:#69817d}
+@media(max-width:690px){.hub-organisation{padding:15px;gap:12px}.hub-organisation strong{font-size:15px}.hub-organisation-description{font-size:13px}}
 .hub-linked-row{display:block;padding:12px 0;color:#285b50;text-decoration:none;border-bottom:1px solid #e5eae7;font-weight:700}.hub-linked-row small{display:block;color:#7a8784;font-weight:400;margin-top:4px}.hub-linked-row:last-child{border:0}
 .hub-feature-pills{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}.hub-category-preview{background:#eff6f0;padding:22px;border-radius:18px}
 .hub-facts{margin:0}.hub-fact{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #e7ebe9;line-height:1.5}.hub-fact dt{width:120px;flex:0 0 120px;color:#62736f;font-size:.87rem}.hub-fact dd{margin:0;font-weight:700;color:#26423c}
@@ -65,4 +73,3 @@
 /* Programmatic focus for screenreader navigation should not draw a rectangle around headings. */
 #hub-view h1[tabindex="-1"]:focus,
 #guide-view h1[tabindex="-1"]:focus { outline: none; }
-
