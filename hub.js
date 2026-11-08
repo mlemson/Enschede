@@ -5,7 +5,8 @@
   if(!d)return;
   const feed=window.ED_AUTO_UPDATES||{news:[],events:[]};
   const coreUrls=new Set(d.news.map(x=>x.url));
-  const newsItems=[...(feed.news||[]).filter(x=>!coreUrls.has(x.url)),...d.news].filter(n=>!n.expires||n.expires>=new Date().toLocaleDateString('sv-SE'));
+  const checks=feed.newsChecks||{};
+  const newsItems=[...(feed.news||[]).filter(x=>!coreUrls.has(x.url)),...d.news].filter(n=>!n.expires||n.expires>=new Date().toLocaleDateString('sv-SE')).map(n=>({...n,sourceCheck:checks[n.url]||null}));
   const coreEvents=new Set(d.events.map(x=>(x.date+'|'+x.title).toLowerCase()));
   const datedEvents=[...d.events,...(feed.events||[]).filter(x=>!coreEvents.has((x.date+'|'+x.title).toLowerCase()))];
   const $=q=>document.querySelector(q);
@@ -66,7 +67,7 @@
     const a=make('label','hub-filter');a.append(make('span',null,'Stadsdeel'));const area=make('select');['Heel Enschede','Centrum','Noord','Oost','Zuid','West'].forEach(v=>{const o=make('option',null,v);o.value=v;area.append(o);});a.append(area);controls.append(l,a);wrap.append(controls);
     const results=make('div','hub-news-list');wrap.append(results);
     function update(){const rows=newsItems.filter(x=>(topic.value==='Alles'||x.category===topic.value)&&(area.value==='Heel Enschede'||x.area===area.value||x.area==='Hele stad'));results.replaceChildren(...rows.map(n=>newsCard(n)));if(!rows.length)results.append(make('p',null,'Geen berichten in deze selectie.'));}
-    topic.addEventListener('change',update);area.addEventListener('change',update);update();wrap.append(make('p','hub-data-note','Dit is een redactionele selectie en geen automatische nieuwsfeed. Gepubliceerdatum alleen vermeld wanneer gecontroleerd. Laatste controle: 7 november 2026.'));view.append(wrap);document.title='Nieuws | Enschede dichtbij';
+    topic.addEventListener('change',update);area.addEventListener('change',update);update();wrap.append(make('p','hub-data-note','Redactionele nieuwsselectie, aangevuld met een dagelijkse broncontrole. Bij gewijzigde bronnen worden handmatig geschreven teksten niet ongemerkt vervangen.'));view.append(wrap);document.title='Nieuws | Enschede dichtbij';
   }
   function detailEvent(e){
     const view=$('#guide-view');view.replaceChildren(pageHeader('ACTIVITEIT · '+e.category,e.title,e.summary));
@@ -79,7 +80,10 @@
   }
   function detailNews(n){
     const view=$('#guide-view');view.replaceChildren(pageHeader('NIEUWS · '+n.category,n.title,n.summary));
-    const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');const body=make('section','guide-copy-block');body.append(make('span','hub-eyebrow',n.area+(n.date?' · '+fmtDate(n.date):'')),make('h2',null,'Dit speelt er'),make('p',null,n.description));if(n.image){const fig=make('figure','ed-context-figure ed-news-photo');const img=make('img');img.src=n.image;img.alt='Sfeerbeeld bij '+n.title;img.loading='lazy';fig.append(img,make('figcaption',null,n.imageCaption||'Sfeerbeeld'));body.append(fig);}for(const para of n.details||[])body.append(make('p',null,para));if(n.points?.length){body.append(make('h3',null,'In het kort'));const ul=make('ul');n.points.forEach(s=>ul.append(make('li',null,s)));body.append(ul);}main.append(body);
+    const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');const body=make('section','guide-copy-block');body.append(make('span','hub-eyebrow',n.area+(n.date?' · '+fmtDate(n.date):'')),make('h2',null,'Dit speelt er'),make('p',null,n.description));if(n.image){const fig=make('figure','ed-context-figure ed-news-photo');const img=make('img');img.src=n.image;img.alt='Sfeerbeeld bij '+n.title;img.loading='lazy';fig.append(img,make('figcaption',null,n.imageCaption||'Sfeerbeeld'));body.append(fig);}for(const para of n.details||[])body.append(make('p',null,para));if(n.points?.length){body.append(make('h3',null,'In het kort'));const ul=make('ul');n.points.forEach(s=>ul.append(make('li',null,s)));body.append(ul);}if(n.sourceCheck?.status==='ok'){
+      body.append(make('p','hub-data-note',n.sourceCheck.changed?'De bron is sinds de vorige controle aangepast. Bekijk het oorspronkelijke artikel voor de nieuwste informatie.':'Bron gecontroleerd op '+fmtDate(n.sourceCheck.lastChecked)+'.'));
+    }
+    main.append(body);
     const relatedEvents=visibleEvents().filter(e=>(e.topics||[]).some(t=>(n.topics||[]).includes(t))).slice(0,4);
     if(relatedEvents.length){const sec=make('section','guide-copy-block');sec.append(make('h2',null,'Passende activiteiten'));for(const e of relatedEvents)sec.append(link('#/agenda/'+e.id,'hub-linked-row',e.title+' · '+(e.date?fmtDate(e.date):e.frequency)));main.append(sec);}
     const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Oorspronkelijke bron'),make('p',null,n.source));panel.append(link(n.url,'guide-button-primary',n.source,true),link('#/nieuws','guide-muted-link','Alle nieuwsberichten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=n.title+' | Enschede dichtbij';
