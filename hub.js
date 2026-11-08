@@ -21,14 +21,14 @@
   const topicLink=topic=>'#/onderwerp/'+topic;
   function eventCard(e,compact=false){
     const card=link('#/agenda/'+e.id,'hub-event-card'+(compact?' hub-compact':''));
-    const date=make('div','hub-event-day');date.append(make('strong',null,e.recurring?'↻':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'2-digit'})),make('small',null,e.recurring?'VAST':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{month:'short'}).toUpperCase()));
+    const date=make('div','hub-event-day');date.append(make('strong',null,e.recurring?'W':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'2-digit'})),make('small',null,e.recurring?'VAST':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{month:'short'}).toUpperCase()));
     const body=make('div','hub-event-content');body.append(make('div','hub-event-tags',e.category+' · '+e.area),make('h3',null,e.title),make('p','hub-event-intro',e.summary),make('span','hub-event-meta',when(e)));
-    body.append(make('span','hub-event-place',e.location));card.append(date,body,make('span','hub-event-next','→'));return card;
+    body.append(make('span','hub-event-place',e.location));card.append(date,body);return card;
   }
   function newsCard(n,featured=false){
     const card=link('#/nieuws/'+n.id,'hub-news-card'+(featured?' hub-featured':''));card.append(make('span','hub-news-category',n.category+' · '+n.area));
     card.append(make('h3',null,n.title),make('p',null,n.summary));
-    const bottom=make('div','hub-news-bottom');bottom.append(make('span',null,n.date?fmtDate(n.date):'Recent bericht'),make('span',null,'Lees uitleg →'));card.append(bottom);
+    if(n.date)card.append(make('span','hub-news-date',fmtDate(n.date)));
     return card;
   }
   function home(){
@@ -39,9 +39,9 @@
     news.replaceChildren(...featuredItems.map((n,i)=>newsCard(n,i===0)));
     const next=visibleEvents().filter(e=>!e.recurring).sort((a,b)=>a.date.localeCompare(b.date));
     agenda.replaceChildren(...next.slice(0,5).map(e=>eventCard(e,true)));
-    const recurringLine=make('div','hub-weekly-link');recurringLine.append(make('strong',null,d.recurring.length+' terugkerende activiteiten'),make('span',null,'zoals taalgroepen, jongereninlopen en sport'));recurringLine.append(link('#/agenda','hub-simple-link','Bekijk ook het wekelijkse aanbod →'));agenda.append(recurringLine);
+    const recurringLine=link('#/agenda','hub-weekly-link');recurringLine.append(make('strong',null,d.recurring.length+' terugkerende activiteiten'),make('span',null,'Taal, ontmoeting en sport'));agenda.append(recurringLine);
   }
-  function pageHeader(kind,title,subtitle){const frag=document.createDocumentFragment();const top=make('div','guide-header-bar shell');top.append(link('#boven','guide-back','← Start'));frag.append(top);const hero=make('div','shell hub-page-hero');hero.append(make('span','hub-kicker',kind),make('h1',null,title),make('p',null,subtitle));frag.append(hero);return frag;}
+  function pageHeader(kind,title,subtitle){const frag=document.createDocumentFragment();const top=make('div','guide-header-bar shell');top.append(link('#boven','guide-back','Start'));frag.append(top);const hero=make('div','shell hub-page-hero');hero.append(make('span','hub-kicker',kind),make('h1',null,title),make('p',null,subtitle));frag.append(hero);return frag;}
   function pageAgenda(){
     const view=$('#guide-view');view.replaceChildren(pageHeader('SAMEN GEVONDEN AGENDA','Activiteiten in Enschede','Van buurtinloop en sport tot gezinnen en cultuur. Eenmalige activiteiten en vaste groepen staan apart.'));
     const wrap=make('div','shell hub-page-main');
@@ -57,7 +57,7 @@
     }[area,cat,query].forEach(el=>el.addEventListener(el===query?'input':'change',update));update();
     wrap.append(make('p','hub-data-note','Gecontroleerd op 7 november 2026. Data zonder exacte datum zijn als terugkerend aanbod opgenomen. Kijk bij de aanbieder of een activiteit doorgaat; deze versie wordt niet live bijgewerkt.'));
     const links=make('div','hub-other-sources');links.append(make('h2',null,'Meer agenda’s'));[
-      ['Alifa','https://www.alifa.nl/activiteiten'],['Sportaal','https://www.sportaal.nl/'],['Uit in Enschede','https://www.uitinenschede.nl/agenda'],['M-Pact','https://www.m-pact.nl/'],['Wijkwijzer','https://wijkwijzerenschede.nl/meedoen-en-ontmoeten']].forEach(([name,url])=>links.append(link(url,'hub-source-link',name+' ↗',true)));wrap.append(links);
+      ['Alifa','https://www.alifa.nl/activiteiten'],['Sportaal','https://www.sportaal.nl/'],['Uit in Enschede','https://www.uitinenschede.nl/agenda'],['M-Pact','https://www.m-pact.nl/'],['Wijkwijzer','https://wijkwijzerenschede.nl/meedoen-en-ontmoeten']].forEach(([name,url])=>links.append(link(url,'hub-source-link',name,true)));wrap.append(links);
     view.append(wrap);document.title='Agenda | Enschede dichtbij';
   }
   function pageNews(){
@@ -74,15 +74,15 @@
     const facts=make('section','guide-copy-block');facts.append(make('h2',null,'Praktische informatie'));
     const dl=make('dl','hub-facts');[['Wanneer',when(e)],['Waar',e.location],['Stadsdeel',e.area],['Organisatie / bron',e.source],['Kosten',e.price||'Controleer bij de organisatie']].forEach(([k,v])=>{facts.append(make('div','hub-fact'));facts.lastElementChild.append(make('dt',null,k),make('dd',null,v));});main.append(facts);
     const detail=make('section','guide-copy-block');detail.append(make('h2',null,'Wat kun je verwachten?'),make('p',null,e.summary));if(e.recurring)detail.append(make('p','hub-caution','Terugkerend aanbod: tijdens vakanties of feestdagen kan het anders zijn. Controleer dag en locatie altijd bij de organisatie.'));main.append(detail);
-    if(e.topics?.length){const related=make('section','guide-copy-block');related.append(make('h2',null,'Informatie bij dit onderwerp'));for(const id of e.topics){const t=window.ED_CONTENT.topics.find(x=>x.id===id);if(t)related.append(link(topicLink(id),'hub-linked-row',t.title+' →'));}main.append(related);}
-    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Bron & aanmelden'),make('p',null,'Controleer de actuele tijden en eventuele aanmelding.'));panel.append(link(e.url,'guide-button-primary','Naar '+e.source+' ↗',true),link('#/agenda','guide-muted-link','← Alle activiteiten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=e.title+' | Enschede dichtbij';
+    if(e.topics?.length){const related=make('section','guide-copy-block');related.append(make('h2',null,'Informatie bij dit onderwerp'));for(const id of e.topics){const t=window.ED_CONTENT.topics.find(x=>x.id===id);if(t)related.append(link(topicLink(id),'hub-linked-row',t.title));}main.append(related);}
+    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Bron & aanmelden'),make('p',null,'Controleer de actuele tijden en eventuele aanmelding.'));panel.append(link(e.url,'guide-button-primary',e.source,true),link('#/agenda','guide-muted-link','Alle activiteiten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=e.title+' | Enschede dichtbij';
   }
   function detailNews(n){
     const view=$('#guide-view');view.replaceChildren(pageHeader('NIEUWS · '+n.category,n.title,n.summary));
     const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');const body=make('section','guide-copy-block');body.append(make('span','hub-eyebrow',n.area+(n.date?' · '+fmtDate(n.date):'')),make('h2',null,'Dit speelt er'),make('p',null,n.description));main.append(body);
     const relatedEvents=visibleEvents().filter(e=>(e.topics||[]).some(t=>(n.topics||[]).includes(t))).slice(0,4);
     if(relatedEvents.length){const sec=make('section','guide-copy-block');sec.append(make('h2',null,'Passende activiteiten'));for(const e of relatedEvents)sec.append(link('#/agenda/'+e.id,'hub-linked-row',e.title+' · '+(e.date?fmtDate(e.date):e.frequency)));main.append(sec);}
-    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Oorspronkelijke bron'),make('p',null,n.source));panel.append(link(n.url,'guide-button-primary','Bekijk bij de bron ↗',true),link('#/nieuws','guide-muted-link','← Alle nieuwsberichten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=n.title+' | Enschede dichtbij';
+    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Oorspronkelijke bron'),make('p',null,n.source));panel.append(link(n.url,'guide-button-primary',n.source,true),link('#/nieuws','guide-muted-link','Alle nieuwsberichten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=n.title+' | Enschede dichtbij';
   }
   function route(){const match=(location.hash||'').match(/^#\/(agenda|nieuws)(?:\/([a-z0-9-]+))?$/);if(!match)return;
     const [,type,id]=match,view=$('#guide-view'),main=$('#inhoud');view.hidden=false;main.classList.add('guide-active');

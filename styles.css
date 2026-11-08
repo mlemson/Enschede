@@ -29,3 +29,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 
 .mobile-tabs .tab-current{color:var(--accent)}.mobile-tabs a:first-child:not(.tab-current){color:#72817d}
 
+
+/* v6 — klikbaarheid via kaartstijl; alleen functionele iconen. */
+.jump-card:hover,.jump-card:focus-visible,.useful-card:hover,.useful-card:focus-visible{transform:none;box-shadow:0 7px 23px rgba(35,57,44,.075)}
+.org-grid>a:hover,.org-grid>a:focus-visible,.pro-links a:hover,.pro-links a:focus-visible{border-color:#b6cfc4;background:#f9fcfa}
+.chat-form button{width:auto;min-width:74px;padding:0 15px;font-size:13px;font-weight:700}

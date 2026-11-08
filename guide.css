@@ -103,3 +103,18 @@ main.guide-active > :not(#guide-view){display:none!important}
 .chat-related-link{display:inline-flex;font-size:11.5px;font-weight:680;padding:7px 9px;border:1px solid #dce8e1;border-radius:9px;text-decoration:none}
 @media(max-width:560px){.chat-reply>.chat-bubble.bot{font-size:13px}.chat-details summary{min-height:42px}}
 .chat-stream.chat-has-answers{padding-bottom:min(38vh,255px)}
+
+/* v6 — inhoudskaarten zijn volledig klikbaar en hebben geen dubbele link. */
+.guide-topic-card:hover,.guide-topic-card:focus-visible,.guide-source-card:hover,.guide-source-card:focus-visible{transform:none;box-shadow:0 5px 20px rgba(35,57,44,.065);border-color:#acc7bd;background:#fdfefd}
+.guide-topic-card .guide-card-body strong,.guide-source-card strong{font-weight:720}
+.guide-source-card small:empty{display:none}
+.source-hit{color:inherit;text-decoration:none;transition:border-color .16s,box-shadow .16s,background .16s}
+.source-hit:hover,.source-hit:focus-visible{background:#fdfefd;border-color:#acc7bd;box-shadow:0 7px 23px rgba(35,57,44,.07)}
+.source-hit-title{font-weight:725}
+.source-hit:hover .source-hit-title{text-decoration:none}
+.hub-digest-item{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
+.hub-digest-item:hover,.hub-digest-item:focus-visible{border-color:#acc7bd;background:#fdfefd}
+.hub-digest-item strong{font-weight:720;font-size:.95rem}
+.hub-source-name{font-size:.76rem;color:#6e827b}
+.guide-update-note{background:transparent;padding:0;color:#798b86;font-size:.78rem}
+.guide-aside-panel h2{font-weight:720}

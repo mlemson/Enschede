@@ -44,9 +44,9 @@
       return {topic,score,i};
     }).filter(x=>x.score>0).sort((x,y)=>y.score-x.score||x.i-y.i).slice(0,limit).map(x=>x.topic);
   }
-  function localCard(topic,variant=''){const link=a(topicLink(topic.id),'guide-topic-card'+(variant?' '+variant:''));link.append(make('span','guide-topic-icon tone-'+topic.tone,topic.icon));const copy=make('span','guide-card-body');copy.append(make('strong',null,topic.title),make('small',null,topic.summary));link.append(copy,icon('arrow'));return link;}
-  function externalCard(link){const wrap=a(link.url,'guide-source-card',undefined,true);const copy=make('span');copy.append(make('strong',null,link.title),make('small',null,link.note||'Bekijk de oorspronkelijke informatie'));wrap.append(copy,icon('external'));return wrap;}
-  function detailHeading(){const wrap=make('div','guide-header-bar shell');wrap.append(a('#boven','guide-back','← Start'));return wrap;}
+  function localCard(topic,variant=''){const link=a(topicLink(topic.id),'guide-topic-card'+(variant?' '+variant:''));link.append(make('span','guide-topic-icon tone-'+topic.tone,topic.icon));const copy=make('span','guide-card-body');copy.append(make('strong',null,topic.title),make('small',null,topic.summary));link.append(copy);return link;}
+  function externalCard(link){const wrap=a(link.url,'guide-source-card',undefined,true);const copy=make('span');copy.append(make('strong',null,link.title),make('small',null,link.note||''));wrap.append(copy);return wrap;}
+  function detailHeading(){const wrap=make('div','guide-header-bar shell');wrap.append(a('#boven','guide-back','Start'));return wrap;}
   function buildCategory(category){
     const view=$('#guide-view');view.replaceChildren(detailHeading());
     const hero=make('div','guide-hero shell');const text=make('div','guide-hero-copy');text.append(make('span','guide-eyebrow','ENSCHEDE DICHTBIJ'),make('span','guide-top-symbol tone-'+category.tone,category.icon),make('h1',null,category.title),make('p',null,category.intro));
@@ -56,7 +56,7 @@
     if(category.id==='buurt'){
       const buurt=make('section','guide-section guide-info-panel');buurt.append(make('h2',null,'Wijkwijzers in Enschede'),make('p',null,'Je kunt zonder afspraak binnenlopen bij een Wijkwijzer. Er zijn meerdere locaties per stadsdeel. Sommige adressen wisselen per dag.'));const actions=make('div','guide-buttons');actions.append(a('#mijn-buurt','guide-button-primary','Bekijk de 10 locaties'),externalCard({title:'Controleer openingstijden',url:'https://wijkwijzerenschede.nl/contact-en-openingstijden',note:'Officiële website Wijkwijzer'}));buurt.append(actions);content.append(buurt);
     }
-    if(category.id==='doen' && window.ED_UPDATES){const explore=make('section','guide-section hub-category-preview');explore.append(make('h2',null,'Activiteiten uit de stad en jouw buurt'),make('p',null,'Bekijk de gecombineerde agenda met eenmalige evenementen en vaste buurtactiviteiten.'));const links=make('div','hub-feature-pills');links.append(a('#/agenda','guide-button-primary','Open de agenda'),a('#/nieuws','guide-muted-link','Nieuw uit de buurt →'));explore.append(links);content.append(explore);}
+    if(category.id==='doen' && window.ED_UPDATES){const explore=make('section','guide-section hub-category-preview');explore.append(make('h2',null,'Activiteiten uit de stad en jouw buurt'),make('p',null,'Bekijk de gecombineerde agenda met eenmalige evenementen en vaste buurtactiviteiten.'));const links=make('div','hub-feature-pills');links.append(a('#/agenda','guide-button-primary','Open de agenda'),a('#/nieuws','guide-muted-link','Buurtberichten'));explore.append(links);content.append(explore);}
     if(category.id==='buurt' && window.ED_UPDATES){const explore=make('section','guide-section hub-category-preview');explore.append(make('h2',null,'Wat gebeurt er in jouw buurt?'),make('p',null,'Nieuws en activiteiten uit meerdere organisaties, met een filter voor de vijf stadsdelen.'));explore.append(a('#/agenda','guide-button-primary','Filter activiteiten op stadsdeel'));content.append(explore);}
     const sources=make('section','guide-section');sources.append(make('h2',null,'Handige websites'));const srcs=make('div','guide-source-grid');category.links.forEach(l=>srcs.append(externalCard(l)));sources.append(srcs);content.append(sources);
     view.append(content);document.title=category.title+' | Enschede dichtbij';
@@ -77,19 +77,19 @@
         const card=a(url,'hub-organisation',undefined,true);
         card.setAttribute('aria-label',name+' — '+desc+' (opent in een nieuw tabblad)');
         const body=make('span','hub-organisation-body');body.append(make('strong',null,name),make('span','hub-organisation-description',desc));
-        card.append(body,icon('external'));combined.append(card);
+        card.append(body);combined.append(card);
       }
       main.append(combined);
     }
     const updates=window.ED_UPDATES;
     if(updates){const relatedEvents=[...updates.events.map(e=>({...e,internal:'#/agenda/'+e.id})),...updates.recurring.map(e=>({...e,internal:'#/agenda/'+e.id}))].filter(e=>(e.topics||[]).includes(topic.id)&&(!e.date||e.date>=new Date().toLocaleDateString('sv-SE'))).slice(0,3);
       if(relatedEvents.length){const section=make('section','guide-copy-block hub-related-events');section.append(make('h2',null,'Ook interessant: activiteiten'));for(const e of relatedEvents){const card=a(e.internal,'hub-linked-row');card.append(make('strong',null,e.title),make('small',null,(e.date?e.date:e.frequency)+' · '+e.location));section.append(card);}main.append(section);}}
-    const note=make('div','guide-update-note');note.append(icon('info'),make('span',null,'Samengevat uit lokale bronnen, gecontroleerd op '+data.checked+'. Voor actuele regels en openingstijden: bekijk de bron.'));main.append(note);columns.append(main);
-    const aside=make('aside','guide-aside');const linkPanel=make('div','guide-aside-panel');linkPanel.append(make('h2',null,'Verder lezen & regelen'),make('p',null,'Officiële informatie en contact.'));topic.links.forEach(link=>linkPanel.append(externalCard(link)));aside.append(linkPanel);
-    const human=make('div','guide-aside-panel guide-human-panel');human.append(make('h3',null,'Liever iemand spreken?'),make('p',null,'Loop binnen bij een Wijkwijzer. Je kunt ook bellen op werkdagen.'));human.append(a('tel:+31534817900','guide-button-primary','Bel 053 481 79 00'),a('#/onderwerp/wijkwijzer','guide-muted-link','Wat doet de Wijkwijzer? →'));aside.append(human);
+    const note=make('div','guide-update-note');note.append(make('span',null,'Bronnen gecontroleerd: '+data.checked+'.'));main.append(note);columns.append(main);
+    const aside=make('aside','guide-aside');const linkPanel=make('div','guide-aside-panel');linkPanel.append(make('h2',null,'Verder lezen & regelen'));topic.links.forEach(link=>linkPanel.append(externalCard(link)));aside.append(linkPanel);
+    const human=make('div','guide-aside-panel guide-human-panel');human.append(make('h3',null,'Liever iemand spreken?'),make('p',null,'Loop binnen bij een Wijkwijzer. Je kunt ook bellen op werkdagen.'));human.append(a('tel:+31534817900','guide-button-primary','Bel 053 481 79 00'),a('#/onderwerp/wijkwijzer','guide-muted-link','Wijkwijzer'));aside.append(human);
     columns.append(aside);view.append(columns);
     if(topic.related?.length){const related=make('section','guide-section guide-related shell');related.append(make('h2',null,'Misschien ook handig'));const cards=make('div','guide-topic-grid');topic.related.slice(0,5).map(id=>byId.get(id)).filter(Boolean).forEach(t=>cards.append(localCard(t)));related.append(cards);view.append(related);}
-    const bottom=make('div','guide-bottom-back shell');bottom.append(a(categoryLink(topic.category),'guide-muted-link','← Terug naar '+(category?.title||'onderwerpen')));view.append(bottom);document.title=topic.title+' | Enschede dichtbij';
+    const bottom=make('div','guide-bottom-back shell');bottom.append(a(categoryLink(topic.category),'guide-muted-link','Terug naar '+(category?.title||'onderwerpen')));view.append(bottom);document.title=topic.title+' | Enschede dichtbij';
   }
   // Resultaten van alle geïndexeerde bronnen, inclusief woorden die niet vooraf zijn bedacht.
   const sourceRoute=(item,query='')=>item.internal||('#/bron/'+encodeURIComponent(item.id)+(query?'?q='+encodeURIComponent(query):''));
@@ -97,17 +97,17 @@
   const typeNames={informatie:'Informatie',organisatie:'Organisaties',voorziening:'Voorzieningen',activiteit:'Activiteiten'};
   const safeDate=raw=>/^\d{4}-\d{2}-\d{2}$/.test(raw||'')?raw.split('-').reverse().join('-'):'niet bekend';
   function sourceResult(item,query){
-    const card=make('article','source-hit');
+    const card=a(sourceRoute(item,query),'source-hit');
     const meta=make('div','source-hit-meta');meta.append(make('span','source-pill source-'+(item.type||'informatie'),typeNames[item.type]||'Informatie'),make('span',null,item.source));
-    card.append(meta,a(sourceRoute(item,query),'source-hit-title',item.title),make('p',null,item.excerpt||item.summary));
-    const actions=make('div','source-hit-actions');actions.append(a(sourceRoute(item,query),'source-internal','Lees op deze pagina →'),a(item.url,'source-original','Bekijk bron ↗',true));card.append(actions);
+    card.append(meta,make('strong','source-hit-title',item.title),make('p',null,item.excerpt||item.summary));
+    
     return card;
   }
   function buildSource(id,query=''){
     const item=(window.ED_SEARCH?.items||[]).find(s=>s.id===id);
     if(!item){location.hash='#boven';return;}
     const view=$('#guide-view');view.replaceChildren(detailHeading());
-    const head=make('header','guide-topic-hero shell');const back=make('div','guide-crumb');back.append(a(searchRoute(query||item.title),'','← Zoekresultaten'));
+    const head=make('header','guide-topic-hero shell');const back=make('div','guide-crumb');back.append(a(searchRoute(query||item.title),'','Zoekresultaten'));
     const intro=make('div','guide-source-intro');intro.append(make('span','guide-eyebrow',(typeNames[item.type]||'Informatie')+' · '+item.source),make('h1',null,item.title),make('p',null,item.summary));head.append(back,intro);view.append(head);
     const content=make('div','guide-detail-grid shell');const article=make('article','guide-article');
     const section=make('section','guide-copy-block');section.append(make('h2',null,'Wat staat er over dit onderwerp?'));
@@ -115,8 +115,8 @@
     const blocks=(relatedSegments.length?relatedSegments:item._excerpts||[]).slice(0,5);
     if(blocks.length)for(const seg of blocks)section.append(make('p',null,seg.text));
     else section.append(make('p',null,item.summary));article.append(section);
-    const info=make('div','guide-update-note');info.append(icon('info'),make('span',null,'Korte bronweergave; geen volledige kopie. Raadpleeg de oorspronkelijke pagina voor alle details. Bronindex: '+safeDate(window.ED_SEARCH.checked)+'.'));article.append(info);content.append(article);
-    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Bron en vervolg'),make('p',null,item.source));panel.append(externalCard({url:item.url,title:'Open de volledige bron',note:'Controleer de actuele informatie'}));if(item.caution)panel.append(make('p','source-caution',item.caution));aside.append(panel);content.append(aside);
+    const info=make('div','guide-update-note');info.append(make('span',null,'Korte samenvatting · bronindex '+safeDate(window.ED_SEARCH.checked)+'.'));article.append(info);content.append(article);
+    const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Oorspronkelijke bron'));panel.append(externalCard({url:item.url,title:item.source,note:''}));if(item.caution)panel.append(make('p','source-caution',item.caution));aside.append(panel);content.append(aside);
     view.append(content);document.title=item.title+' | Enschede dichtbij';
   }
   function buildSearchPage(query){
@@ -127,9 +127,9 @@
     const content=make('div','shell guide-search-content');
     if(found.topics.length||found.sources.length){
       const overview=make('section','guide-section hub-answer-digest');overview.append(make('span','hub-kicker','IN ÉÉN OVERZICHT'),make('h2',null,'Dit vonden we over '+query));
-      const best=found.topics[0];if(best){overview.append(make('p','hub-digest-intro',best.intro));overview.append(a(topicLink(best.id),'hub-digest-read','Lees onze complete uitleg →'));}
+      const best=found.topics[0];if(best){overview.append(make('p','hub-digest-intro',best.intro));overview.append(a(topicLink(best.id),'hub-digest-read',best.title));}
       const selected=[];const seen=new Set();for(const doc of found.sources){if(seen.has(doc.source))continue;seen.add(doc.source);selected.push(doc);if(selected.length===3)break;}
-      if(selected.length){const sources=make('div','hub-digest-sources');for(const doc of selected){const item=make('article','hub-digest-item');item.append(make('strong',null,doc.source),make('p',null,doc.excerpt||doc.summary),a(sourceRoute(doc,query),'hub-inline-source','Meer over '+doc.title+' →'));sources.append(item);}overview.append(sources);}
+      if(selected.length){const sources=make('div','hub-digest-sources');for(const doc of selected){const item=a(sourceRoute(doc,query),'hub-digest-item');item.append(make('strong',null,doc.title),make('small','hub-source-name',doc.source),make('p',null,doc.excerpt||doc.summary));sources.append(item);}overview.append(sources);}
       content.append(overview);
     }
     if(found.topics.length){const topics=make('section','guide-section');topics.append(make('h2',null,'Uitleg van Enschede dichtbij'));const cards=make('div','guide-topic-grid');found.topics.slice(0,4).forEach(t=>cards.append(localCard(t)));topics.append(cards);content.append(topics);}
@@ -174,17 +174,17 @@
     const raw=query.trim();results.replaceChildren();if(raw.length<2){results.hidden=true;return;}
     results.hidden=false;
     const matches=window.ED_SEARCH.search(raw,{limit:10}),topics=matches.topics,docs=matches.sources;
-    if(!topics.length&&!docs.length){results.append(make('h3',null,'Geen informatie gevonden'),make('p','search-help-text','Deze bronindex is nog niet volledig. Probeer een ander woord of neem contact op met de Wijkwijzer.'));results.append(a(searchRoute(raw),'search-local-link','Zoeken op de hele pagina →'));return;}
+    if(!topics.length&&!docs.length){results.append(make('h3',null,'Geen informatie gevonden'),make('p','search-help-text','Deze bronindex is nog niet volledig. Probeer een ander woord of neem contact op met de Wijkwijzer.'));results.append(a(searchRoute(raw),'search-local-link','Zoek in alle bronnen'));return;}
     results.append(make('span','search-overline','DOORZOEKTE LOKALE BRONNEN'));
     // Laat inhoud uit de bron zien, niet alleen een link of vooraf ingestelde trefwoorden.
-    const best=topics[0];if(best){results.append(make('h3',null,best.title),make('p','search-answer',best.intro));results.append(a(topicLink(best.id),'search-local-link','Lees onze uitleg →'));}
+    const best=topics[0];if(best){results.append(make('h3',null,best.title),make('p','search-answer',best.intro));results.append(a(topicLink(best.id),'search-local-link',best.title));}
     else if(docs.length){results.append(make('h3',null,docs[0].title),make('p','search-answer',docs[0].excerpt||docs[0].summary));}
     if(docs.length){
       const list=make('div','search-source-list');list.append(make('strong',null,'Gevonden op websites:'));
       docs.slice(0,4).forEach(item=>{const card=a(sourceRoute(item,raw),'search-source-item');card.append(make('span','',item.title+' · '+item.source),make('small','',item.excerpt||item.summary));list.append(card);});
       results.append(list);
     }
-    results.append(a(searchRoute(raw),'search-all-link','Bekijk alle resultaten ('+matches.count+' bronnen) →'));
+    results.append(a(searchRoute(raw),'search-all-link','Alle resultaten ('+matches.count+')'));
   }
   form.addEventListener('submit',e=>{e.preventDefault();if(input.value.trim())location.hash=searchRoute(input.value);});
   input.addEventListener('input',()=>{if(input.value.trim().length>=2)renderSearch(input.value);else results.hidden=true;});
@@ -230,7 +230,7 @@
         const extra=shortText(practical,125);
         if(text.length+extra.length<385&&!norm(text).includes(norm(extra)))text+=' '+extra;
       }
-      const primary={text:'Lees verder: '+topic.title,href:topicLink(topic.id)};
+      const primary={text:topic.title,href:topicLink(topic.id)};
       const extras=docs.slice(0,3).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type}));
       const related=(topic.related||[]).map(id=>byId.get(id)).filter(Boolean).slice(0,2);
       const suggestions=related.map(t=>({text:t.title,href:topicLink(t.id)}));
@@ -239,7 +239,7 @@
     if(docs.length){
       const best=docs[0];
       const text=shortText(best.excerpt||best.summary,325)||'Ik heb hierover informatie uit een lokale bron gevonden.';
-      return {text,primary:{text:'Lees meer: '+best.title,href:sourceRoute(best,q)},extra:docs.slice(1,4).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type})),suggestions:[]};
+      return {text,primary:{text:best.title,href:sourceRoute(best,q)},extra:docs.slice(1,4).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type})),suggestions:[]};
     }
     return {text:'Daarover heb ik nog geen duidelijk antwoord gevonden. Kun je iets specifieker vertellen wat je zoekt? Bijvoorbeeld een onderwerp, organisatie of activiteit. Je kunt ook bij de Wijkwijzer terecht.',primary:{text:'Bekijk de onderwerpen',href:'#/categorie/hulp'},extra:[],suggestions:[]};
   }

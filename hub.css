@@ -73,3 +73,19 @@
 /* Programmatic focus for screenreader navigation should not draw a rectangle around headings. */
 #hub-view h1[tabindex="-1"]:focus,
 #guide-view h1[tabindex="-1"]:focus { outline: none; }
+
+/* v6 — rustige, functionele kaarten zonder decoratieve pijlen. */
+.hub-news-card{gap:11px;min-height:0;padding:24px;box-shadow:0 4px 18px rgba(35,57,44,.035);transform:none}
+.hub-news-card:hover,.hub-news-card:focus-visible{transform:none;border-color:#afc8bf;box-shadow:0 7px 24px rgba(35,57,44,.075);background:#fdfefd}
+.hub-news-card h3{font-weight:720;line-height:1.32;letter-spacing:-.018em}
+.hub-news-card p{font-size:.93rem;line-height:1.55;flex:0 0 auto}
+.hub-news-category{font-size:.73rem;font-weight:650;letter-spacing:0}
+.hub-news-date{margin-top:auto;color:#778780;font-size:.79rem;padding-top:10px}
+.hub-news-list .hub-news-card{min-height:0}
+.hub-event-card:hover,.hub-event-card:focus-visible{transform:none;border-color:#afc8bf;background:#fdfefd;box-shadow:0 7px 24px rgba(35,57,44,.065)}
+.hub-weekly-link{text-decoration:none;color:inherit;border:1px solid transparent;transition:border-color .18s,background .18s}
+.hub-weekly-link:hover,.hub-weekly-link:focus-visible{border-color:#b6cdc4;background:#e5f0e9}
+.hub-organisation:hover,.hub-organisation:focus-visible{transform:none}
+.hub-organisation strong{font-weight:700}
+.hub-source-link:hover,.hub-source-link:focus-visible{background:#f3f8f4;border-color:#b8cfc5}
+@media(max-width:690px){.hub-news-card{padding:20px}.hub-news-card h3{font-size:1.07rem}}

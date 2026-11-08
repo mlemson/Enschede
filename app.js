@@ -30,13 +30,13 @@ function renderLocations(){
     const routes=node('div','location-routes');
     const stops=location.routes||[{label:'Route',address:location.address}];
     for(const stop of stops){
-      const a=node('a','route-link',stop.label);a.href=mapLink(stop.address);a.target='_blank';a.rel='noopener noreferrer';a.append(icon('arrow'));a.setAttribute('aria-label',stop.label+' naar '+location.name+' ('+stop.address+') via OpenStreetMap');
+      const a=node('a','route-link',stop.label);a.href=mapLink(stop.address);a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',stop.label+' naar '+location.name+' ('+stop.address+') via OpenStreetMap');
       routes.append(a);
     }
     card.append(routes);grid.append(card);
   }
   const btn=$('#show-all-locations');
-  if(entries.length<=3){btn.hidden=true;}else{btn.hidden=false;btn.replaceChildren(document.createTextNode(showAllLocations?'Toon minder locaties':'Bekijk alle '+entries.length+' Wijkwijzers'),icon('arrow'));}
+  if(entries.length<=3){btn.hidden=true;}else{btn.hidden=false;btn.replaceChildren(document.createTextNode(showAllLocations?'Toon minder locaties':'Bekijk alle '+entries.length+' Wijkwijzers'));}
 }
 $('#neighborhood-select').addEventListener('change',()=>{showAllLocations=false;renderLocations();});
 $('#show-all-locations').addEventListener('click',()=>{showAllLocations=!showAllLocations;renderLocations();});
