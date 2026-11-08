@@ -52,7 +52,21 @@
     const hero=make('div','guide-hero shell');const text=make('div','guide-hero-copy');text.append(make('span','guide-eyebrow','ENSCHEDE DICHTBIJ'),make('span','guide-top-symbol tone-'+category.tone,category.icon),make('h1',null,category.title),make('p',null,category.intro));
     const picture=make('div','guide-photo');const img=make('img');img.src=category.image;img.alt='Illustratie bij '+category.title;picture.append(img);
     hero.append(text,picture);view.append(hero);
-    const content=make('div','guide-content shell');const top=make('section','guide-section');top.append(make('h2',null,'Ontdek de onderwerpen'));const cards=make('div','guide-topic-grid');category.topics.map(id=>byId.get(id)).filter(Boolean).forEach(t=>cards.append(localCard(t)));top.append(cards);content.append(top);
+    const content=make('div','guide-content shell');const top=make('section','guide-section');top.append(make('h2',null,'Onderwerpen'));const cards=make('div','guide-topic-grid');category.topics.map(id=>byId.get(id)).filter(Boolean).forEach(t=>cards.append(localCard(t)));top.append(cards);content.append(top);
+    const subGroups=Object.entries(category.subtopics||{});
+    if(subGroups.length){
+      const more=make('section','guide-section guide-subtopics');more.append(make('h2',null,'Specifieke vragen'));
+      const groups=make('div','guide-subtopic-groups');
+      for(const [parentId,ids] of subGroups){
+        const parent=byId.get(parentId);const valid=ids.map(id=>byId.get(id)).filter(Boolean);
+        if(!parent||!valid.length)continue;
+        const group=make('div','guide-subtopic-group');group.append(a(topicLink(parentId),'guide-subtopic-parent',parent.title));
+        const links=make('nav','guide-subtopic-links');links.setAttribute('aria-label','Meer over '+parent.title);
+        valid.forEach(t=>links.append(a(topicLink(t.id),'guide-subtopic-link',t.title)));
+        group.append(links);groups.append(group);
+      }
+      more.append(groups);content.append(more);
+    }
     if(category.id==='buurt'){
       const buurt=make('section','guide-section guide-info-panel');buurt.append(make('h2',null,'Wijkwijzers in Enschede'),make('p',null,'Je kunt zonder afspraak binnenlopen bij een Wijkwijzer. Er zijn meerdere locaties per stadsdeel. Sommige adressen wisselen per dag.'));const actions=make('div','guide-buttons');actions.append(a('#mijn-buurt','guide-button-primary','Bekijk de 10 locaties'),externalCard({title:'Controleer openingstijden',url:'https://wijkwijzerenschede.nl/contact-en-openingstijden',note:'Officiële website Wijkwijzer'}));buurt.append(actions);content.append(buurt);
     }
@@ -66,6 +80,14 @@
     const header=make('div','guide-topic-hero shell');const bread=make('div','guide-crumb');const category=categoryById.get(topic.category);bread.append(a(categoryLink(topic.category),'',category?.title||'Thema'),document.createTextNode('  /  '+topic.title));
     const top=make('div','guide-topic-hero-intro');top.append(make('span','guide-top-symbol tone-'+topic.tone,topic.icon));const copy=make('div');copy.append(make('span','guide-eyebrow',topic.tag),make('h1',null,topic.title),make('p',null,topic.intro));top.append(copy);header.append(bread,top);view.append(header);
     const columns=make('div','guide-detail-grid shell');const main=make('article','guide-article');
+    const childIds=category?.subtopics?.[topic.id]||[];
+    if(childIds.length){
+      const rail=make('nav','guide-child-rail');rail.setAttribute('aria-label','Meer over '+topic.title);
+      rail.append(make('strong',null,'Binnen dit onderwerp'));
+      const links=make('div','guide-child-links');
+      childIds.map(id=>byId.get(id)).filter(Boolean).forEach(child=>links.append(a(topicLink(child.id),'guide-subtopic-link',child.title)));
+      rail.append(links);main.append(rail);
+    }
     topic.sections.forEach((section,i)=>{const block=make('section','guide-copy-block');block.append(make('h2',null,section.title));if(section.text)block.append(make('p',null,section.text));if(section.bullets){const list=make('ul');section.bullets.forEach(item=>list.append(make('li',null,item)));block.append(list);}main.append(block);});
     const dossier=window.ED_DOSSIERS?.[topic.id];
     if(dossier){
