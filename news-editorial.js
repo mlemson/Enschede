@@ -1,5 +1,5 @@
 'use strict';
-// Brononderbouwde uitleg in eigen woorden. Geen originele persfoto.
+// Brononderbouwde uitleg in eigen woorden. Echte foto rechtstreeks uit het Sportaal-artikel.
 (() => {
   const rows=window.ED_UPDATES?.news;
   if(!Array.isArray(rows))return;
@@ -18,6 +18,7 @@
     'Gratis eten en drinken',
     'Contact tussen buurtbewoners van verschillende leeftijden'
   ];
-  item.image='assets/activiteit.webp';
-  item.imageCaption='Sfeerbeeld · niet gemaakt tijdens Pathmos Beweegt';
+  item.image='https://www.sportaal.nl/assets/IMG_9814-1__FocusFillWyIwLjAwIiwiMC4wMCIsMTkyMCw4Nzhd.jpg';
+  item.imageSource=item.url;
+  item.imageCredit='Foto: Sportaal';
 })();

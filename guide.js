@@ -88,7 +88,7 @@
       childIds.map(id=>byId.get(id)).filter(Boolean).forEach(child=>links.append(a(topicLink(child.id),'guide-subtopic-link',child.title)));
       rail.append(links);main.append(rail);
     }
-    if(topic.editorialImage){const fig=make('figure','ed-context-figure');const photo=make('img');photo.src=topic.editorialImage;photo.alt=topic.editorialImageAlt||'Sfeerbeeld';photo.loading='lazy';fig.append(photo,make('figcaption',null,'Sfeerbeeld'));main.append(fig);}
+    // Geen willekeurige afbeelding zonder geverifieerde bron.
     topic.sections.forEach((section,i)=>{const block=make('section','guide-copy-block');block.append(make('h2',null,section.title));if(section.text)block.append(make('p',null,section.text));if(section.bullets){const list=make('ul');section.bullets.forEach(item=>list.append(make('li',null,item)));block.append(list);}main.append(block);});
     const dossier=window.ED_DOSSIERS?.[topic.id];
     if(dossier){

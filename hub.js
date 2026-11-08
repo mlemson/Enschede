@@ -6,7 +6,9 @@
   const feed=window.ED_AUTO_UPDATES||{news:[],events:[]};
   const coreUrls=new Set(d.news.map(x=>x.url));
   const checks=feed.newsChecks||{};
-  const newsItems=[...(feed.news||[]).filter(x=>!coreUrls.has(x.url)),...d.news].filter(n=>!n.expires||n.expires>=new Date().toLocaleDateString('sv-SE')).map(n=>({...n,sourceCheck:checks[n.url]||null}));
+  const newsItems=[...(feed.news||[]).filter(x=>!coreUrls.has(x.url)),...d.news]
+    .filter(n=>!n.expires||n.expires>=new Date().toLocaleDateString('sv-SE'))
+    .map(n=>{const c=checks[n.url]||null;return {...n,sourceCheck:c,image:n.image||c?.image||null,imageSource:n.imageSource||c?.imageSource||null,imageCredit:n.imageCredit||c?.imageCredit||null};});
   const coreEvents=new Set(d.events.map(x=>(x.date+'|'+x.title).toLowerCase()));
   const datedEvents=[...d.events,...(feed.events||[]).filter(x=>!coreEvents.has((x.date+'|'+x.title).toLowerCase()))];
   const $=q=>document.querySelector(q);
@@ -20,6 +22,27 @@
   const normal=str=>String(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   const when=e=>e.recurring?(e.frequency?.includes('online cursus')?'Online cursus · op elk moment':'Wekelijks · '+e.frequency):fmtDate(e.date)+' · '+e.time;
   const topicLink=topic=>'#/onderwerp/'+topic;
+  function verifiedPhoto(item){
+    if(!item?.image||!item?.imageSource||!item?.url)return null;
+    try{
+      const page=new URL(item.url),source=new URL(item.imageSource),photo=new URL(item.image);
+      const host=h=>h.toLowerCase().replace(/^www\./,'');
+      if([page,source,photo].some(u=>u.protocol!=='https:'||u.port||u.username||u.password))return null;
+      if(host(page.hostname)!=='sportaal.nl'||host(source.hostname)!=='sportaal.nl'||host(photo.hostname)!=='sportaal.nl')return null;
+      if(page.pathname.replace(/\/$/,'')!==source.pathname.replace(/\/$/,''))return null;
+      if(!/\.(?:jpe?g|png|webp)$/i.test(photo.pathname))return null;
+      return photo.href;
+    }catch{return null;}
+  }
+  function addSourcePhoto(parent,item,type){
+    const url=verifiedPhoto(item);if(!url)return;
+    const figure=make('figure','ed-context-figure ed-'+type+'-photo');
+    const img=make('img');img.src=url;img.alt='Foto bij '+item.title;img.loading='lazy';img.referrerPolicy='no-referrer';
+    img.addEventListener('error',()=>figure.remove(),{once:true});
+    figure.append(img,make('figcaption',null,item.imageCredit||'Foto: '+(item.source||'bronsite')));
+    parent.append(figure);
+  }
+
   function eventCard(e,compact=false){
     const card=link('#/agenda/'+e.id,'hub-event-card'+(compact?' hub-compact':''));
     const date=make('div','hub-event-day');date.append(make('strong',null,e.recurring?(e.frequency?.includes('online cursus')?'◉':'W'):new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'2-digit'})),make('small',null,e.recurring?(e.frequency?.includes('online cursus')?'ONLINE':'VAST'):new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{month:'short'}).toUpperCase()));
@@ -74,13 +97,13 @@
     const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');
     const facts=make('section','guide-copy-block');facts.append(make('h2',null,'Praktische informatie'));
     const dl=make('dl','hub-facts');[['Wanneer',when(e)],['Waar',e.location],['Stadsdeel',e.area],['Organisatie / bron',e.source],['Kosten',e.price||'Controleer bij de organisatie']].forEach(([k,v])=>{facts.append(make('div','hub-fact'));facts.lastElementChild.append(make('dt',null,k),make('dd',null,v));});main.append(facts);
-    const detail=make('section','guide-copy-block');detail.append(make('h2',null,'Wat kun je verwachten?'),make('p',null,e.summary));if(e.image){const fig=make('figure','ed-context-figure ed-event-photo');const img=make('img');img.src=e.image;img.alt='Sfeerbeeld bij '+e.title;img.loading='lazy';fig.append(img,make('figcaption',null,e.imageCaption||'Sfeerbeeld'));detail.append(fig);}for(const para of e.details||[])detail.append(make('p',null,para));if(e.practical?.length){detail.append(make('h3',null,'Goed om te weten'));const ul=make('ul');e.practical.forEach(s=>ul.append(make('li',null,s)));detail.append(ul);}if(e.recurring)detail.append(make('p','hub-caution','Terugkerend aanbod: tijdens vakanties of feestdagen kan het anders zijn. Controleer dag en locatie altijd bij de organisatie.'));main.append(detail);
+    const detail=make('section','guide-copy-block');detail.append(make('h2',null,'Wat kun je verwachten?'),make('p',null,e.summary));addSourcePhoto(detail,e,'event');for(const para of e.details||[])detail.append(make('p',null,para));if(e.practical?.length){detail.append(make('h3',null,'Goed om te weten'));const ul=make('ul');e.practical.forEach(s=>ul.append(make('li',null,s)));detail.append(ul);}if(e.recurring)detail.append(make('p','hub-caution','Terugkerend aanbod: tijdens vakanties of feestdagen kan het anders zijn. Controleer dag en locatie altijd bij de organisatie.'));main.append(detail);
     if(e.topics?.length){const related=make('section','guide-copy-block');related.append(make('h2',null,'Informatie bij dit onderwerp'));for(const id of e.topics){const t=window.ED_CONTENT.topics.find(x=>x.id===id);if(t)related.append(link(topicLink(id),'hub-linked-row',t.title));}main.append(related);}
     const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Bron & aanmelden'),make('p',null,'Controleer de actuele tijden en eventuele aanmelding.'));panel.append(link(e.url,'guide-button-primary',e.source,true),link('#/agenda','guide-muted-link','Alle activiteiten'));aside.append(panel);wrap.append(main,aside);view.append(wrap);document.title=e.title+' | Enschede dichtbij';
   }
   function detailNews(n){
     const view=$('#guide-view');view.replaceChildren(pageHeader('NIEUWS · '+n.category,n.title,n.summary));
-    const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');const body=make('section','guide-copy-block');body.append(make('span','hub-eyebrow',n.area+(n.date?' · '+fmtDate(n.date):'')),make('h2',null,'Dit speelt er'),make('p',null,n.description));if(n.image){const fig=make('figure','ed-context-figure ed-news-photo');const img=make('img');img.src=n.image;img.alt='Sfeerbeeld bij '+n.title;img.loading='lazy';fig.append(img,make('figcaption',null,n.imageCaption||'Sfeerbeeld'));body.append(fig);}for(const para of n.details||[])body.append(make('p',null,para));if(n.points?.length){body.append(make('h3',null,'In het kort'));const ul=make('ul');n.points.forEach(s=>ul.append(make('li',null,s)));body.append(ul);}if(n.sourceCheck?.status==='ok'){
+    const wrap=make('div','guide-detail-grid shell');const main=make('article','guide-article');const body=make('section','guide-copy-block');body.append(make('span','hub-eyebrow',n.area+(n.date?' · '+fmtDate(n.date):'')),make('h2',null,'Dit speelt er'),make('p',null,n.description));addSourcePhoto(body,n,'news');for(const para of n.details||[])body.append(make('p',null,para));if(n.points?.length){body.append(make('h3',null,'In het kort'));const ul=make('ul');n.points.forEach(s=>ul.append(make('li',null,s)));body.append(ul);}if(n.sourceCheck?.status==='ok'){
       body.append(make('p','hub-data-note',n.sourceCheck.changed?'De bron is sinds de vorige controle aangepast. Bekijk het oorspronkelijke artikel voor de nieuwste informatie.':'Bron gecontroleerd op '+fmtDate(n.sourceCheck.lastChecked)+'.'));
     }
     main.append(body);
