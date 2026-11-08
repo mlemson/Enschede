@@ -48,17 +48,20 @@ def parse(html,url,site):
  return {'id':uid,'title':name,'source':site['label'],'type':site['type'],'url':url,'summary':summary,'segments':[clean(b,160) for b in blocks[:8]],'terms':terms,'caution':'Controleer veranderlijke informatie bij de bron.'}
 def crawl(session,site):
  hosts=set(site['hosts']);access={h:robots(session,h) for h in hosts}
+ prefixes=tuple(site.get('path_prefixes',[]))
+ def allowed(u):
+  return url_allowed(u,hosts) and (not prefixes or any(urlparse(u).path.startswith(prefix) for prefix in prefixes))
  queue=collections.deque((u,0) for u in site['start_urls']);seen=set();found=[]
  while queue and len(seen)<site.get('max_pages',20):
   url,depth=queue.popleft();p=urlparse(url)
-  if not url_allowed(url,hosts) or url in seen:continue
+  if not allowed(url) or url in seen:continue
   seen.add(url);permitted=access.get(p.hostname)
   if permitted is False or (permitted is not True and not permitted.can_fetch(UA,url)):continue
   try:
    res=session.get(url,headers=HEADERS,timeout=17,allow_redirects=False)
    if 300<=res.status_code<400:
     redirect=urljoin(url,res.headers.get('Location',''))
-    if url_allowed(redirect,hosts):queue.appendleft((redirect,depth))
+    if allowed(redirect):queue.appendleft((redirect,depth))
     continue
    if res.status_code!=200 or 'text/html' not in res.headers.get('Content-Type','') or len(res.content)>1500000:continue
    article=parse(res.text,url,site)
@@ -67,7 +70,7 @@ def crawl(session,site):
     soup=BeautifulSoup(res.text,'html.parser')
     for a in soup.select('a[href]'):
      dest=urljoin(url,a['href'])
-     if url_allowed(dest,hosts) and dest not in seen:queue.append((dest,depth+1))
+     if allowed(dest) and dest not in seen:queue.append((dest,depth+1))
   except requests.RequestException:pass
   time.sleep(.6)
  return found

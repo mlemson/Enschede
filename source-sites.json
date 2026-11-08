@@ -151,6 +151,121 @@
       ],
       "max_pages": 40,
       "max_depth": 3
+    },
+    {
+      "label": "Humanitas Twente – Enschede",
+      "hosts": [
+        "humanitastwente.nl",
+        "www.humanitastwente.nl"
+      ],
+      "type": "voorziening",
+      "start_urls": [
+        "https://humanitastwente.nl/regios/enschede/",
+        "https://humanitastwente.nl/wat-we-doen/thuisadministratie/"
+      ],
+      "max_pages": 20,
+      "max_depth": 2,
+      "path_prefixes": [
+        "/regios/enschede/",
+        "/wat-we-doen/"
+      ]
+    },
+    {
+      "label": "Stichting 55+ Enschede",
+      "hosts": [
+        "55plus-enschede.nl",
+        "www.55plus-enschede.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://55plus-enschede.nl/",
+        "https://55plus-enschede.nl/category/doe-activiteiten/"
+      ],
+      "max_pages": 25,
+      "max_depth": 2
+    },
+    {
+      "label": "Ixta Noa – Enschede",
+      "hosts": [
+        "ixtanoa.nl",
+        "www.ixtanoa.nl"
+      ],
+      "type": "voorziening",
+      "start_urls": [
+        "https://www.ixtanoa.nl/regio-enschede-en-hengelo/",
+        "https://www.ixtanoa.nl/inloop/",
+        "https://www.ixtanoa.nl/respijt/"
+      ],
+      "max_pages": 6,
+      "max_depth": 1,
+      "path_prefixes": [
+        "/regio-enschede-en-hengelo/",
+        "/inloop/",
+        "/respijt/"
+      ]
+    },
+    {
+      "label": "Voedselbank Enschede-Haaksbergen",
+      "hosts": [
+        "voedselbankenschedehaaksbergen.nl",
+        "www.voedselbankenschedehaaksbergen.nl"
+      ],
+      "type": "voorziening",
+      "start_urls": [
+        "https://voedselbankenschedehaaksbergen.nl/ik-zoek-hulp/",
+        "https://voedselbankenschedehaaksbergen.nl/nieuws/"
+      ],
+      "max_pages": 18,
+      "max_depth": 2
+    },
+    {
+      "label": "Stichting Beien",
+      "hosts": [
+        "beien.nl",
+        "www.beien.nl"
+      ],
+      "type": "activiteit",
+      "start_urls": [
+        "https://www.beien.nl/",
+        "https://www.beien.nl/all4free/"
+      ],
+      "max_pages": 18,
+      "max_depth": 2
+    },
+    {
+      "label": "Stichting Present Enschede",
+      "hosts": [
+        "stichtingpresent.nl",
+        "www.stichtingpresent.nl"
+      ],
+      "type": "voorziening",
+      "start_urls": [
+        "https://stichtingpresent.nl/enschede/",
+        "https://stichtingpresent.nl/enschede/ik-zoek-hulp-2/",
+        "https://stichtingpresent.nl/enschede/voor-hulpverleners/aanmelden/"
+      ],
+      "max_pages": 20,
+      "max_depth": 2,
+      "path_prefixes": [
+        "/enschede/"
+      ]
+    },
+    {
+      "label": "Jij Maakt Enschede",
+      "hosts": [
+        "jijmaaktenschede.nl",
+        "www.jijmaaktenschede.nl"
+      ],
+      "type": "informatie",
+      "start_urls": [
+        "https://jijmaaktenschede.nl/wijkbudget/",
+        "https://jijmaaktenschede.nl/wijkbudget/alle-wijken"
+      ],
+      "max_pages": 22,
+      "max_depth": 2,
+      "path_prefixes": [
+        "/wijkbudget/"
+      ]
     }
   ],
   "feeds": {
