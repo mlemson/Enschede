@@ -127,15 +127,15 @@ def parse_variable(path):
 
 
 def article_photo(html, page_url):
-    """Gebruik alleen een afbeelding uit het originele Sportaal-artikel, geen site-logo."""
+    """Gebruik alleen een foto uit het originele Sportaal-artikel, geen header- of reclamefoto."""
     if not html or (urlparse(page_url).hostname or '').removeprefix('www.') != 'sportaal.nl':
         return None
-    soup=BeautifulSoup(html, 'html.parser')
-    heading=soup.find('h1')
+    soup = BeautifulSoup(html, 'html.parser')
+    heading = soup.find('h1')
     if not heading:
         return None
     for node in heading.next_elements:
-        kind=getattr(node,'name',None)
+        kind = getattr(node,'name',None)
         if kind in ('h2','h3') and any(x in node.get_text(' ',strip=True).casefold()
                                      for x in ('nieuws & activiteiten','lees ook','meer nieuws')):
             break
@@ -146,14 +146,24 @@ def article_photo(html, page_url):
             src=node.get('srcset').split(',')[0].strip().split()[0]
         photo=urljoin(page_url,src)
         try:
-            u=urlparse(photo)
-            if u.scheme!='https' or (u.hostname or '').removeprefix('www.')!='sportaal.nl':
+            info=urlparse(photo)
+            if info.scheme!='https' or (info.hostname or '').removeprefix('www.')!='sportaal.nl':
                 continue
-            if u.port not in (None,443) or u.username or u.password:
+            if info.port not in (None,443) or info.username or info.password:
                 continue
         except ValueError:
             continue
-        if not re.search(r'\.(?:jpe?g|png|webp)
+        if not re.search(r'\.(?:jpe?g|png|webp)$',info.path,re.I):
+            continue
+        if any(x in info.path.casefold() for x in ('logo','favicon','avatar','placeholder','sprite','default-image')):
+            continue
+        width,height=node.get('width',''),node.get('height','')
+        if (width.isdigit() and int(width)<360) or (height.isdigit() and int(height)<180):
+            continue
+        return photo
+    return None
+
+def monitor(session, today, data):
     robots = {}
     old = data.get('newsChecks', {})
     checks = {}
@@ -189,70 +199,6 @@ def article_photo(html, page_url):
         checks[url] = {'hash':article['hash'],'lastChecked':str(today),'status':'ok',
             'changed':needs_review,'changedOn':str(today) if newly_changed else previous.get('changedOn'),
             'image':photo,'imageSource':url if photo else None,'imageCredit':'Foto: Sportaal' if photo else None}
-    merged = {n['url']:n for n in data.get('news',[]) if n.get('date') and n['date']>=str(today-dt.timedelta(days=65))}
-    merged.update({n['url']:n for n in discovered})
-    data['news'] = list(merged.values())[:60]
-    data['newsChecks'] = checks
-    data['checked'] = str(today)
-    changed = [{'url':url,'changedOn':entry.get('changedOn')} for url,entry in checks.items() if entry.get('changed')]
-    return data, changed
-
-def main():
-    data = parse_variable(FEED) or {'news':[],'events':[]}
-    today = dt.datetime.now(dt.timezone.utc).date()
-    data, changed = monitor(requests.Session(), today, data)
-    FEED.write_text('window.ED_AUTO_UPDATES='+json.dumps(data,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
-    REPORT.parent.mkdir(exist_ok=True)
-    REPORT.write_text(json.dumps({'updatedAt':str(today),'changedSources':changed,
-        'successfulChecks':sum(x.get('status')=='ok' for x in data['newsChecks'].values()),
-        'failedChecks':sum(x.get('status')!='ok' for x in data['newsChecks'].values())},
-        ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    print('Nieuws gecontroleerd:',len(data['news']),'items,',len(changed),'gewijzigde bronnen')
-
-if __name__ == '__main__':
-    main()
-,u.path,re.I):
-            continue
-        if any(t in u.path.casefold() for t in ('logo','favicon','avatar','placeholder','sprite','default-image')):
-            continue
-        width,height=node.get('width',''),node.get('height','')
-        if (width.isdigit() and int(width)<360) or (height.isdigit() and int(height)<180):
-            continue
-        return photo
-    return None
-
-def monitor(session, today, data):
-    robots = {}
-    old = data.get('newsChecks', {})
-    checks = {}
-    discovered = []
-    cache = {}
-    html, err = fetch(session, SPORTAAL, robots)
-    if html:
-        for url in candidate_links(html):
-            page, problem = fetch(session, url, robots)
-            cache[url] = (page, problem)
-            article = extract(page) if page and is_sportaal_news(page) else None
-            if article and article['date'] and today-dt.timedelta(days=65)<=dt.date.fromisoformat(article['date'])<=today:
-                discovered.append({'id':'sportaal-'+hashlib.sha256(url.encode()).hexdigest()[:12],'url':url,
-                    'source':'Sportaal','title':article['title'],'date':article['date'],
-                    'summary':'Nieuws van Sportaal over sporten en bewegen in Enschede.',
-                    'description':'Uit de bron: '+article['excerpt'],'area':'Hele stad','category':'Sport','topics':['sport']})
-    curated = parse_variable(ROOT/'local-updates.js').get('news',[])
-    urls = [n['url'] for n in curated if allowed(n.get('url','')) and urlparse(n['url']).path not in ('/','/nieuws','/nieuws/')]
-    for url in dict.fromkeys(urls):
-        page, problem = cache.get(url, (None, None))
-        if page is None and problem is None:
-            page, problem = fetch(session, url, robots)
-        previous = old.get(url, {})
-        article = extract(page) if page else None
-        if not article:
-            checks[url] = {**previous, 'status':problem or 'geen artikeltekst','attemptedAt':str(today)}
-            continue
-        newly_changed = bool(previous.get('hash') and previous['hash'] != article['hash'])
-        needs_review = bool(previous.get('changed') or newly_changed)
-        checks[url] = {'hash':article['hash'],'lastChecked':str(today),'status':'ok',
-            'changed':needs_review,'changedOn':str(today) if newly_changed else previous.get('changedOn')}
     merged = {n['url']:n for n in data.get('news',[]) if n.get('date') and n['date']>=str(today-dt.timedelta(days=65))}
     merged.update({n['url']:n for n in discovered})
     data['news'] = list(merged.values())[:60]
