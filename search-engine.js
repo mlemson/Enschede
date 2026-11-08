@@ -30,7 +30,7 @@
   const matches=(haystack,word)=>[...expand(word)].some(w=>contains(haystack,w));
   const uniqueTokens=(str)=>[...new Set(tokenize(str))];
   const index=window.ED_SOURCE_INDEX||{checked:null,items:[],note:'Er is nog geen bronindex beschikbaar.'};
-  const sourceItems=Array.isArray(index.items)?index.items.slice():[];
+  const sourceItems=[...(Array.isArray(index.items)?index.items:[]), ...(Array.isArray(window.ED_EXTRA_SOURCES)?window.ED_EXTRA_SOURCES:[])];
   const updates=window.ED_UPDATES||{events:[],recurring:[],news:[]};
   const auto=window.ED_AUTO_UPDATES||{events:[],news:[]};
   for(const e of [...updates.events,...updates.recurring,...(auto.events||[])].filter(x=>!x.date||x.date>=new Date().toLocaleDateString('sv-SE')))sourceItems.push({id:'agenda-'+e.id,title:e.title,type:'activiteit',source:e.source,url:e.url,internal:'#/agenda/'+e.id,summary:e.summary,terms:[e.location,e.area,e.category,e.time||e.frequency,...(e.topics||[])].join(' '),segments:[e.summary],checked:updates.checked});

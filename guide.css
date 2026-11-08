@@ -118,3 +118,7 @@ main.guide-active > :not(#guide-view){display:none!important}
 .hub-source-name{font-size:.76rem;color:#6e827b}
 .guide-update-note{background:transparent;padding:0;color:#798b86;font-size:.78rem}
 .guide-aside-panel h2{font-weight:720}
+
+/* Laat hele, afgeronde antwoorden zien zonder afkappen. */
+.chat-bubble.bot{white-space:pre-line;overflow-wrap:anywhere;word-break:normal;line-height:1.65;display:block;max-height:none!important;-webkit-line-clamp:unset!important;text-overflow:clip!important;}
+.chat-reply .chat-bubble.bot{max-width:100%;}

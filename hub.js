@@ -17,11 +17,11 @@
   const allEvents=[...datedEvents.map(x=>({...x,recurring:false})),...d.recurring.map(x=>({...x,recurring:true}))];
   const visibleEvents=()=>allEvents.filter(x=>x.recurring||x.date>=today());
   const normal=str=>String(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-  const when=e=>e.recurring?'Wekelijks · '+e.frequency:fmtDate(e.date)+' · '+e.time;
+  const when=e=>e.recurring?(e.frequency?.includes('online cursus')?'Online cursus · op elk moment':'Wekelijks · '+e.frequency):fmtDate(e.date)+' · '+e.time;
   const topicLink=topic=>'#/onderwerp/'+topic;
   function eventCard(e,compact=false){
     const card=link('#/agenda/'+e.id,'hub-event-card'+(compact?' hub-compact':''));
-    const date=make('div','hub-event-day');date.append(make('strong',null,e.recurring?'W':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'2-digit'})),make('small',null,e.recurring?'VAST':new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{month:'short'}).toUpperCase()));
+    const date=make('div','hub-event-day');date.append(make('strong',null,e.recurring?(e.frequency?.includes('online cursus')?'◉':'W'):new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'2-digit'})),make('small',null,e.recurring?(e.frequency?.includes('online cursus')?'ONLINE':'VAST'):new Date(e.date+'T12:00:00').toLocaleDateString('nl-NL',{month:'short'}).toUpperCase()));
     const body=make('div','hub-event-content');body.append(make('div','hub-event-tags',e.category+' · '+e.area),make('h3',null,e.title),make('p','hub-event-intro',e.summary),make('span','hub-event-meta',when(e)));
     body.append(make('span','hub-event-place',e.location));card.append(date,body);return card;
   }
@@ -53,11 +53,11 @@
     function update(){const q=normal(query.value.trim()),a=area.value,c=cat.value;const selected=visibleEvents().filter(e=>(a==='Heel Enschede'||e.area===a)&&(c==='Alles'||e.category===c)&&(!q||normal([e.title,e.summary,e.location,e.category,e.area,e.source,...(e.topics||[])].join(' ')).includes(q)));
       const dated=selected.filter(e=>!e.recurring).sort((x,y)=>x.date.localeCompare(y.date));const recurring=selected.filter(e=>e.recurring).sort((x,y)=>x.title.localeCompare(y.title,'nl'));
       onceList.replaceChildren(...dated.map(e=>eventCard(e)));routineList.replaceChildren(...recurring.map(e=>eventCard(e)));once.hidden=!dated.length;routine.hidden=!recurring.length;
-      count.textContent=selected.length+' activiteiten gevonden · samengesteld uit Alifa, Sportaal, gemeente, M-Pact en Uit in Enschede';if(!selected.length){const no=make('div','hub-no-results','Geen activiteiten gevonden met deze filters. Probeer een ander stadsdeel of thema.');once.hidden=false;onceList.append(no);}
+      count.textContent=selected.length+' activiteiten gevonden · onder meer Alifa, LOES, Sportaal, gemeente en M-Pact';if(!selected.length){const no=make('div','hub-no-results','Geen activiteiten gevonden met deze filters. Probeer een ander stadsdeel of thema.');once.hidden=false;onceList.append(no);}
     }[area,cat,query].forEach(el=>el.addEventListener(el===query?'input':'change',update));update();
-    wrap.append(make('p','hub-data-note','Gecontroleerd op 7 november 2026. Data zonder exacte datum zijn als terugkerend aanbod opgenomen. Kijk bij de aanbieder of een activiteit doorgaat; deze versie wordt niet live bijgewerkt.'));
+    wrap.append(make('p','hub-data-note','Samengesteld uit gecontroleerde bronnen, aangevuld op 8 november 2026. Een online cursus is niet hetzelfde als een vaste wekelijkse activiteit. Controleer tijden en aanmelding bij de aanbieder.'));
     const links=make('div','hub-other-sources');links.append(make('h2',null,'Meer agenda’s'));[
-      ['Alifa','https://www.alifa.nl/activiteiten'],['Sportaal','https://www.sportaal.nl/'],['Uit in Enschede','https://www.uitinenschede.nl/agenda'],['M-Pact','https://www.m-pact.nl/'],['Wijkwijzer','https://wijkwijzerenschede.nl/meedoen-en-ontmoeten']].forEach(([name,url])=>links.append(link(url,'hub-source-link',name,true)));wrap.append(links);
+      ['LOES','https://loes.nl/agenda'],['Alifa','https://www.alifa.nl/activiteiten'],['Sportaal','https://www.sportaal.nl/'],['Uit in Enschede','https://www.uitinenschede.nl/agenda'],['M-Pact','https://www.m-pact.nl/'],['Wijkwijzer','https://wijkwijzerenschede.nl/meedoen-en-ontmoeten']].forEach(([name,url])=>links.append(link(url,'hub-source-link',name,true)));wrap.append(links);
     view.append(wrap);document.title='Agenda | Enschede dichtbij';
   }
   function pageNews(){

@@ -120,6 +120,37 @@
       ],
       "max_pages": 15,
       "max_depth": 2
+    },
+    {
+      "label": "LOES",
+      "hosts": [
+        "loes.nl",
+        "www.loes.nl"
+      ],
+      "type": "informatie",
+      "start_urls": [
+        "https://loes.nl/informatie-en-tips",
+        "https://loes.nl/agenda",
+        "https://loes.nl/informatie-en-tips/jongere",
+        "https://loes.nl/informatie-en-tips/peuter/gedrag-opvoeding"
+      ],
+      "max_pages": 75,
+      "max_depth": 3
+    },
+    {
+      "label": "GGD Twente",
+      "hosts": [
+        "www.ggdtwente.nl",
+        "ggdtwente.nl"
+      ],
+      "type": "informatie",
+      "start_urls": [
+        "https://www.ggdtwente.nl/onderwerpen/kinderen/wat-doen-we-voor-je/hulp-bij-opvoeden",
+        "https://www.ggdtwente.nl/contact/jeugdgezondheid/contact-met-jeugdgezondheid",
+        "https://www.ggdtwente.nl/onderwerpen/kinderen/leeftijdsnieuwsbrieven-samen-opgroeien"
+      ],
+      "max_pages": 40,
+      "max_depth": 3
     }
   ],
   "feeds": {

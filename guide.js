@@ -194,12 +194,29 @@
   results.addEventListener('click',e=>{if(e.target.closest('a[href^="#/"]'))results.hidden=true;});
   // Gesprekslaag: antwoorden uit eigen onderwerpen en bronindex. Geen AI, netwerkverzoeken of opslag.
   const chatStream=$('#chat-stream'),chatInput=$('#chat-input'),chatForm=$('#chat-form');
-  const shortText=(value,max=300)=>{
-    const clean=String(value||'').replace(/\s+/g,' ').trim();
-    if(clean.length<=max)return clean;
-    const cut=clean.slice(0,max+1),sentences=cut.match(/^.*?[.!?](?=\s|$)/);
-    if(sentences&&sentences[0].length>Math.min(90,max*.45))return sentences[0].trim();
-    return cut.slice(0,cut.lastIndexOf(' ')>max*.6?cut.lastIndexOf(' '):max).trim().replace(/[,:; ]+$/,'')+'…';
+  // Antwoorden worden niet meer op een vast aantal tekens afgeknipt.
+  // Bronfragmenten kunnen zelf verkort zijn: geef dan liever een eigen volledige uitleg.
+  const completeText=value=>{
+    const raw=String(value||'').replace(/\s+/g,' ').trim();
+    if(!raw)return '';
+    if(!/[.…]$/.test(raw))return raw;
+    const parts=raw.match(/.*?[.!?](?=\s|$)/g)||[];
+    return parts.filter(s=>!s.trim().endsWith('…')).join(' ').trim();
+  };
+  let lastChatTopic=null;
+  const relevantSection=(topic,query)=>{
+    const text=norm(query),wordSet=new Set(termsOf(text));
+    if(!topic.sections?.length)return null;
+    let sections=topic.sections.map((section,i)=>{
+      const title=norm(section.title),body=norm(section.text);
+      let score=0;
+      for(const word of wordSet){if(title.includes(word))score+=6;if(body.includes(word))score+=1;}
+      if(/waar|terecht|hulp|loket|organisat/.test(text)&&/(hulp|waar|advies|contact)/.test(title))score+=6;
+      if(/hoe|aanpak|begin|nu|stap|wat kan|wat moet/.test(text)&&/(begin|doen|stap|zelf|wat)/.test(title))score+=6;
+      return {section,i,score};
+    });
+    sections.sort((a,b)=>b.score-a.score||a.i-b.i);
+    return sections[0]?.section||null;
   };
   const chatSafety=[
     {test:/(direct gevaar|levensgevaar|acuut gevaar|bel 112|ik word nu bedreigd|iemand ligt bewusteloos)/,text:'Is er direct gevaar of is er met spoed hulp nodig? Bel 112. Deze wegwijzer kan geen noodhulp inschakelen.',action:{text:'Bel 112',href:'tel:112'}},
@@ -210,26 +227,55 @@
     const q=question.trim(),n=norm(q);
     const safe=chatSafety.find(item=>item.test.test(n));
     if(safe)return {text:safe.text,primary:safe.action,extra:safe.extra||[],suggestions:[]};
-    if(/^(hoi|hallo|hey|goedemorgen|goedemiddag|goedenavond|hi)[! .]*$/.test(n))return {text:'Hoi! Waarover wil je iets weten? Je kunt bijvoorbeeld vragen naar geldzaken, activiteiten, opvoeden of hulp in jouw wijk.',extra:[],suggestions:[]};
-    const found=window.ED_SEARCH.search(q,{limit:8});
-    const ranked=rankTopics(q,3);
+    if(/^(hoi|hallo|hey|goedemorgen|goedemiddag|goedenavond|hi)[! .]*$/.test(n))return {text:'Hoi! Waarover wil je iets weten? Bijvoorbeeld over geld, een activiteit, opvoeden of hulp in je wijk.',extra:[],suggestions:[]};
+    if(/^(nu|en nu|wat nu|en hoe nu|wat moet ik nu doen)[!?. ]*$/.test(n)&&!lastChatTopic){
+      return {text:'Kun je iets meer vertellen over wat je nu wilt weten? Bijvoorbeeld: ik heb geen inkomen, mijn kind gaat niet naar school of ik zoek een activiteit.',extra:[],suggestions:[]};
+    }
+    const followup=/^(nu|en nu|wat nu|en hoe nu|wat moet ik nu doen)[!?. ]*$/.test(n);
+    if(followup&&lastChatTopic){
+      const topic=lastChatTopic;
+      const section=relevantSection(topic,'wat kan ik nu doen');
+      const step=window.ED_DOSSIERS?.[topic.id]?.steps?.[0];
+      const answer=step||section?.text||topic.intro;
+      return {text:'Bij '+topic.title.toLocaleLowerCase('nl')+' kun je hiermee beginnen:\n\n'+answer,primary:{text:topic.title,href:topicLink(topic.id)},extra:[],suggestions:[]};
+    }
+    const eventWords=/(webinar|online cursus|voorlichtingsavond|online bijeenkomst|lezing)/.test(n);
+    if(eventWords){
+      const now=new Date().toLocaleDateString('sv-SE');
+      const upcoming=(window.ED_UPDATES?.events||[]).filter(event=>event.date>=now&&(/webinar|online|lezing/i.test([event.title,event.location].join(' '))));
+      const words=termsOf(q).filter(w=>!['webinar','online','cursus','lezing','bijeenkomst'].includes(w));
+      const matching=words.length?upcoming.filter(e=>words.some(w=>norm([e.title,e.summary,...(e.topics||[])].join(' ')).includes(w))):upcoming;
+      const chosen=(matching.length?matching:upcoming).slice().sort((a,b)=>a.date.localeCompare(b.date)).slice(0,3);
+      if(chosen.length){
+        const format=date=>new Date(date+'T12:00:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long'});
+        return {text:'Er zijn komende bijeenkomsten en webinars die je mogelijk kunt volgen:\n\n'+chosen.map(e=>'• '+e.title+' — '+format(e.date)+', '+e.time+(e.location==='Online'?' (online)':'')).join('\n')+'\n\nControleer de aanmelding bij de organisator.',primary:{text:'Agenda',href:'#/agenda'},extra:chosen.map(e=>({text:e.title,href:'#/agenda/'+e.id,note:e.source})),suggestions:[]};
+      }
+    }
+    const found=window.ED_SEARCH.search(q,{limit:12});
+    const ranked=rankTopics(q,4);
     let topic=found.topics[0]||null;
-    // Herken veelgebruikte vraagvormen, maar gebruik de volledige bronindex voor vrije woorden.
     if(/(iets doen|wat is er te doen|leuke activiteiten|activiteiten voor)/.test(n))topic=byId.get('activiteiten')||topic;
-    else if(/(ik voel me eenzaam|geen vrienden|alleen voelen|sociaal contact)/.test(n))topic=byId.get('eenzaamheid')||topic;
+    else if(/(ik voel me eenzaam|geen vrienden|alleen voelen|sociaal contact)/.test(n))topic=byId.get('ontmoeten')||topic;
     else if(/(ik heb schulden|deurwaarder|betalingsachterstand)/.test(n))topic=byId.get('schulden')||topic;
-    else if(/(autisme|autistisch|\bass\b|autismespectrum)/.test(n))topic=byId.get('autisme')||topic;
+    else if(/(autisme|autistisch|\bass\b|autismespectrum|overprikkeling)/.test(n))topic=byId.get('autisme')||topic;
+    else if(/(thuiszitter|schoolstress|schoolverzuim|niet naar school)/.test(n))topic=byId.get('schoolstress')||topic;
+    else if(/(baby|zwanger|borstvoeding|consultatiebureau|bevalling)/.test(n))topic=byId.get('baby')||topic;
     else if(/(wijkwijzer|waar kan ik terecht|inloopspreekuur)/.test(n))topic=byId.get('wijkwijzer')||topic;
+    else if(/(geen inkomen|zonder inkomen|geen geld|rondkomen|kan niet betalen|inkomen weggevallen)/.test(n))topic=byId.get('geld')||topic;
+    else if(/(baan verloren|werkloos|ontslagen|baan kwijt)/.test(n))topic=byId.get('werk')||topic;
     else if(!topic&&ranked.length)topic=ranked[0];
     const docs=found.sources.filter(item=>item.score>=12).slice(0,6);
     if(topic){
+      lastChatTopic=topic;
+      const section=relevantSection(topic,q);
       const dossier=window.ED_DOSSIERS?.[topic.id];
-      let text=shortText(topic.intro||topic.summary,275);
-      const practical=Array.isArray(dossier?.steps)&&dossier.steps.length?dossier.steps[0]:null;
-      if(practical&&/(hoe|waar|welke|wat kan|wat moet|hulp|advies|begin|stap|regelen|terecht|zoek)/.test(n)){
-        const extra=shortText(practical,125);
-        if(text.length+extra.length<385&&!norm(text).includes(norm(extra)))text+=' '+extra;
+      const paragraphs=[completeText(topic.intro)];
+      if(section?.text&&!norm(topic.intro).includes(norm(section.text)))paragraphs.push(completeText(section.text));
+      if(/(hoe|wat kan ik|wat moet ik|waar begin|geen idee|advies|nu|stappen)/.test(n)&&dossier?.steps?.length){
+        const first=completeText(dossier.steps[0]);
+        if(first&&!paragraphs.some(p=>norm(p).includes(norm(first))))paragraphs.push('Eerste stap: '+first);
       }
+      const text=paragraphs.filter(Boolean).join('\n\n');
       const primary={text:topic.title,href:topicLink(topic.id)};
       const extras=docs.slice(0,3).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type}));
       const related=(topic.related||[]).map(id=>byId.get(id)).filter(Boolean).slice(0,2);
@@ -238,10 +284,11 @@
     }
     if(docs.length){
       const best=docs[0];
-      const text=shortText(best.excerpt||best.summary,325)||'Ik heb hierover informatie uit een lokale bron gevonden.';
-      return {text,primary:{text:best.title,href:sourceRoute(best,q)},extra:docs.slice(1,4).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type})),suggestions:[]};
+      const summary=completeText(best.summary);
+      const informative=summary?summary:'Ik vond informatie over '+best.title.toLocaleLowerCase('nl')+' bij '+best.source+'.';
+      return {text:informative,primary:{text:best.title,href:sourceRoute(best,q)},extra:docs.slice(1,4).map(doc=>({text:doc.title,href:sourceRoute(doc,q),note:doc.source,type:doc.type})),suggestions:[]};
     }
-    return {text:'Daarover heb ik nog geen duidelijk antwoord gevonden. Kun je iets specifieker vertellen wat je zoekt? Bijvoorbeeld een onderwerp, organisatie of activiteit. Je kunt ook bij de Wijkwijzer terecht.',primary:{text:'Bekijk de onderwerpen',href:'#/categorie/hulp'},extra:[],suggestions:[]};
+    return {text:'Daarover heb ik nog geen duidelijk antwoord gevonden. Welke informatie zoek je precies? Bijvoorbeeld een voorziening, een activiteit of een organisatie in Enschede.',primary:{text:'Bekijk de onderwerpen',href:'#/categorie/hulp'},extra:[],suggestions:[]};
   }
   const chatLink=(item,css)=>{
     const external=/^https:\/\//.test(item.href);
@@ -281,5 +328,5 @@
   chatForm.addEventListener('submit',e=>{e.preventDefault();const text=chatInput.value;chatInput.value='';answer(text);chatInput.focus();});
   document.querySelectorAll('#chat-dialog [data-question]').forEach(button=>button.addEventListener('click',()=>answer(button.dataset.question)));
   // Behulpzame beginvragen zonder gepersonaliseerde verwerking.
-  window.ED_DEBUG={rankTopics,search:(q)=>window.ED_SEARCH.search(q),topics:byId,categories:categoryById};
+  window.ED_DEBUG={rankTopics,search:(q)=>window.ED_SEARCH.search(q),chat:composeChatReply,topics:byId,categories:categoryById};
 })();
