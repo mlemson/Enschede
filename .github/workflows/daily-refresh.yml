@@ -8,7 +8,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: github-pages
+  group: pages-deploy
   cancel-in-progress: false
 jobs:
   refresh-and-deploy:
@@ -26,12 +26,14 @@ jobs:
       - name: Publieke index verversen
         run: python tools/build_source_index.py
       - name: Nieuws en agenda verversen
-        run: python tools/refresh_updates.py
+        run: |
+          python tools/refresh_updates.py
+          python tools/monitor_news.py
       - name: Bewaar index
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add source-index.js source-index.json auto-updates.js
+          git add source-index.js source-index.json auto-updates.js data/news-review.json
           if ! git diff --cached --quiet; then
             git commit -m 'Actualiseer sociale informatie, nieuws en activiteiten'
             git push origin HEAD:main
