@@ -11,6 +11,13 @@
   const make=(tag,cl,text)=>{const n=document.createElement(tag);if(cl)n.className=cl;if(text!==undefined)n.textContent=text;return n;};
   const a=(href,cl,text,external=false)=>{const el=make('a',cl,text);el.href=href;if(external){el.target='_blank';el.rel='noopener noreferrer';}return el;};
   const icon=(name)=>{const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.classList.add('icon');s.setAttribute('aria-hidden','true');const u=document.createElementNS('http://www.w3.org/2000/svg','use');u.setAttribute('href','#i-'+name);s.append(u);return s;};
+  // Platformonafhankelijke lijniconen in plaats van emoji op mobiele apparaten.
+  const visualIcon=(name,classes)=>{
+    const el=make('span',classes);
+    if(['users','calendar','heart'].includes(name))el.append(icon(name));
+    else el.textContent=name;
+    return el;
+  };
   const topicLink=id=>'#/onderwerp/'+id;
   const categoryLink=id=>'#/categorie/'+id;
   const words=(t)=>norm([t.title,t.tag,t.summary,t.keywords,t.intro].join(' '));
@@ -44,12 +51,12 @@
       return {topic,score,i};
     }).filter(x=>x.score>0).sort((x,y)=>y.score-x.score||x.i-y.i).slice(0,limit).map(x=>x.topic);
   }
-  function localCard(topic,variant=''){const link=a(topicLink(topic.id),'guide-topic-card'+(variant?' '+variant:''));link.append(make('span','guide-topic-icon tone-'+topic.tone,topic.icon));const copy=make('span','guide-card-body');copy.append(make('strong',null,topic.title),make('small',null,topic.summary));link.append(copy);return link;}
+  function localCard(topic,variant=''){const link=a(topicLink(topic.id),'guide-topic-card'+(variant?' '+variant:''));link.append(visualIcon(topic.icon,'guide-topic-icon tone-'+topic.tone));const copy=make('span','guide-card-body');copy.append(make('strong',null,topic.title),make('small',null,topic.summary));link.append(copy);return link;}
   function externalCard(link){const wrap=a(link.url,'guide-source-card',undefined,true);const copy=make('span');copy.append(make('strong',null,link.title),make('small',null,link.note||''));wrap.append(copy);return wrap;}
   function detailHeading(){const wrap=make('div','guide-header-bar shell');wrap.append(a('#boven','guide-back','Start'));return wrap;}
   function buildCategory(category){
     const view=$('#guide-view');view.replaceChildren(detailHeading());
-    const hero=make('div','guide-hero shell');const text=make('div','guide-hero-copy');text.append(make('span','guide-eyebrow','ENSCHEDE DICHTBIJ'),make('span','guide-top-symbol tone-'+category.tone,category.icon),make('h1',null,category.title),make('p',null,category.intro));
+    const hero=make('div','guide-hero shell');const text=make('div','guide-hero-copy');text.append(make('span','guide-eyebrow','ENSCHEDE DICHTBIJ'),visualIcon(category.icon,'guide-top-symbol tone-'+category.tone),make('h1',null,category.title),make('p',null,category.intro));
     const picture=make('div','guide-photo');const img=make('img');img.src=category.image;img.alt='Illustratie bij '+category.title;picture.append(img);
     hero.append(text,picture);view.append(hero);
     const content=make('div','guide-content shell');const top=make('section','guide-section');top.append(make('h2',null,'Onderwerpen'));const cards=make('div','guide-topic-grid');category.topics.map(id=>byId.get(id)).filter(Boolean).forEach(t=>cards.append(localCard(t)));top.append(cards);content.append(top);
@@ -78,7 +85,7 @@
   function buildTopic(topic){
     const view=$('#guide-view');view.replaceChildren(detailHeading());
     const header=make('div','guide-topic-hero shell');const bread=make('div','guide-crumb');const category=categoryById.get(topic.category);bread.append(a(categoryLink(topic.category),'',category?.title||'Thema'),document.createTextNode('  /  '+topic.title));
-    const top=make('div','guide-topic-hero-intro');top.append(make('span','guide-top-symbol tone-'+topic.tone,topic.icon));const copy=make('div');copy.append(make('span','guide-eyebrow',topic.tag),make('h1',null,topic.title),make('p',null,topic.intro));top.append(copy);header.append(bread,top);view.append(header);
+    const top=make('div','guide-topic-hero-intro');top.append(visualIcon(topic.icon,'guide-top-symbol tone-'+topic.tone));const copy=make('div');copy.append(make('span','guide-eyebrow',topic.tag),make('h1',null,topic.title),make('p',null,topic.intro));top.append(copy);header.append(bread,top);view.append(header);
     const columns=make('div','guide-detail-grid shell');const main=make('article','guide-article');
     const childIds=category?.subtopics?.[topic.id]||[];
     if(childIds.length){
