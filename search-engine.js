@@ -33,8 +33,8 @@
   const sourceItems=[...(Array.isArray(index.items)?index.items:[]), ...(Array.isArray(window.ED_EXTRA_SOURCES)?window.ED_EXTRA_SOURCES:[])];
   const updates=window.ED_UPDATES||{events:[],recurring:[],news:[]};
   const auto=window.ED_AUTO_UPDATES||{events:[],news:[]};
-  for(const e of [...updates.events,...updates.recurring,...(auto.events||[])].filter(x=>!x.date||x.date>=new Date().toLocaleDateString('sv-SE')))sourceItems.push({id:'agenda-'+e.id,title:e.title,type:'activiteit',source:e.source,url:e.url,internal:'#/agenda/'+e.id,summary:e.summary,terms:[e.location,e.area,e.category,e.time||e.frequency,...(e.topics||[])].join(' '),segments:[e.summary],checked:updates.checked});
-  for(const n of [...updates.news,...(auto.news||[])].filter(x=>!x.expires||x.expires>=new Date().toLocaleDateString('sv-SE')))sourceItems.push({id:'nieuws-'+n.id,title:n.title,type:'informatie',source:n.source,url:n.url,internal:'#/nieuws/'+n.id,summary:n.summary,terms:[n.area,n.category,...(n.topics||[])].join(' '),segments:[n.description],checked:updates.checked});
+  for(const e of [...updates.events,...updates.recurring,...(auto.events||[])].filter(x=>!x.date||x.date>=new Date().toLocaleDateString('sv-SE')))sourceItems.push({id:'agenda-'+e.id,title:e.title,type:'activiteit',source:e.source,url:e.url,internal:'#/agenda/'+e.id,summary:e.summary,terms:[e.location,e.area,e.category,e.time||e.frequency,...(e.topics||[]),...(e.details||[]),...(e.practical||[])].join(' '),segments:[e.summary,...(e.details||[])],checked:updates.checked});
+  for(const n of [...updates.news,...(auto.news||[])].filter(x=>!x.expires||x.expires>=new Date().toLocaleDateString('sv-SE')))sourceItems.push({id:'nieuws-'+n.id,title:n.title,type:'informatie',source:n.source,url:n.url,internal:'#/nieuws/'+n.id,summary:n.summary,terms:[n.area,n.category,...(n.topics||[]),...(n.details||[]),...(n.points||[])].join(' '),segments:[n.description,...(n.details||[])],checked:updates.checked});
   const ownItems=(window.ED_CONTENT?.topics||[]);
   const sources=sourceItems.filter(item=>item&&/^https:\/\//.test(item.url||'')).map(item=>{
     const excerpts=Array.isArray(item.segments)?item.segments:[];

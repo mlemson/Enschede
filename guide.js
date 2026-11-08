@@ -88,6 +88,7 @@
       childIds.map(id=>byId.get(id)).filter(Boolean).forEach(child=>links.append(a(topicLink(child.id),'guide-subtopic-link',child.title)));
       rail.append(links);main.append(rail);
     }
+    if(topic.editorialImage){const fig=make('figure','ed-context-figure');const photo=make('img');photo.src=topic.editorialImage;photo.alt=topic.editorialImageAlt||'Sfeerbeeld';photo.loading='lazy';fig.append(photo,make('figcaption',null,'Sfeerbeeld'));main.append(fig);}
     topic.sections.forEach((section,i)=>{const block=make('section','guide-copy-block');block.append(make('h2',null,section.title));if(section.text)block.append(make('p',null,section.text));if(section.bullets){const list=make('ul');section.bullets.forEach(item=>list.append(make('li',null,item)));block.append(list);}main.append(block);});
     const dossier=window.ED_DOSSIERS?.[topic.id];
     if(dossier){
@@ -137,7 +138,9 @@
     const blocks=(relatedSegments.length?relatedSegments:item._excerpts||[]).slice(0,5);
     if(blocks.length)for(const seg of blocks)section.append(make('p',null,seg.text));
     else section.append(make('p',null,item.summary));article.append(section);
-    const info=make('div','guide-update-note');info.append(make('span',null,'Korte samenvatting · bronindex '+safeDate(window.ED_SEARCH.checked)+'.'));article.append(info);content.append(article);
+    const candidates=rankTopics(query||item.title,2);const matching=candidates.find(t=>t&&t.sections?.length);
+    if(matching){const more=make('section','guide-copy-block ed-source-companion');more.append(make('h2',null,'Uitleg en mogelijkheden in Enschede'),make('p',null,matching.intro));for(const s of matching.sections.slice(-2)){more.append(make('h3',null,s.title),make('p',null,s.text));}more.append(a(topicLink(matching.id),'ed-quiet-cta','Meer over '+matching.title));article.append(more);}
+    const info=make('div','guide-update-note');info.append(make('span',null,'Bronindex '+safeDate(window.ED_SEARCH.checked)+' · Lees de originele bron voor de meest actuele voorwaarden.'));article.append(info);content.append(article);
     const aside=make('aside','guide-aside');const panel=make('div','guide-aside-panel');panel.append(make('h2',null,'Oorspronkelijke bron'));panel.append(externalCard({url:item.url,title:item.source,note:''}));if(item.caution)panel.append(make('p','source-caution',item.caution));aside.append(panel);content.append(aside);
     view.append(content);document.title=item.title+' | Enschede dichtbij';
   }
