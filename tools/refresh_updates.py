@@ -88,11 +88,11 @@ def main():
     r=session.get(url,headers=HEADERS,timeout=18)
     if r.status_code==200 and len(r.content)<2000000:agenda.extend(events(r.text,url,label,today))
    except requests.RequestException:pass
- if not news:news=previous.get('news',[])
+ news=[*previous.get('news',[]),*news]
  if not agenda:agenda=previous.get('events',[])
- news=[x for x in news if x.get('date','')>=str(today-dt.timedelta(days=65))]
+ news=list({x['url']:x for x in news if x.get('url') and x.get('date','')>=str(today-dt.timedelta(days=65))}.values())
  agenda=[x for x in agenda if x.get('date','')>=str(today)]
- data={'checked':str(today),'news':news,'events':list({(x['date'],x['title']):x for x in agenda}.values())[:60]}
+ data={'checked':str(today),'news':news,'events':list({(x['date'],x['title']):x for x in agenda}.values())[:60],'newsChecks':previous.get('newsChecks',{})}
  OUT.write_text('window.ED_AUTO_UPDATES='+json.dumps(data,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
  print('Nieuws:',len(news),'activiteiten:',len(data['events']))
 if __name__=='__main__':main()

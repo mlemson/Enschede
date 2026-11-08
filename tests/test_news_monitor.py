@@ -21,3 +21,8 @@ def test_news_urls():
 
 def test_edited_news_is_loaded():
     assert 'nieuws-pathmos' in (ROOT/'news-editorial.js').read_text(encoding='utf-8')
+
+
+def test_local_update_file_is_read_even_with_following_js():
+    rows=m.parse_variable(ROOT/'local-updates.js')
+    assert any(x.get('id')=='nieuws-pathmos' for x in rows.get('news',[]))

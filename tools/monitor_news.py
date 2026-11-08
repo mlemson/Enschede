@@ -108,7 +108,7 @@ def candidate_links(html):
 def parse_variable(path):
     try:
         text = path.read_text(encoding='utf-8')
-        return json.loads(text.split('=',1)[1].rstrip(';\n'))
+        return json.JSONDecoder().raw_decode(text.split('=',1)[1].lstrip())[0]
     except (ValueError, IndexError, FileNotFoundError):
         return {}
 
