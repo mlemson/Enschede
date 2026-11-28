@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-27",
+  "checked": "2026-11-28",
   "note": "Periodieke publieke bronindex; gegevens kunnen wijzigen.",
   "items": [
     {
@@ -24,13 +24,13 @@
       "summary": "Je ziet ons overal in Enschede. We organiseren kriskras door de stad allerlei activiteiten. Juist omdat we erop gericht zijn mensen te verbinden, creëren we ontmoetingsplekken. Het liefste dichtbij jouw huis. We willen…",
       "segments": [
         "Je ziet ons overal in Enschede. We organiseren kriskras door de stad allerlei activiteiten. Juist omdat we erop gericht zijn mensen te verbinden, creëren we…",
-        "Vrijdag van 19.15 - 20.45 uur.",
-        "Bonhoeffer College & het Stedelijk Alpha Maandag, dinsdag, donderdag en vrijdag van 14.00 - 16.00 uur.",
-        "Maandag en vrijdag van 14.30 - 16.30 uur.",
-        "Woensdag en vrijdag van 12.45 tot 14.45 uur.",
-        "Iedere woensdag van 10.00 tot 12.00 uur Iedere vrijdag van 13.00 tot 15.00 uur",
-        "Vrijdag van 15.30 - 17.00 uur.",
-        "Iedere vrijdag van 12.00 tot 16.00 uur"
+        "Maandag van 19.00 - 20.30 uur.",
+        "Maandag 13.30-16.00 uur en dinsdag en donderdag van 9.30 - 12.00 uur.",
+        "Maandag van 10.00-11.45 uur. Donderdag van 10.00-11.45 uur.",
+        "Maandag van 19.00-21.00 uur.",
+        "Maandag van 17.00 - 19.00 uur.",
+        "Maandag van 19.00 - 21.00 uur.",
+        "Maandag en donderdag van 14.30 - 16.30 uur."
       ],
       "terms": "activiteiten alle allerlei alpha bijeenkomst blij bonhoeffer college creëren dat dichtbij die dinsdag donderdag door een enschede erop gericht gezamenlijke hebben het huis iedere inloop jonge jouw juist kompas kriskras liefste lijsterstraat maandag meedoen mensen moeders nije noordhollandstraat omdat ons ontmoetingsgroep ontmoetingsplekken organiseren overal pro spreken stad stedelijk terphoes tot turks uur van verbinden voor vooral vrijdag vrouwen waar wanneer willen woensdag woensdagmiddag wordt ziet zijn",
       "caution": "Controleer veranderlijke informatie bij de bron."
@@ -350,21 +350,23 @@
       "caution": "Controleer voorwaarden bij de aanbieder."
     },
     {
-      "id": "web-https-www-alifa-nl-activiteit-470-huiskamer-obs-de-spinner",
-      "title": "Huiskamer OBS de Spinner",
+      "id": "web-https-www-alifa-nl-activiteit-448-huiskamer-bonhoeffer-geessinkweg",
+      "title": "Huiskamer Bonhoeffer Geessinkweg",
       "source": "Alifa",
       "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/470/huiskamer-obs-de-spinner",
-      "summary": "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van OBS de Spinner. Deze huiskamer is speciaal voor leerlingen uit groep 6, 7 en 8. In de huiskamer kun je lekker…",
+      "url": "https://www.alifa.nl/activiteit/448/huiskamer-bonhoeffer-geessinkweg",
+      "summary": "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van het Bonhoeffer college. In de huiskamer kun je lekker komen chillen, gamen, praten of nog even bezig met…",
       "segments": [
-        "Woensdag en vrijdag van 12.45 tot 14.45 uur.",
-        "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van OBS de Spinner. Deze huiskamer is speciaal voor…",
+        "Huiskamer Bonhoeffer Geessinkweg",
+        "Maandag en donderdag van 14.00 - 15.30 uur.",
+        "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van het Bonhoeffer college. In de huiskamer kun je…",
         "De huiskamer is geheel vrijblijvend en kost je niks!",
-        "Waar? De Huiskamer, OBS de spinner.",
-        "Wanneer? Elke woensdag en vrijdag van 12.45 tot 14.45 uur.",
+        "Waar? De Huiskamer, Bonhoeffer College Geesinkweg.",
+        "Wanneer? Elke maandag en donderdag van 14.00 tot 15.30.",
+        "Voor meer informatie kun je contact opzoeken met Anouk ( [contactgegevens bij bron] )",
         "Er zijn geen activiteiten gevonden."
       ],
-      "terms": "aanwezig activiteiten altijd bezig bij blijven chillen dan deze een eens elke even gaan gamen geen geheel gevonden groep hangen heb huis huiskamer jongerenwerker kan kom komen kost kun langs leerlingen lekker met naar niks nog obs ook praten school schoolwerk speciaal spinner terecht tot uit uur van voor vooral vrijblijvend vrijdag waar wanneer woensdag zijn zin zit",
+      "terms": "aanwezig activiteiten altijd anouk bezig bij blijven bonhoeffer bron chillen college contact contactgegevens dan donderdag een eens elke even gaan gamen geen geesinkweg geessinkweg geheel gevonden hangen heb het huis huiskamer informatie jongerenwerker kan kom komen kost kun langs lekker maandag meer met naar niks nog ook opzoeken praten school schoolwerk terecht tot uur van voor vooral vrijblijvend waar wanneer zijn zin zit",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -379,6 +381,26 @@
       ],
       "terms": "Alifa Huiskamer Stedelijk Diekman Jongerenhuiskamer voor ontmoeting en laagdrempelig contact. jeugd ['jeugd', 'activiteit', 'inloop', 'taal', 'jongeren'] ['jeugd']",
       "caution": "Controleer voorwaarden bij de aanbieder."
+    },
+    {
+      "id": "web-https-www-alifa-nl-activiteit-294-huiskamer-stedelijk-diekman",
+      "title": "Huiskamer Stedelijk Diekman",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/294/huiskamer-stedelijk-diekman",
+      "summary": "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van het Stedelijk Diekman. In de huiskamer kun je lekker komen chillen, gamen, praten of nog even bezig met…",
+      "segments": [
+        "Maandag en donderdag van 14.30 - 16.30 uur.",
+        "Heb je na school nog geen zin om naar huis te gaan? Dan kun je nog even blijven hangen in de huiskamer van het Stedelijk Diekman. In de huiskamer kun je lekker…",
+        "De huiskamer is geheel vrijblijvend en kost je niks!",
+        "Waar? De Huiskamer, Het Stedelijk Diekman",
+        "Wanneer? Elke maandag en donderdag van 14.30 tot 16.30 uur.",
+        "Voor meer informatie kun je contact opzoeken met Quirijn:",
+        "06-59 82 30 39 [contactgegevens bij bron]",
+        "Er zijn geen activiteiten gevonden."
+      ],
+      "terms": "aanwezig activiteiten altijd bezig bij blijven bron chillen contact contactgegevens dan diekman donderdag een eens elke even gaan gamen geen geheel gevonden hangen heb het huis huiskamer informatie jongerenwerker kan kom komen kost kun langs lekker maandag meer met naar niks nog ook opzoeken praten quirijn school schoolwerk stedelijk terecht tot uur van voor vooral vrijblijvend waar wanneer zijn zin zit",
+      "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
       "id": "kaart-extra-20261002-alifa-huiskamer-wethouder-beverstraat",
@@ -530,6 +552,25 @@
       "caution": "Controleer het programma bij de uitvoerder."
     },
     {
+      "id": "web-https-www-alifa-nl-activiteit-293-jongereninloop-10-robina",
+      "title": "Jongereninloop 10+ Robina",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/293/jongereninloop-10-robina",
+      "summary": "Hou jij ervan om gezellig met je vrienden/vriendinnen leuke dingen te doen of gezellig te chillen? Dat kan bij speeltuin Robinia. Om de week is er een tieneravond voor jongens en meisjes vanaf 10 jaar. Samen met de…",
+      "segments": [
+        "Maandag van 19.00 - 21.00 uur.",
+        "Hou jij ervan om gezellig met je vrienden/vriendinnen leuke dingen te doen of gezellig te chillen? Dat kan bij speeltuin Robinia. Om de week is er een…",
+        "Waar? Speeltuin Robinia, Berkstraat 31A Wanneer? Om de week op maandagavond 19.00 - 21.00",
+        "Aanmelden wordt wel gewaardeerd.",
+        "Voor meer aanmelden of meer informatie kun je contact opzoeken met Jelle.",
+        "Jelle - 06 86 86 16 60 - [contactgegevens bij bron]",
+        "Er zijn geen activiteiten gevonden."
+      ],
+      "terms": "31a aan aanmelden activiteiten bakken bedenken berkstraat bij bron chillen contact contactgegevens dan dat denk dingen doen een ervan gaan geen gevonden gewaardeerd gezellig gooi groep heb het hou idee iets informatie jaar jelle jij jongens jongerewerker jullie kan kart kijken kun lekker leuk leuke maandag maandagavond mario meer meisjes met mogelijk natuurlijk opeten opzoeken potje robinia samen speeltuin spelletjes tieneravond uur van vanaf voor vrienden vriendinnen waar wanneer week wel wordt zelf zijn",
+      "caution": "Controleer veranderlijke informatie bij de bron."
+    },
+    {
       "id": "web-https-www-alifa-nl-activiteit-286-jongereninloop-12-20-jaar-helmerhoek",
       "title": "Jongereninloop 12-20 jaar Helmerhoek",
       "source": "Alifa",
@@ -563,6 +604,26 @@
       "caution": "Controleer voorwaarden bij de aanbieder."
     },
     {
+      "id": "web-https-www-alifa-nl-activiteit-292-jongereninloop-de-hut",
+      "title": "Jongereninloop De Hut",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/292/jongereninloop-de-hut",
+      "summary": "Voor iedereen uit de wijk tussen 12-18 jaar organiseren we elke woensdagmidaag een jongereninloop.",
+      "segments": [
+        "Maandag van 19.00 - 21.00 uur.",
+        "Voor iedereen uit de wijk tussen 12-18 jaar organiseren we elke woensdagmidaag een jongereninloop.",
+        "Lijkt het je leuk en heb je niks te doen? Kom dan tafeltennissen, darten, gamen of natuurlijk gewoon socializen en chillen.",
+        "Waar? De Hut, Schipholtstraat 47",
+        "Wanneer? Elke maandagavond van 19.00 - 21.00 uur.",
+        "Voor meer informatie kun je contact opnemen met Randy",
+        "Randy - 06 53 34 71 82 - [contactgegevens bij bron]",
+        "Er zijn geen activiteiten gevonden."
+      ],
+      "terms": "activiteiten bij bron chillen contact contactgegevens dan darten doen een elke gamen geen gevonden gewoon heb het hut iedereen informatie jaar jongereninloop kom kun leuk lijkt maandag maandagavond meer met natuurlijk niks opnemen organiseren randy schipholtstraat socializen tafeltennissen tussen uit uur van voor waar wanneer wijk woensdagmidaag zijn",
+      "caution": "Controleer veranderlijke informatie bij de bron."
+    },
+    {
       "id": "kaart-extra-20261002-alifa-jongereninloop-helmerhoek",
       "title": "Jongereninloop Helmerhoek",
       "source": "Alifa",
@@ -587,26 +648,6 @@
       ],
       "terms": "Alifa Jongereninloop Robina Terugkerende jongereninloop in stadsdeel West. jeugd ['jeugd', 'activiteit', 'inloop', 'taal', 'jongeren'] ['jeugd']",
       "caution": "Controleer voorwaarden bij de aanbieder."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-217-jongereninloop-twekkerveld",
-      "title": "Jongereninloop Twekkerveld",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/217/jongereninloop-twekkerveld",
-      "summary": "Hou jij ervan om gezellig met je vrienden/vriendinnen leuke dingen te doen of gezellig te chillen? Dat kan bij de jongereninloop Twekkerveld. Elke week is er een jongereninloop voor alle jongeren uit de buurt. Samen met…",
-      "segments": [
-        "Vrijdag van 19.15 - 20.45 uur.",
-        "Hou jij ervan om gezellig met je vrienden/vriendinnen leuke dingen te doen of gezellig te chillen? Dat kan bij de jongereninloop Twekkerveld. Elke week is er…",
-        "Waar? 't Proathuus, Regulusstraat 10 Wanneer? Elke week op vrijdagavond van 19.15 - 20.45 uur.",
-        "Aanmelden wordt wel gewaardeerd.",
-        "Voor aanmelden of meer informatie kun je contact opzoeken met Yuksel, Sagar of Mihriban.",
-        "Yuksel - 06 86 84 21 58 - [contactgegevens bij bron]",
-        "Sagar - 06 53 20 52 72 - [contactgegevens bij bron]",
-        "Mihriban - 06 53 20 54 12 - [contactgegevens bij bron]"
-      ],
-      "terms": "aan aanmelden activiteiten alle bakken bedenken bij bron buurt chillen contact contactgegevens dan dat denk dingen doen een elke ervan gaan geen gevonden gewaardeerd gezellig gooi groep heb het hou idee iets informatie jij jongeren jongereninloop jongerewerker jullie kan kart kijken kun lekker leuk leuke mario meer met mihriban mogelijk natuurlijk opeten opzoeken potje proathuus regulusstraat sagar samen spelletjes twekkerveld uit uur van voor vrienden vriendinnen vrijdag vrijdagavond waar wanneer week wel wordt yuksel zelf zijn",
-      "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
       "id": "kaart-candidate-bc42d591cc63c342-activiteit-2",
@@ -635,6 +676,26 @@
       "caution": "Controleer voorwaarden bij de aanbieder."
     },
     {
+      "id": "web-https-www-alifa-nl-activiteit-288-lees-en-schrijfhuis",
+      "title": "Lees- en schrijfhuis",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/288/lees-en-schrijfhuis",
+      "summary": "Kun je al een beetje Nederlands lezen en schrijven, maar wil je dit verbeteren? Dan is het Lees- en Schrijfhuis de juiste plek voor jou.",
+      "segments": [
+        "Kun je al een beetje Nederlands lezen en schrijven, maar wil je dit verbeteren? Dan is het Lees- en Schrijfhuis de juiste plek voor jou.",
+        "De Nederlands taal heeft veel regeltjes, maar niet iedereen kent die regels even goed. Schrijf je ‘word’ nou met of zonder -t erachter? Hoe schrijf ik alle…",
+        "Het antwoord op al deze vragen kun je leren bij het Lees- en Schrijfhuis. Elke week oefen je samen met hetzelfde groepje. Een vrijwilliger zorgt voor goed…",
+        "Let op, je kan alleen starten bij het lees en schrijfhuis na een intake bij het Huis voor Taal en Meedoen.",
+        "Waar? Centrale bibiliotheek / Bieblab, Pijpenstraat 15",
+        "Wanneer? Maandag 12.30u - 14.30u",
+        "Voor meer informatie kun je contact opzoeken met Linda.",
+        "Linda - 06 10 00 56 92 - [contactgegevens bij bron]"
+      ],
+      "terms": "30u activiteiten alle alleen antwoord beetje belangrijk beter bibiliotheek bieblab bij brief bron centrale contact contactgegevens dan deze die dit een elke erachter even geen gevonden goed goede groepje heeft helpt het hetzelfde hoe huis iedereen informatie intake jij jou juiste kan kent kun lees leren lesmateriaal let lezen linda maandag maar meedoen meer met nederlands niet nou oefen ook opzoeken pijpenstraat plek regels regeltjes samen schrijf schrijfhuis schrijven starten taal veel verbeteren volgorde voor vragen vrijwilliger waar wanneer week welke wil woorden word zijn zonder zorgt",
+      "caution": "Controleer veranderlijke informatie bij de bron."
+    },
+    {
       "id": "kaart-candidate-20261001-alifa-ouder-kindgroepen-activiteit-0",
       "title": "Lumen",
       "source": "Alifa",
@@ -660,26 +721,6 @@
         "Vacatures voor vrijwilligerswerk bij Alifa"
       ],
       "terms": "500 activiteiten alifa als bent bij daar dan diensten handen helpende jouw kun kunnen meer misschien naar niet nieuwe nieuwsgierig nog onmisbaar onze terecht uitdaging vacatures vind voor vrijwilligers vrijwilligerswerk wel welke wij zijn zoek zonder zouden",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-215-meideninloop-12-chill-out",
-      "title": "Meideninloop 12- Chill out",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/215/meideninloop-12-chill-out",
-      "summary": "Soms is het fijn om even alleen met meiden onder elkaar te zijn. Bij de activiteiten van het meidenwerk kun je samen met andere meiden leuke, leerzame en gezellige activiteiten doen.",
-      "segments": [
-        "Vrijdag van 15.30 - 17.00 uur.",
-        "Soms is het fijn om even alleen met meiden onder elkaar te zijn. Bij de activiteiten van het meidenwerk kun je samen met andere meiden leuke, leerzame en…",
-        "Wat we gaan doen bepalen we samen: we kiezen zelf onze thema’s waarover we willen praten of doe mee aan workshops speciaal voor meiden. Onze Meidenclubs zijn…",
-        "Je kunt bij ons altijd terecht voor vragen, een luisterend oor, advies of goede tips.",
-        "Locatie: Jongerencentrum Chill Out, Bosuilstraat 5 A",
-        "Voor informatie en aanmelden kun je contact opnemen met Mihriban of Kim.",
-        "Mihriban - 06 53 20 54 12 - [contactgegevens bij bron]",
-        "Kim - 06 53 20 54 84 - [contactgegevens bij bron]"
-      ],
-      "terms": "aan aanmelden activiteiten advies alleen altijd andere bepalen bij bosuilstraat bron chill contact contactgegevens doe doen een eigen elkaar even fijn gaan geen gevonden gezellig gezellige goede heel het informatie jongerencentrum kiezen kim kracht kun kunt leert leerzame leuke locatie luisterend maar mee meiden meidenclubs meidenwerk met mihriban niet onder ons ontdekken onze ook oor opnemen out praten samen soms speciaal terecht thema tips uur van vergroten voor vragen vrijdag waarover wat willen workshops zelf zijn",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -720,66 +761,6 @@
       ],
       "terms": "Alifa seniorenwerk ontmoeten ['ontmoeten'] ['ontmoeten'] {'name': 'Muziek, koren, dansen en toneel'}",
       "caution": "Controleer het programma bij de uitvoerder."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-478-ontmoetingsgroep-voor-surinaamse-mannen-en-vrouwen",
-      "title": "Ontmoetingsgroep voor Surinaamse mannen en vrouwen",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/478/ontmoetingsgroep-voor-surinaamse-mannen-en-vrouwen",
-      "summary": "Spinnerstraat 27 A Enschede ( Wijkcentrum de Boei) Iedere vrijdag van 12.00 tot 16.00 uur",
-      "segments": [
-        "Ontmoetingsgroep voor Surinaamse mannen en vrouwen",
-        "Iedere vrijdag van 12.00 tot 16.00 uur",
-        "Spinnerstraat 27 A Enschede ( Wijkcentrum de Boei) Iedere vrijdag van 12.00 tot 16.00 uur",
-        "Het is belangrijk om mensen te ontmoeten die u verstaan en begrijpen. Dat geldt voor iedereen, maar zeker voor oudere mensen. En dat is nog belangrijker…",
-        "Alifa zorgt voor een lekker kopje koffie of thee. Hiernaast wordt ervoor gezorgd dat er materialen aanwezig zijn voor wie creatief bezig wil zijn, De groepen…",
-        "Kosten Deelname aan de ontmoetingsgroep is gratis.",
-        "Deelnemen? Wilt u deelnemen aan de ontmoetingsgroep of kent u iemand die hiervoor belangstelling heeft? Kom dan gerust langs en/of neem contact op voor meer…",
-        "Mediha Karaduman Alifa Welzijn Senioren tel. 053 480 1200"
-      ],
-      "terms": "053 1200 480 aan aanwezig aanwezigen achtergrond activiteiten alifa allerlei andere begeleiding begrijpen behoefte belangrijk belangrijker belangstelling bent bezig bij boei communiceren contact creatief culturele dag dan dat deelname deelnemen die dit een elkaar elke enschede ervoor geboren geen geldt gerust gevonden gezelschap gezorgd gratis groepen hebben hebt heeft het hiernaast hiervoor hun iedere iedereen iemand informatie karaduman kent koffie kom komen kopje kosten langs lekker maar mannen materialen mediha meer mensen moedertaal moment nederland neem niet nog onderwerpen ontmoeten ontmoetingsgroep ook oudere ouderen over senioren spinnerstraat spreekt spreken surinaamse taal tel thee tot turks uur van vast verstaan voor voorlichting vrijdag vrouwen wanneer week welzijn wie wijkcentrum wil wilt wordt zeker zijn zorgt",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-475-ontmoetingsgroep-voor-vrouwen-die-arabisch-en-suryoyo-spreken",
-      "title": "Ontmoetingsgroep voor vrouwen die Arabisch en Suryoyo spreken",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/475/ontmoetingsgroep-voor-vrouwen-die-arabisch-en-suryoyo-spreken",
-      "summary": "Iedere woensdag van 10.00 tot 12.00 uur Iedere vrijdag van 13.00 tot 15.00 uur",
-      "segments": [
-        "Ontmoetingsgroep voor vrouwen die Arabisch en Suryoyo spreken",
-        "Iedere woensdag van 10.00 tot 12.00 uur Iedere vrijdag van 13.00 tot 15.00 uur",
-        "Wesselernering 60, Enschede (gezondheidscentrum Wesselerbrink) Iedere woensdag van 10.00 tot 12.00 uur Iedere vrijdag van 13.00 tot 15.00 uur",
-        "Het is belangrijk om mensen te ontmoeten die u verstaan en begrijpen. Dat geldt voor iedereen, maar zeker voor oudere mensen. En dat is nog belangrijker…",
-        "Alifa zorgt voor een lekker kopje koffie of thee. Hiernaast wordt ervoor gezorgd dat er materialen aanwezig zijn voor wie creatief bezig wil zijn, De groepen…",
-        "Kosten Deelname aan de ontmoetingsgroep is gratis.",
-        "Deelnemen? Wilt u deelnemen aan de ontmoetingsgroep of kent u iemand die hiervoor belangstelling heeft? Kom dan gerust langs en/of neem contact op voor meer…",
-        "Mediha Karaduman Alifa Welzijn Senioren tel. 053 480 1200"
-      ],
-      "terms": "053 1200 480 aan aanwezig aanwezigen achtergrond activiteiten alifa allerlei andere arabisch begeleiding begrijpen behoefte belangrijk belangrijker belangstelling bent bezig bij communiceren contact creatief culturele dag dan dat deelname deelnemen die dit een elkaar elke enschede ervoor geboren geen geldt gerust gevonden gezelschap gezondheidscentrum gezorgd gratis groepen hebben hebt heeft het hiernaast hiervoor hun iedere iedereen iemand informatie karaduman kent koffie kom komen kopje kosten langs lekker maar materialen mediha meer mensen moedertaal moment nederland neem niet nog onderwerpen ontmoeten ontmoetingsgroep ook oudere ouderen over senioren spreekt spreken suryoyo taal tel thee tot turks uur van vast verstaan voor voorlichting vrijdag vrouwen wanneer week welzijn wesselerbrink wesselernering wie wil wilt woensdag wordt zeker zijn zorgt",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-502-ontmoetingsgroep-voor-vrouwen-die-suryoyo-nederlands-spreken",
-      "title": "Ontmoetingsgroep voor vrouwen die Suryoyo-Nederlands spreken",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/502/ontmoetingsgroep-voor-vrouwen-die-suryoyo-nederlands-spreken",
-      "summary": "Wesselernering 60, Enschede (gezondheidscentrum Wesselerbrink) Iedere vrijdag van 9.00 tot 11.00 uur",
-      "segments": [
-        "Ontmoetingsgroep voor vrouwen die Suryoyo-Nederlands spreken",
-        "Iedere vrijdag van 9.00 tot 11.00 uur",
-        "Wesselernering 60, Enschede (gezondheidscentrum Wesselerbrink) Iedere vrijdag van 9.00 tot 11.00 uur",
-        "Het is belangrijk om mensen te ontmoeten die u verstaan en begrijpen. Dat geldt voor iedereen, maar zeker voor oudere mensen. En dat is nog belangrijker…",
-        "Alifa zorgt voor een lekker kopje koffie of thee. Hiernaast wordt ervoor gezorgd dat er materialen aanwezig zijn voor wie creatief bezig wil zijn, De groepen…",
-        "Kosten Deelname aan de ontmoetingsgroep is gratis.",
-        "Deelnemen? Wilt u deelnemen aan de ontmoetingsgroep of kent u iemand die hiervoor belangstelling heeft? Kom dan gerust langs en/of neem contact op voor meer…",
-        "Mediha Karaduman Alifa Welzijn Senioren tel. 053 480 1200"
-      ],
-      "terms": "053 1200 480 aan aanwezig aanwezigen achtergrond activiteiten alifa allerlei andere begeleiding begrijpen behoefte belangrijk belangrijker belangstelling bent bezig bij communiceren contact creatief culturele dag dan dat deelname deelnemen die dit een elkaar elke enschede ervoor geboren geen geldt gerust gevonden gezelschap gezondheidscentrum gezorgd gratis groepen hebben hebt heeft het hiernaast hiervoor hun iedere iedereen iemand informatie karaduman kent koffie kom komen kopje kosten langs lekker maar materialen mediha meer mensen moedertaal moment nederland nederlands neem niet nog onderwerpen ontmoeten ontmoetingsgroep ook oudere ouderen over senioren spreekt spreken suryoyo taal tel thee tot turks uur van vast verstaan voor voorlichting vrijdag vrouwen wanneer week welzijn wesselerbrink wesselernering wie wil wilt wordt zeker zijn zorgt",
-      "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
       "id": "kaart-candidate-a2da66e7ec4d7366-activiteit-0",
@@ -826,6 +807,22 @@
       ],
       "terms": "Alifa ontmoetingsgroepen ouders en kinderen Wekelijkse groepen verspreid door Enschede waar ouders elkaar ontmoeten en informatie krijgen over opvoeding en ontwikkeling. jeugd ['jeugd', 'opvoeden & gezin', 'ontmoeten'] ['jeugd', 'ontmoeten'] {'name': 'Performance Factory', 'schedule': 'dinsdag 14.00–16.00', 'location': 'Hoge Bothofstraat 49', 'description': 'Ouders met kinderen vanaf 4 jaar.'}",
       "caution": "Controleer het programma bij de uitvoerder."
+    },
+    {
+      "id": "web-https-www-alifa-nl-activiteit-469-praatgroep",
+      "title": "Praatgroep",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/469/praatgroep",
+      "summary": "Bij de praatgroep van SIVE oefenen vrouwen samen om het spreken van de Nederlandse taal beter onder de knie te krijgen. De vrouwen die naar de Praatgroep komen hebben verschillende niveaus van Nederlands. Aanmelden is…",
+      "segments": [
+        "Bij de praatgroep van SIVE oefenen vrouwen samen om het spreken van de Nederlandse taal beter onder de knie te krijgen. De vrouwen die naar de Praatgroep komen…",
+        "WANNEER? Elke maandag en donderdag van 10.00 tot 11.30 uur in de huiskamer van SIVE op de eerste verdieping van de Centrale Bibliotheek, Pijpenstraat 15…",
+        "Voor meer informatie: [contactgegevens bij bron]",
+        "Er zijn geen activiteiten gevonden."
+      ],
+      "terms": "aanmelden activiteiten beter bibliotheek bij bron centrale contactgegevens die donderdag eerste elke enschede geen gevonden hebben het huiskamer informatie knie komen krijgen maandag meer naar nederlands nederlandse niet niveaus nodig oefenen onder pijpenstraat praatgroep samen sive spreken taal tot uur van verdieping verschillende voor vrouwen wanneer zijn",
+      "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
       "id": "kaart-extra-20261002-alifa-praathuis-centrum",
@@ -911,23 +908,43 @@
       "caution": "Controleer voorwaarden bij de aanbieder."
     },
     {
-      "id": "web-https-www-alifa-nl-activiteit-216-sportinloop-10-noord",
-      "title": "Sportinloop 10+ Noord",
+      "id": "web-https-www-alifa-nl-activiteit-291-sportactiviteit-12",
+      "title": "Sportactiviteit 12+",
       "source": "Alifa",
       "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/216/sportinloop-10-noord",
-      "summary": "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in gymzaal Schietbaanweg. We doen hier allerlei verschillende sporten en proberen je altijd uit te dagen. Zo is…",
+      "url": "https://www.alifa.nl/activiteit/291/sportactiviteit-12",
+      "summary": "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in Park de Kotten. We doen hier allerlei verschillende sporten en proberen je altijd uit te dagen. Zo is er…",
       "segments": [
-        "Vrijdag van 19.15 - 20.45 uur.",
-        "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in gymzaal Schietbaanweg. We doen hier allerlei…",
+        "Maandag van 17.00 - 19.00 uur.",
+        "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in Park de Kotten. We doen hier allerlei…",
         "Je kan gratis mee komen doen!",
-        "Waar? Gymzaal Schietbaanweg, Schietbaanweg 115",
-        "Wanneer? Elke vrijdagavond van 19.15 - 20.45 uur.",
-        "Voor meer informatie kun je contact opzoeken met Sagar of Yuksel",
-        "Sagar - 06 53 20 52 72 - [contactgegevens bij bron]",
-        "Yuksel - 06 86 84 21 58 - [contactgegevens bij bron]"
+        "Waar? Hatteler Plaza Stadveld",
+        "Wanneer? Elke Maandagavond van 17.00 - 19.00 uur.",
+        "Voor meer informatie kun je contact opzoeken met Anel of Jelle.",
+        "Anel - 06 86 86 05 80 - [contactgegevens bij bron]",
+        "Jelle - 06 86 86 16 60 - [contactgegevens bij bron]"
       ],
-      "terms": "115 activiteiten allerlei altijd bij bron contact contactgegevens dagen dan doen eens elke energie even geen gevonden gratis gymzaal hier iedereen informatie kan kom komen kun kwijt langs mee meer met nog opzoeken proberen sagar schietbaanweg sporten sportinloop uit uur van verschillende voor vrienden vrijdag vrijdagavond waar wanneer wat wel wil yuksel zijn",
+      "terms": "activiteiten allerlei altijd anel bij bron contact contactgegevens dagen dan doen eens elke energie even geen gevonden gratis hatteler hier iedereen informatie jelle kan kom komen kotten kun kwijt langs maandag maandagavond mee meer met nog opzoeken park plaza proberen sporten sportinloop stadveld uit uur van verschillende voor vrienden waar wanneer wat wel wil zijn",
+      "caution": "Controleer veranderlijke informatie bij de bron."
+    },
+    {
+      "id": "web-https-www-alifa-nl-activiteit-449-sportinloop-12",
+      "title": "Sportinloop 12+",
+      "source": "Alifa",
+      "type": "activiteit",
+      "url": "https://www.alifa.nl/activiteit/449/sportinloop-12",
+      "summary": "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in Park de Kotten. We doen hier allerlei verschillende sporten en proberen je altijd uit te dagen. Zo is er…",
+      "segments": [
+        "Maandag van 19.00 - 20.30 uur.",
+        "Wil je even je energie kwijt? Of nog even sporten met wat vrienden? Kom dan eens langs bij de sportinloop in Park de Kotten. We doen hier allerlei…",
+        "Je kan gratis mee komen doen!",
+        "Waar? Park de Kotten (Zaal Slagman)",
+        "Wanneer? Elke Maandagavond van 19.00 - 20.30 uur.",
+        "Voor meer informatie kun je contact opzoeken met Sagar en Yuksel",
+        "Sagar - 06 53 20 52 72 - [contactgegevens bij bron]",
+        "Yuksel - 06 53 20 52 72 - [contactgegevens bij bron]"
+      ],
+      "terms": "activiteiten allerlei altijd bij bron contact contactgegevens dagen dan doen eens elke energie even geen gevonden gratis hier iedereen informatie kan kom komen kotten kun kwijt langs maandag maandagavond mee meer met nog opzoeken park proberen sagar slagman sporten sportinloop uit uur van verschillende voor vrienden waar wanneer wat wel wil yuksel zaal zijn",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -1068,22 +1085,6 @@
       "caution": "Controleer het programma bij de uitvoerder."
     },
     {
-      "id": "web-https-www-alifa-nl-activiteit-457-taalcaf-c3-a9",
-      "title": "Taalcafé",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/457/taalcaf%C3%A9",
-      "summary": "Bij het Taalcafé van SIVE oefenen vrouwen samen om het spreken van de Nederlandse taal beter onder de knie te krijgen. De vrouwen die naar het Taalcafé komen hebben verschillende niveaus van Nederlands. Aanmelden is…",
-      "segments": [
-        "Bij het Taalcafé van SIVE oefenen vrouwen samen om het spreken van de Nederlandse taal beter onder de knie te krijgen. De vrouwen die naar het Taalcafé komen…",
-        "WANNEER? Elke woensdag en vrijdag van 10.00 tot 12.00 uur in de huiskamer van SIVE op de eerste verdieping van de Centrale Bibliotheek, Pijpenstraat 15 Enschede",
-        "Voor meer informatie: Linda van Veen [contactgegevens bij bron]",
-        "Er zijn geen activiteiten gevonden."
-      ],
-      "terms": "aanmelden activiteiten beter bibliotheek bij bron centrale contactgegevens die eerste elke enschede geen gevonden hebben het huiskamer informatie knie komen krijgen linda meer naar nederlands nederlandse niet niveaus nodig oefenen onder pijpenstraat samen sive spreken taal taalcafé tot uur van veen verdieping verschillende voor vrijdag vrouwen wanneer woensdag zijn",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
       "id": "web-https-www-alifa-nl-activiteit-280-taalintake-centrale-bibliotheek",
       "title": "Taalintake Centrale Bibliotheek",
       "source": "Alifa",
@@ -1206,26 +1207,6 @@
       ],
       "terms": "Alifa seniorenwerk ontmoeten ['ontmoeten'] ['ontmoeten'] {'name': 'Wandelen en fietsen'}",
       "caution": "Controleer het programma bij de uitvoerder."
-    },
-    {
-      "id": "web-https-www-alifa-nl-activiteit-456-wandelgroep",
-      "title": "Wandelgroep",
-      "source": "Alifa",
-      "type": "activiteit",
-      "url": "https://www.alifa.nl/activiteit/456/wandelgroep",
-      "summary": "Samen bewegen is leuker! Dit motto past perfect bij de Wandelgroep van SIVE.",
-      "segments": [
-        "Samen bewegen is leuker! Dit motto past perfect bij de Wandelgroep van SIVE.",
-        "Elke vrijdag verzamelt de Wandelgroep zicht bij de Centrale Bibliotheek Enschede aan de Pijpenstraat 15. We bepalen ter plekke de route en hoe lang we gaan…",
-        "De Wandelgroep van SIVE is beweging én gezelligheid in één. Loop gewoon een keertje mee, dan ontdek je vanzelf of onze wekelijkse wandelgroep iets voor jou is.",
-        "Laat je het ons wel even weten wanneer je voor het eerst mee wilt lopen? Dan geven we dat door aan de rest van de Wandelgroep.",
-        "WANNEER? Elke vrijdag verzamelen we tussen om 11.00 uur bij SIVE (in de Centrale Bibliotheek Enschede). Daarna vertrekken we samen voor de wandeling.",
-        "WAT KOST HET? Deze activiteit is gratis.",
-        "MEEDOEN? Je bent van harte welkom om mee te lopen. Stuur wel even een mailtje naar [contactgegevens bij bron] zodat de Wandelgroep weet dat je komt.",
-        "Er zijn geen activiteiten gevonden."
-      ],
-      "terms": "aan activiteit activiteiten bent bepalen bewegen beweging bibliotheek bij bron centrale contactgegevens daarna dan dat deze dit door een eerst elke enschede even gaan geen geven gevonden gewoon gezelligheid gratis harte het hoe iets jou keertje komt kost laat lang leuker loop lopen mailtje mee meedoen motto naar ons ontdek onze past perfect pijpenstraat plekke rest route samen sive stuur ter tussen uur van vanzelf vertrekken verzamelen verzamelt voor vrijdag wandelen wandelgroep wandeling wanneer wat weet wekelijkse wel welkom weten wilt zicht zijn zodat één",
-      "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
       "id": "web-https-www-alifa-nl-vacatures",
@@ -6925,18 +6906,18 @@
       "source": "LOES",
       "type": "informatie",
       "url": "https://loes.nl/informatie-en-tips/basisschoolkind/ontwikkeling/hoe-help-ik-mijn-kind-s-nachts-droog-te-blijven",
-      "summary": "Veel kinderen plassen ’s nachts nog in bed als ze naar de basisschool gaan. Dat is helemaal niet gek. Toch schamen sommige kinderen zich hiervoor. Zeker als ze er straf voor krijgen of ermee gepest worden. Ze durven dan…",
+      "summary": "Veel jonge kinderen zijn overdag zindelijk, maar worden 's nachts niet wakker om te plassen. Dat is heel normaal. Ongeveer 15 procent van de kinderen tussen de 5 en 6 jaar plast één of meerdere keren per week in bed.…",
       "segments": [
         "Waarom plast mijn kind in bed en wanneer zoek ik hulp?",
         "Hoe help ik mijn kind 's nachts droog te blijven?",
-        "Veel kinderen plassen ’s nachts nog in bed als ze naar de basisschool gaan. Dat is helemaal niet gek. Toch schamen sommige kinderen zich hiervoor. Zeker als ze…",
-        "Stoppen met ’s nachts in bed plassen is niet iets wat 1-2-3 lukt. Maar je kunt je kind hierbij helpen. Lees onze tips om te kijken hoe je het aanpakt. Of meld…",
+        "Veel jonge kinderen zijn overdag zindelijk, maar worden 's nachts niet wakker om te plassen. Dat is heel normaal. Ongeveer 15 procent van de kinderen tussen de…",
+        "'s Nachts droog blijven is niet iets wat ieder kind even snel leert. Maar je kunt je kind hierbij helpen. Lees onze tips om te kijken hoe je het aanpakt. Of…",
         "Onze tips om 's nachts droog te blijven",
-        "Bespreek het bedplassen van je kind alleen met je kind zelf en met mogelijke specialisten op dit gebied.",
-        "Het advies is om kinderen vanaf 3 jaar geen luier meer te laten dragen. Zonder luier voelt je kind sneller nattigheid. Om de matras droog te houden, kun je een…",
-        "snel in en uit bed te stappen. Misschien is een bedlampje handig."
+        "Kinderen die nog in bed plassen schamen zich daar meestal voor. Ze zijn bijvoorbeeld bang om gepest te worden. Ze durven niet op vakantie of uit logeren te…",
+        "Laat je kind voor het slapen gaan een extra keer plassen. Bijvoorbeeld in deze volgorde: plassen, tanden poetsen, halfuurtje in bed (voor) lezen en dan nog een…",
+        "Blijf rustig en geef vertrouwen als je kind oefent met droog blijven. Geef je kind wel genoeg te drinken. Je kind kan zo leren om wakker te worden van het…"
       ],
-      "terms": "aan aanpak aanpakken aanpakt aantal achter advies afgesproken afhalen afspraak alleen als avond avonds basisschool bed beddengoed bedlampje bedplassen begeleiden begin behalve belonen beloning beloon bereid beseft bespreek beste bij bijvoorbeeld blaas blijf blijft blijven brengen buiten cadeautje complimentje controleer daarmee daarna dan dat denk denken deze die direct dit doen door doorspoelen doucht draagt dragen drinken droge droog duren durven een eenmaal eens eerder elkaar elke ermee erop ervoor flanellen gaan gaat gebeuren gebied gebruik gebruiken gebruikt geef geeft geen gegaan gek genoeg gepest gerust geschikt geval gevoel gevonden ggd goed grote haar handig heb hebben hebt heeft helemaal help helpen helpt hem het hier hierbij hierboven hiermee hiervoor hij hoe hoes hoeven hoogte hoort houden houdt hulp hun iedere iedereen iets ineens inslapen jaar jeugdverpleegkundige jij juist jullie kalender kamp kan kans keer kenniscentrum keuze kies kijk kijken kind kinderen klagen kleding kleine kleiner kost krijgen kun kunt kwartier laat langer laten later leert lees leggen leren let leuk loes logeren loop lopen luier lukt maak maakt maar mag maken makkelijk manieren matras matrasbeschermer media mee meer meerdere meestal meld met meteen mijn minstens mis misgaat misschien moeilijker moet mogelijke mopperen morgen naar nacht nachten nachtje nachts nat natte nattigheid net niet niets nieuwsbrief noemen noemt nog nou oefenen oefent onderbroek ongeveer onze ook opblijven opnemen opnieuw opruimt ouders over paar pakken pas past per periode plakken plas plassen plast plaswekker poos positief prijs probeer pyjama reageer redelijk reden rest ruikt rustig samen schamen school signaal situatie slaapkamer slapen snel sneller social sommige speciale specialisten spelen spreek spreken stap stappen stel sticker stickers stop stoppen straf succes teleurstellingen thuis tijd tijdstip tips toch toe tot trouwens twente uit uur van vanaf vanzelf vast veel verdiend verkort verschillende verschonen vertrouwen verwacht vieze vochtig voelen voelt vol volg volgen volgende volgt volle voor voordat vooruitgang vraag vragen vriendjes waard waarom wachtwoord wakker wanneer want was wast wat waterdichte webinar weekend weer weinig weken wekker wel werkt wie wil wilt worden wordt zeg zeker zelf zelfs zich zij zijn zindelijk zoals zocht zoek zolang zonder zorg zorgen zorgt zwaar zélf",
+      "terms": "aan aanpak aanpakt aantal achter afgesproken afhalen afspraak alleen alles als avonds bang bed beddengoed bedplassen begeleiden begin behalve behandelingen belonen beloning beloon bereid beseft bespreek beste beter bij bijvoorbeeld blaas blijf blijft blijven buiten cadeautje complimentje controleer daar daarmee daarna dan dat denk denken deze die direct dit doen donker door doorspoelen doucht draagt drinken droge droog duidelijke duren durven een eenmaal eens eerder elkaar elke erop ervoor even extra gaan gaat gebeuren gebied gebleven gebruik gebruiken gebruikt geef geeft geen gegaan genoeg gepest gerust geschikt geval gevoel gevonden ggd goed grote groter haar halfuurtje handig heb hebben hebt heeft heel help helpen helpt hem het hier hierbij hierboven hiermee hij hoe hoes hoeven hoogte hoort houden houdt huisarts hulp ieder iedere iedereen iets ineens informatie inslapen jaar jeugdverpleegkundige jij jonge jou jullie kalender kan kans keer kenniscentrum keren kies kijk kijken kind kinderen klagen kleding kleine kleiner kost kun kunnen kunt kwartier laat lampje langer lastig laten later leert lees leggen leren let leuk lezen loes logeren loop lopen luier lukt maak maakt maar mag maken makkelijk manieren matras matrasbeschermer media medicijnen medische mee meer meerdere meestal meld met meteen mijn minstens mis misgaat misschien moet mogelijke mopperen morgen naar nacht nachten nachtje nachts nat natte nattigheid net niet niets nieuwsbrief noemen noemt nog normaal nou oefenen oefent onderbroek ongeveer onze ook oorzaak opblijven opnemen opnieuw opruimt ouder over overdag paar pas past per periode plakken plas plassen plast plaswekker poetsen poos positief praktijk prijs probeer procent reageer redelijk reden rest ruikt rustig samen schamen school signaal situatie slapen snel sneller social speciale specialisten spelen spreek spreken stap stappen stel sticker stickers stop stopt straf succes tanden teleurstellingen thuis thuisarts tijd tijdstip tips toch toe tot trouwens tussen twente uit uitleg uur vaak vakantie van vanaf vanzelf vast veel verdiend verkort verschonen vertelt vertrouwen verwacht vieze vind vochtig voelt vol volg volgen volgende volgorde volgt volle voor voordat vooruitgang vraag vragen waard waarom wachtwoord wakker wanneer was wast wat waterdichte webinar week weekend weer weg weinig weken wekker wel werkt wie willen wilt worden wordt zeg zelf zelfs zich zij zijn zindelijk zindelijkheidsproblemen zoals zocht zoek zolang zonder zorg zorgt één",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -7329,8 +7310,8 @@
         "Elke ouder twijfelt weleens. Of je kind nu een baby is of bijna volwassen, er blijven momenten waarop je denkt: hoe pak ik dit aan? Hier vind je steun,…",
         "Hoe begeleid ik mijn kind bij de scheiding?",
         "Je kind voorbereiden op een ziekenhuisopname",
-        "Vind jij het leuk om met andere (aanstaande) ouders in contact te komen? Bekijk hier het aanbod in Hengelo.",
         "Vind jij het leuk om met andere (aanstaande) ouders in contact te komen? Bekijk hier het aanbod in Borne.",
+        "Vind jij het leuk om met andere (aanstaande) ouders in contact te komen? Bekijk hier het aanbod in Hengelo.",
         "Inloop en ontmoeten Enschede",
         "Vind jij het leuk om met andere (aanstaande) ouders in contact te komen? Bekijk hier het aanbod in Enschede."
       ],
@@ -7770,26 +7751,6 @@
         "Hoe help ik mijn kind 's nachts droog te blijven?"
       ],
       "terms": "aan afhankelijk afwijkt alleen allemaal als andere anders beantwoordt betekent bevestiging bezig bij bijeenkomsten bijna blijf blijven blogs brutaal buurt centrum cjg consultatiebureau contact cursussen cyberpesten dan dat deze die dingen doen doet doorgegeven doorhebt droog een eerder eet eetgedrag eetstoornis emmanuel ene enzovoort erover estafette eten even feestjes gebeurt gedrag gelukkig gemeente gemeenten geoliede gewicht gewone gewoon gezelligheid gezin goed haar heb heeft help helpen het hieronder hij hoe hoeft hoogte hoort houd iets ineens intocht jeugd jij jou kies kind kinderen komt korte kun kunnen kunt lach land lekker leuk lichaam loes luide maak maaltijden maar magische media meld mensje menu merk merken met meteen mijn misschien momenten mooi naar nachts nemen neus niet nieuwsbrief nogal normaal ode oksels onder online ons ontdek ontspannen ook opmerkzaam opvoeden opvoeders ouders ouderschap over overslaat paniek per periode pittig plattegrond praten professional puber registreert respectloos samengesteld scheet schoen sinterklaas sinterklaascadeaus sinterklaasjournaal snel snotje social soepel soort spannende spanning stiefouderschap stiekeme stokje surprises terecht terechtkomt tijd tips toch tot totdat twente twentse twijfelt uit van vanaf veel vel veranderingen verloskundige vol volg volledig volwassen voor vraag vragen vreemde vrij waar waarbij want weer wij wilt woon worden wordt wow zeker zetten zie zijn zit zoek zorg zorgen zorgverleners zwanger zwangerschap zweetplekken",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
-      "id": "web-https-loes-nl-informatie-en-tips-zwanger",
-      "title": "Zwanger",
-      "source": "LOES",
-      "type": "informatie",
-      "url": "https://loes.nl/informatie-en-tips/zwanger",
-      "summary": "Een zwangerschap is een bijzondere periode. Er komt veel op je af en je krijgt veel informatie. Met een goede voorbereiding voel je je zeker en ontspannen. Loes organiseert in Twente gratis bijeenkomsten, webinars en…",
-      "segments": [
-        "Een zwangerschap is een bijzondere periode. Er komt veel op je af en je krijgt veel informatie. Met een goede voorbereiding voel je je zeker en ontspannen.…",
-        "Voorbereiding op de bevalling",
-        "Je doet een test en… 2 streepjes! Gefeliciteerd, je bent zwanger! Misschien ben je meteen dolblij, misschien moet je nog even wennen aan het idee. Hoe dan ook,…",
-        "Hoe verhoog ik als man mijn vruchtbaarheid?",
-        "Hoe raak ik sneller zwanger?",
-        "Hulp zoeken als zwanger worden niet lukt",
-        "30 november 2026 19:30 tot 20:30",
-        "Wil je je kind na je zwangerschapsverlof blijven voeden met moedermelk? Je kan je borstvoeding goed combineren met werken en kolven. Een lactatiekundige…"
-      ],
-      "terms": "2026 aan aanstaande afhankelijk afspraak afspraken afwijkt allemaal alles als andere anders baby ben bent bereiden betekent betrouwbare bevallen bevalling bezig bij bijeenkomst bijeenkomsten bijna bijzondere blijven borstvoeding breekt combineren consultatiebureau cursussen cyberpesten dan dat december deze dingen dit doet dolblij doorgegeven doorhebt een eerder eerste eerstelijns eet eetgedrag eetstoornis emmanuel ene enschede enzovoort erover ervaring estafette eten even experts feestjes gebeurt gefeliciteerd gelukkig geoliede geven gewicht gewone gezelligheid goed goede gratis haar heeft help helpen helpt het hij hoe hulp idee iets ineens informatie intocht jij jou kan kans kind kinderen klinisch kolven komende komt korte kraamzorg krijgt kun kunt lach lactatiekundige land lekker leren lichaam loes luide lukt maak maaltijden maanden maar magische man meer meld mensje merk merken met meteen mijn misschien moedermelk moet mst naar neus niet nieuwsbrief nog nogal normaal november ode oksels onder online ontdek ontmoet ontspannen ook opmerkzaam organiseert ouders over overslaat paniek periode positieve praten proces professional raak regelen registreert rij samen scheet schoen sinterklaas sinterklaasjournaal snel sneller snotje soepel soort spannende spanning stiekeme stokje streepjes surprises terechtkomt test tijd toch tot tweedelijns twente van veel vel veranderingen vergroot verhoog verloskundige vertellen vertelt verwachten voeden voel vol volledig voor voorbereid voorbereiding voorbereidingen vreemde vrij vruchtbaarheid waarbij wat webinars weer wekenecho wennen werken wij wil wilt worden wordt wow zeker zelf zetten zijn zit zoeken zorg zorgen zorgverleners zwanger zwangerschap zwangerschapsverlof zweetplekken",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -9850,43 +9811,36 @@
       "caution": "Controleer voorwaarden bij de aanbieder."
     },
     {
+      "id": "web-https-www-sportaal-nl-nieuws-en-activiteiten-wat-een-energie-tijdens-de-mix-markten-op-het-voortgezet-onderwijs",
+      "title": "MIX! Markten op het voortgezet onderwijs!",
+      "source": "Sportaal",
+      "type": "activiteit",
+      "url": "https://www.sportaal.nl/nieuws-en-activiteiten/wat-een-energie-tijdens-de-mix-markten-op-het-voortgezet-onderwijs/",
+      "summary": "MIX! Markten op het voortgezet onderwijs!",
+      "segments": [
+        "MIX! Markten op het voortgezet onderwijs!",
+        "Wat een energie tijdens de MIX! Markten op het voortgezet onderwijs!"
+      ],
+      "terms": "een energie het markten mix onderwijs tijdens voortgezet wat",
+      "caution": "Controleer veranderlijke informatie bij de bron."
+    },
+    {
       "id": "web-https-www-sportaal-nl-nieuws-en-activiteiten",
       "title": "Nieuws & activiteiten",
       "source": "Sportaal",
       "type": "activiteit",
       "url": "https://www.sportaal.nl/nieuws-en-activiteiten/",
-      "summary": "27 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
+      "summary": "Sportaal organiseert op woensdag 9 december een sportieve netwerkavond voor Enschedese verenigingen. Een mooie gelegenheid om andere verenigingen te ontmoeten, ervaringen uit te wisselen en samen actief bezig te zijn.…",
       "segments": [
-        "27 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "Geniet van een gezellige maandag- en vrijdagochtend vol beweging, motoriekontwikkeling en nieuwe vriendjes maken. Onder begeleiding van Sportaal kunnen jullie…",
         "9 december 2026 - 17:30 tot 22:00 - PadelCasa",
         "Sportieve netwerkavond voor Enschedese verenigingen bij PadelCasa",
-        "Pathmos Beweegt: een dag vol beweging, verbinding en plezier!",
+        "Sportaal organiseert op woensdag 9 december een sportieve netwerkavond voor Enschedese verenigingen. Een mooie gelegenheid om andere verenigingen te ontmoeten,…",
         "21 december 2026 - 09:00 tot 17:00",
         "Schoolbasketbaltoernooi december 2026",
+        "Pathmos Beweegt: een dag vol beweging, verbinding en plezier!",
         "MIX! Markten op het voortgezet onderwijs!"
       ],
-      "terms": "2026 7543 activiteiten afgestemd allerlei avontuurlijk begeleiding beweegt beweging bij dag december een enschede enschedese ervaren geniet gezellige gym het jullie kinderen kleinsten kunnen leuke maandag maken markten meedoen met mix motoriekontwikkeling netwerkavond nieuwe noordhollandstraat november onder onderwijs ouder padelcasa pathmos peuter plezier schoolbasketbaltoernooi speciaal spelen sportaal sportieve terphoes tijdens tot van verbinding verenigingen vol voor voortgezet vriendjes vrijdagochtend wijkcentrum",
-      "caution": "Controleer veranderlijke informatie bij de bron."
-    },
-    {
-      "id": "web-https-www-sportaal-nl-nieuws-en-activiteiten-nieuwe-berichten-pagina-2",
-      "title": "Ouder/peuter gym",
-      "source": "Sportaal",
-      "type": "activiteit",
-      "url": "https://www.sportaal.nl/nieuws-en-activiteiten/nieuwe-berichten-pagina-2/",
-      "summary": "6 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-      "segments": [
-        "6 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "9 november 2026 - 09:00 tot 10:00 - Het Kompas | Lijsterstraat 11, 7523 ER Enschede",
-        "13 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "16 november 2026 - 09:00 tot 10:00 - Het Kompas | Lijsterstraat 11, 7523 ER Enschede",
-        "20 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "23 november 2026 - 09:00 tot 10:00 - Het Kompas | Lijsterstraat 11, 7523 ER Enschede",
-        "27 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "Geniet van een gezellige maandag- en vrijdagochtend vol beweging, motoriekontwikkeling en nieuwe vriendjes maken. Onder begeleiding van Sportaal kunnen jullie…"
-      ],
-      "terms": "2026 7523 7543 aan aansluiten activiteiten afgestemd allerlei andere avontuurlijk begeleiding bewegen beweging bezig bij centraal die doen een elke enschede ervaren geniet gezellige gym het hun iedere jaar jullie kinderen kleinsten kompas krijgen kunnen leeftijd leuke lijsterstraat locaties maandag maandagochtend maken manier meedoen met mogelijkheid motoriek motoriekontwikkeling naast nieuwe noordhollandstraat november onder ontdekken ontmoeten ontwikkeling ook ouder ouders peuter peutergym plaats plezier ruimte samen speciaal speelse spelen sportaal staat terphoes tijdens tot twee unnen van verschillende verzorger vindt vol vriendjes vrijdagochtend wijkcentrum zijn",
+      "terms": "2026 actief andere beweegt beweging bezig bij centraal dag december dit een enschedese ervaringen gelegenheid het keer markten mix mooie netwerkavond onderwijs ontmoeten organiseert padel padelcasa pathmos plezier samen schoolbasketbaltoernooi sportaal sportieve staat tot uit verbinding verenigingen vol voor voortgezet wisselen woensdag zijn",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -9922,11 +9876,11 @@
         "Voor de kinderen was er van alles te beleven. Ze konden dansen, kickboksen, creatief bezig zijn, voetballen en lekker spelen op het plein. Er werd volop…",
         "Pathmos Beweegt was meer dan alleen een leuke dag. Het is een moment waarop buurtbewoners elkaar ontmoeten, nieuwe contacten ontstaan en we samen bouwen aan…",
         "Bedankt aan alle partners, wijkbewoners, vrijwilligers en betrokkenen die Pathmos Beweegt samen tot zo’n mooie dag hebben gemaakt. Samen brengen we Pathmos in…",
-        "27 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "Geniet van een gezellige maandag- en vrijdagochtend vol beweging, motoriekontwikkeling en nieuwe vriendjes maken. Onder begeleiding van Sportaal kunnen jullie…",
-        "9 december 2026 - 17:30 tot 22:00 - PadelCasa"
+        "9 december 2026 - 17:30 tot 22:00 - PadelCasa",
+        "Sportieve netwerkavond voor Enschedese verenigingen bij PadelCasa",
+        "Sportaal organiseert op woensdag 9 december een sportieve netwerkavond voor Enschedese verenigingen. Een mooie gelegenheid om andere verenigingen te ontmoeten,…"
       ],
-      "terms": "2026 7543 aan activiteiten afgestemd alle alleen allerlei alles als avontuurlijk bedankt begeleiding beleven beter betrokkenen beweegt beweging bezig bij bijzonders blije bouwen brengen bruist buurtbewoners contacten creatief daar dag dan dansen december deze die doen door drinken een einde elkaar enschede enschedese ervaren eten fijne gelachen gemaakt geniet genoten gevoel gevuld gezellige gezelligheid gezichten gratis groeit gym hebben herfstdag het hoe huis iets jong juist jullie kennen kickboksen kinderen kleinsten komen konden kunnen lekker leren leuke liep maakten maandag maken markten meedoen meegedaan meer met mix moment momenten mooi mooie motoriekontwikkeling naar netwerkavond nieuwe nog noordhollandstraat november onder onderwijs ontmoeten ontmoetingen ontstaan ook opkomst opnieuw oud ouder padelcasa partners pathmos peuter plein plezier prachtige saamhorigheid samen samenkwamen schoolbasketbaltoernooi sfeer speciaal spelen sportaal sportieve sterke ten terphoes tijdens toen tot vakantie van veel verbinding verbonden verenigingen vertrekken voetballen vol volop voor voortgezet vriendjes vrijdagochtend vrijwilligers vrolijke waarop want was wat werd wijk wijkbewoners wijkcentrum zagen zien zijn zorgde",
+      "terms": "2026 aan actief alle alleen alles als andere bedankt beleven beter betrokkenen beweegt beweging bezig bij bijzonders blije bouwen brengen bruist buurtbewoners centraal contacten creatief daar dag dan dansen december deze die dit doen door drinken een einde elkaar enschedese ervaringen eten fijne gelachen gelegenheid gemaakt genoten gevoel gevuld gezellige gezelligheid gezichten gratis groeit hebben herfstdag het hoe huis iets jong juist keer kennen kickboksen kinderen komen konden lekker leren leuke liep maakten markten meegedaan meer met mix moment momenten mooi mooie naar netwerkavond nieuwe nog onderwijs ontmoeten ontmoetingen ontstaan ook opkomst opnieuw organiseert oud padel padelcasa partners pathmos plein plezier prachtige saamhorigheid samen samenkwamen schoolbasketbaltoernooi sfeer spelen sportaal sportieve staat sterke ten tijdens toen tot uit vakantie van veel verbinding verbonden verenigingen vertrekken voetballen vol volop voor voortgezet vrijwilligers vrolijke waarop want was wat werd wijk wijkbewoners wisselen woensdag zagen zien zijn zorgde",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -9957,12 +9911,12 @@
         "Bij Sportaal geloven we dat iedereen moet kunnen bewegen. Samen maken we sporten, bewegen en een gezonde leefstijl voor iedereen bereikbaar. Lees er hier alles…",
         "In Enschede kun je sinds juli 2026 zwemmen in zwembad Het Diekman. Zwembaden Aquadrome en Het Slagman zijn gesloten. Kom jij zwemmen in het nieuwe zwembad?",
         "We zijn er voor sportverenigingen in Enschede. We delen met veel enthousiasme onze kennis en ervaring. Lees hier wat we voor jouw vereniging kunnen betekenen.",
-        "27 november 2026 - 09:00 tot 10:00 - Wijkcentrum ’t Ni-je Terphoes | Noordhollandstraat 4, 7543 WB Enschede",
-        "Geniet van een gezellige maandag- en vrijdagochtend vol beweging, motoriekontwikkeling en nieuwe vriendjes maken. Onder begeleiding van Sportaal kunnen jullie…",
         "9 december 2026 - 17:30 tot 22:00 - PadelCasa",
-        "Sportieve netwerkavond voor Enschedese verenigingen bij PadelCasa"
+        "Sportieve netwerkavond voor Enschedese verenigingen bij PadelCasa",
+        "Sportaal organiseert op woensdag 9 december een sportieve netwerkavond voor Enschedese verenigingen. Een mooie gelegenheid om andere verenigingen te ontmoeten,…",
+        "21 december 2026 - 09:00 tot 17:00"
       ],
-      "terms": "2026 7543 activiteiten afgestemd allerlei alles aquadrome avontuurlijk begeleiding bereikbaar betekenen bevorderen beweegt bewegen beweging bij dag dat december delen diekman een enschede enschedese enthousiasme ervaren ervaring faciliteert geloven geniet gesloten gezellige gezonde gezondheid gym het hier iedereen impact inwoners jij jouw juli jullie kennis kinderen kleinsten kom kracht kun kunnen leefstijl lees leuke maandag maatschappelijke maken markten meedoen mensen met mix moet motoriekontwikkeling netwerkavond nieuwe noordhollandstraat november onder onderwijs onze ouder over padelcasa pathmos peuter plezier plezierig samen schoolbasketbaltoernooi scoren sinds slagman speciaal spelen sport sportaal sporten sportief sportieve sportverenigingen stimuleert terphoes tijdens toegankelijk tot van veel veilig verbinden verbinding vereniging verenigingen vol voor voortgezet vriendjes vrijdagochtend wat welkom wij wijkcentrum willen zijn zwembad zwembaden zwemmen",
+      "terms": "2026 actief alles andere aquadrome bereikbaar betekenen bevorderen beweegt bewegen beweging bezig bij centraal dag dat december delen diekman dit een enschede enschedese enthousiasme ervaring ervaringen faciliteert gelegenheid geloven gesloten gezonde gezondheid het hier iedereen impact inwoners jij jouw juli keer kennis kom kracht kun kunnen leefstijl lees maatschappelijke maken markten mensen met mix moet mooie netwerkavond nieuwe onderwijs ontmoeten onze organiseert over padel padelcasa pathmos plezier plezierig samen schoolbasketbaltoernooi scoren sinds slagman sport sportaal sporten sportief sportieve sportverenigingen staat stimuleert toegankelijk tot uit van veel veilig verbinden verbinding vereniging verenigingen vol voor voortgezet wat welkom wij willen wisselen woensdag zijn zwembad zwembaden zwemmen",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -10108,7 +10062,7 @@
         "In onze zwembad kun je sporten en ontspannen. Van zwemlessen, baanzwemmen tot recreatief zwemmen: er is voor iedereen een passend moment in het water.",
         "Bekijk al het nieuws en alle activiteiten van Sportaal voor de inwoners van Enschede."
       ],
-      "terms": "2026 7543 aan aanbieden achtergrond actief actieve activiteiten afgestemd alle allerlei als altijd avontuurlijk baanzwemmen begeleiding bekijk bevorderen beweeggroepen beweegmakelaars beweegt bewegen beweging bij blijven creatief dag dagelijks dan december dichtbij doel een enschede enschedese ernaar ervaren faciliteiten fietscursussen gaat gebied geniet gezellige gezond gezonde gezonder gym hebben helpen het iedere iedereen inwoners jou jullie kinderen kleinsten komen kun kunnen lang leefstijl leefstijlgesprekken leeftijd leuke leven maandag maken markten meedoen met mix mogelijkheden moment motoriekontwikkeling netwerkavond nieuwe nieuws noordhollandstraat november onder ondersteunen onderwijs ongeacht ons ontdek ontspannen onze ouder padelcasa passend past pathmos peuter play plezier programma projecten recreatief samen schoolbasketbaltoernooi senioren sjors speciaal spel spelen sport sportaal sporten sportief sportieve sportniveau stad stimuleren streven team terphoes tijdens toegankelijk tot vaardig valpreventie van verbinding verder verenigingen vitaler vol volwassenen voor voortgezet vriendjes vrijdagochtend waardevolle wat water werken wijkcentrum zet zetten zich zoals zwembad zwemfaciliteiten zwemlessen zwemmen",
+      "terms": "2026 aan aanbieden achtergrond actief actieve activiteiten alle als altijd andere baanzwemmen bekijk bevorderen beweeggroepen beweegmakelaars beweegt bewegen beweging bezig bij blijven centraal creatief dag dagelijks dan december dichtbij dit doel een enschede enschedese ernaar ervaringen faciliteiten fietscursussen gaat gebied gelegenheid gezond gezonde gezonder hebben helpen het iedere iedereen inwoners jou keer kinderen komen kun lang leefstijl leefstijlgesprekken leeftijd leven maken markten met mix mogelijkheden moment mooie netwerkavond nieuws ondersteunen onderwijs ongeacht ons ontdek ontmoeten ontspannen onze organiseert padel padelcasa passend past pathmos play plezier programma projecten recreatief samen schoolbasketbaltoernooi senioren sjors spel sport sportaal sporten sportief sportieve sportniveau staat stad stimuleren streven team toegankelijk tot uit vaardig valpreventie van verbinding verder verenigingen vitaler vol volwassenen voor voortgezet waardevolle wat water werken wisselen woensdag zet zetten zich zijn zoals zwembad zwemfaciliteiten zwemlessen zwemmen",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
@@ -10128,7 +10082,7 @@
         "Tijdens de schoolvakanties organiseert Sportaal de Play XL-activiteiten in de binnensportlocaties van Enschede. Deze hallen worden omgetoverd tot een waar…",
         "Daarnaast biedt Sportaal nog tal van andere evenementen, zoals Play@ the Park en de Avondvierdaagse. Ontdek alle evenementen en activiteiten van Sportaal!"
       ],
-      "terms": "2026 2027 7543 aanbieders aangeboden activiteiten afgestemd alle allemaal allerlei als andere asm athletic avondvierdaagse avontuurlijk basis basisscholen basisschool basisschoolkinderen basisschoolleerlingen basketbal bedoeld beeball begeleiding behouden bekijk belangrijk bewegen beweging biedt bij binnen binnensportlocaties blijven conditie contact creatief creatieve cultuur daarnaast daarom dag december deze die diekman dit doel doen doet door doorgang een eerder effecten elk elke enschede ervaren evenementen faciliteren fitheid gebied gegeven gekeken gelooft geniet gewoon gezellig gezellige gezondheid graag gratis gym haar hallen hebben heeft helpen het hier hockey hun iedere informatie initiatief interactie jaar jij jouw jullie kampioen kans kinderen kleinsten korfbal kracht kunnen lang lees lekker leuk leuke leven maand maandag maken meedoen meer mei met meten model moment motoriekontwikkeling naar naschoolse nauw neem nieuwe nieuws nog noordhollandstraat november omgetoverd onder onderbouwde onderwerpen ons ontdek organiseerde organiseert ouder over park peuter play positieve praktisch proberen proeflessen programma project regelmatig samen samenwerking schaken scholen school schoolbasketbaltoernooi schoolprestaties schoolsporttoernooien schoolvakanties sjors skills sociale speciaal spelen spelspektakel sport sportaal sportactiviteiten sporten sportief sportverenigingen stad stimuleren stoppen strijden tal talent team terphoes terwijl the tijdens titel tot uit uitdagende vaardig van veel veelzijdig verder verplichtingen verschillende verzorger vindt visie vitaliteit voetbal vol volgen voor vriendjes vrijdagochtend waar wat week werkt wetenschappelijk wijkcentrum wijken wil worden wordt zelfvertrouwen zet zich zijn zoals zodra zonder zwembad zwemdiploma zwemmen zwemvaardigheid",
+      "terms": "2026 2027 aanbieders aangeboden activiteiten afgestemd alle allemaal allerlei als andere asm athletic avondvierdaagse avontuurlijk basis basisscholen basisschool basisschoolkinderen basisschoolleerlingen basketbal bedoeld beeball begeleiding behouden bekijk belangrijk bewegen beweging biedt bij binnen binnensportlocaties blijven conditie contact creatief creatieve cultuur daarnaast daarom dag december deze die diekman dit doel doen doet door doorgang een eerder effecten elk elke enschede ervaren evenementen faciliteren fitheid gebied gegeven gekeken gelooft geniet gewoon gezellig gezondheid graag gratis gym haar hallen hebben heeft helpen het hier hockey hun iedere informatie initiatief interactie jaar jij jouw jullie kampioen kans kinderen kleinsten korfbal kracht kunnen lang lees lekker leuk leuke leven maand maandag maken meedoen meer mei met meten model moment motoriekontwikkeling naar naschoolse nauw neem nieuwe nieuws nog omgetoverd onder onderbouwde onderwerpen ons ontdek organiseerde organiseert ouder over park peuter play positieve praktisch proberen proeflessen programma project regelmatig samen samenwerking schaken scholen school schoolbasketbaltoernooi schoolprestaties schoolsporttoernooien schoolvakanties sjors skills sociale speciaal spelen spelspektakel sport sportaal sportactiviteiten sporten sportief sportverenigingen stad stimuleren stoppen strijden tal talent team terwijl the tijdens titel tot uit uitdagende vaardig van veel veelzijdig verder verplichtingen verschillende verzorger vindt visie vitaliteit voetbal vol volgen voor vriendjes vrijdagochtend waar wat week werkt wetenschappelijk wijken wil worden wordt zelfvertrouwen zet zich zijn zoals zodra zonder zwembad zwemdiploma zwemmen zwemvaardigheid",
       "caution": "Controleer veranderlijke informatie bij de bron."
     },
     {
